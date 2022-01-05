@@ -21,7 +21,7 @@ highlight_name: true
 social:
 - icon: envelope
   icon_pack: fas
-  link: /#contact
+  link: mailto:andrejleban@gmail.com 
 - display:
     header: true
   # icon: twitter

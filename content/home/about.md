@@ -7,12 +7,12 @@ widget: about
 active: true
 
 # This file represents a page section.
-headless: true
+headless: false
 
 # Order that this section appears on the page.
 weight: 20
 
-title: Biography
+title: About me
 
 # Choose the user profile to display
 # This should be the username (folder name) of a profile in your `content/authors/` folder.

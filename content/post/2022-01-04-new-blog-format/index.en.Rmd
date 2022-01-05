@@ -18,7 +18,6 @@ projects: []
 ---
 
 
-Since Wordpress was just annoying enough for typesetting math & code to dissuade me from posting,
-I have decided to migrate to [blogdown](https://bookdown.org/yihui/blogdown/). 
+Since Wordpress was just annoying enough for typesetting math & code to dissuade me from posting, I have decided to migrate to [blogdown](https://bookdown.org/yihui/blogdown/). 
 My old blog can be found [here](https://andleb1.wordpress.com/).
 
