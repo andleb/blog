@@ -1,2 +1,4 @@
 # blog
 My personal blog
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3faed875-df3d-4b69-afc0-888eb9742839/deploy-status)](https://app.netlify.com/sites/andrejleban/deploys)
