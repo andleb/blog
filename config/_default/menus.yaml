@@ -23,8 +23,8 @@ main:
   #   url: courses/
   #   weight: 60
   - name: About
-    url: '#about'
+    url: '/about'
     weight: 70
   - name: Contact
-    url: '#contact'
+    url: '/contact'
     weight: 70
