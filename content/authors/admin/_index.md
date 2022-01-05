@@ -5,7 +5,7 @@ education:
   - course: M.A. Statistics
     institution: University of California, Berkeley
     year: 2022
-  - course: M.Sc. Mathematical Physics
+  - course: M.Sc. (equivalent) Mathematical Physics
     institution: University of Ljubljana
     year: 2016
 email: "andrejleban@gmail.com"
