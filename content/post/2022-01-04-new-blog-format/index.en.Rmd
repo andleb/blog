@@ -1,0 +1,22 @@
+---
+title: New blog format
+author: Andrej Leban
+date: '2022-01-04'
+slug: new-blog-format
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2022-01-04T21:59:03-08:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+I have decided to migrate to [blogdown](https://bookdown.org/yihui/blogdown/).
+My old blog can be found [here](https://andleb1.wordpress.com/).
