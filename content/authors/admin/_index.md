@@ -23,14 +23,20 @@ social:
   icon_pack: fab
   link: https://www.linkedin.com/in/andrejleban
 superuser: yes
-bio: null
+bio:
 ---
 
-` TODO: blurb`
+I am currently a graduate student in Statistics at the University of California, Berkeley.
+My interests and experience coincide in combining computationally-intensive approaches
+with more traditional analytical methods, especially in the realm of finance.
+
 
 <!-- {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/leban_andrej-cv.pdf" "newtab" >}}resumé{{< /staticref >}}. -->
 
-{{< icon name="download" pack="fas" >}} {{< staticref "uploads/andrej_leban-diploma.pdf" "newtab" >}} Master's thesis (Diploma): Time-dependent current through a quantum dot in the presence of a voltage probe (in Slovene){{< /staticref >}}[^1].
+{{< icon name="download" pack="fas" >}} 
+{{< staticref "uploads/andrej_leban-diploma.pdf" "newtab" >}} 
+Master's thesis (Diploma) in Mathematical Physics: Time-dependent current through a quantum dot in the presence of a voltage probe (in Slovene)
+{{< /staticref >}}[^1].
 
 
 [^1]: <span style="font-family:Arial; font-size:0.7em;"> NOTE: The document significantly compresses the theoretical background of the thesis, which is to be found in the referenced works, since it falls outside of the Diploma program and recommended thesis format. The focus of the work is on the empirical results, which can be appreciated even with the compressed background.

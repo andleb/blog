@@ -7,8 +7,8 @@
 
 theme: minimal
 day_night: true
-font: ''
-font_size: L
+font: 'Minimal'
+font_size: m
 
 # SEO
 # TODO:
@@ -79,9 +79,12 @@ highlight_languages:
   - r
   - python
   - latex
-  - c++
-math: false
-diagram: false
+  - cpp
+  - cmake
+  - bash
+highlight_style: "monokai-sublime"
+math: true
+diagram: true
 privacy_pack: false
 edit_page:
   repo_url: ''
