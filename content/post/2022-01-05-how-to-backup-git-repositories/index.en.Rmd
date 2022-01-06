@@ -2,7 +2,7 @@
 title: "How to backup git repositories"
 author: "Andrej Leban"
 date: '2022-01-05'
-draft: no
+draft: false
 slug: how-to-backup-git-repositories
 categories: []
 tags:

@@ -1,0 +1,68 @@
+---
+title: How to call all the functions in a Python file on an object
+author: Andrej Leban
+date: '2022-01-05'
+slug: how-to-call-all-the-functions-in-a-python-file-on-an-object
+categories: []
+tags:
+  - Data Science
+  - Python
+  - Reflection
+  - Machine Learning
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2022-01-05T18:17:12-08:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+*NOTE: This is a migration of an old post from my [previous blog](https://andleb1.wordpress.com/2020/05/28/how-to-call-all-the-functions-in-a-python-file-on-an-object/)*
+
+
+Recently, I’ve been playing around with some competitions on Kaggle. Given that an inescapable fact of Machine Learning is *Feature Selection*,
+I’ve been finding myself in the situation of having to call a dozen or more functions that add synthetic features, 
+infer missing values, etc., on the same `Pandas DataFrame`.
+
+The following code snippet will call every function in its `.py` file but itself on the object,
+using tail recursion (nested helper function `recCall`):
+
+```{python, eval=FALSE, include=TRUE}
+import inspect
+import sys
+ 
+import pandas as pd
+ 
+def addAllFeatures(data: pd.DataFrame):
+    currFunc  = inspect.getframeinfo(inspect.currentframe()).function
+    functions = [obj for name, obj in
+                 inspect.getmembers(sys.modules[__name__])
+                 if (inspect.isfunction(obj) and name != currFunc)]
+ 
+    def recCall(modifiedData, remFuncs):
+        if len(remFuncs) == 0:
+            return modifiedData
+         
+        return recCall(remFuncs[0](modifiedData), remFuncs[1:])
+ 
+    return recCall(data, functions)
+```
+
+For this specific example, the general form of the feature-adding functions is:
+
+```{python, eval=FALSE, include=TRUE}
+def addFeature(data: pd.DataFrame, *args, **kwargs):
+     
+    # add the feature ...
+     
+    return data
+```
+
+
+Also notable is the fact that the data gets modified between calls of the recursion; 
+if your features depend on each other, then the `functions` list would need to be in the correct dependency order.
+Determining this can, however, quickly become non-trivial.
