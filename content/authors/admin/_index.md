@@ -38,8 +38,10 @@ with more traditional analytical methods, especially in the realm of finance.
 Master's thesis (Diploma) in Mathematical Physics: Time-dependent current through a quantum dot in the presence of a voltage probe (in Slovene)
 {{< /staticref >}}[^1].
 
-
 [^1]: <span style="font-family:Arial; font-size:0.7em;"> NOTE: The document significantly compresses the theoretical background of the thesis, which is to be found in the referenced works, since it falls outside of the Diploma program and recommended thesis format. The focus of the work is on the empirical results, which can be appreciated even with the compressed background.
 </span>
+
+
+You can get the source code of this website at [https://github.com/andleb/blog](https://github.com/andleb/blog).
 
 
