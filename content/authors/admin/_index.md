@@ -28,7 +28,7 @@ bio:
 
 I am currently a graduate student in Statistics at the University of California, Berkeley.
 My interests and experience coincide in combining computationally-intensive approaches
-with more traditional analytical methods, especially in the realm of finance.
+with more traditional analytical methods in diverse fields.
 
 
 <!-- {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/leban_andrej-cv.pdf" "newtab" >}}resumé{{< /staticref >}}. -->
