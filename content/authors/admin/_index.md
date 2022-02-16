@@ -26,8 +26,9 @@ superuser: yes
 bio:
 ---
 
-I am currently a graduate student in Statistics at the University of California, Berkeley.
-My interests and experience coincide in combining computationally-intensive approaches
+I am currently a graduate student in Statistics at the University of California, Berkeley and
+a researcher at the [Berkeley Speech & Computation Lab](https://twitter.com/BerkeleySCLab).
+My interests and experience coincide in seamlessly combining computationally-intensive approaches
 with more traditional analytical methods in diverse fields.
 
 
