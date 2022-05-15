@@ -37,5 +37,5 @@ This is the thesis for my Diploma (Master's and Bachelor's combined) in Mathemat
 The work is an original examination of the effects that a coupled voltage probe has on the current flowing through a quantum dot. This was done by numerically simulating the problem from first principles (i.e. from a version of Schrödinger's equation). The main challenge was to ensure that the voltage on the probe was set just so there was no current flowing in or out of it, *while* the system was being integrated - i.e. without knowing what the actual currents at that step were.
 
 
-The document attached significantly compresses the theoretical background of the thesis (based on the Non-Equilibrium Green's Functions formalism - NEGF), which is to be found in the [referenced works](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.72.035308) since it falls outside of the Diploma program and recommended Diploma thesis format.
+The document attached significantly compresses the theoretical background of the thesis (based on the Non-Equilibrium Green's Functions formalism - NEGF), which is to be found in the [referenced works](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.72.035308) since it falls outside of the Diploma program and the recommended Diploma thesis format.
 
