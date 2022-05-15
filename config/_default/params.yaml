@@ -11,15 +11,18 @@ font: 'Minimal'
 font_size: l
 
 # SEO
-# TODO:
 site_type: Person
 local_business_type: ''
 org_name: ''
+# Admin role replaces anyway
 description: ''
-twitter: ''
+twitter: 'anleb1'
+
+#TODO:
+# 5. Add a sharing image
+# Add an image named sharing to the assets/media/ folder to represent your site when it is shared on social media.
 
 # Contact (edit or remove options as required)
-
 email: andrejleban@gmail.com
 # phone: 888 888 88 88
 # address:
@@ -151,7 +154,7 @@ map:
   api_key: ''
   zoom: 15
 marketing:
-  google_analytics: ''
+  google_analytics: 'UA-228705789-1'
   google_tag_manager: ''
   google_site_verification: 'google-site-verification=oJUt4qEgz1nbEKcvDXzsR0LNbHNPGcPECa2xegOaWp8'
   baidu_site_verification: ''
