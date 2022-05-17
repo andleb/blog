@@ -81,5 +81,5 @@ image:
 ---
 
 
-NOTE: This paper stems from the work I did as a Machine Learning intern at [Translated](https://www.google.com/search?channel=fs&q=translated+srl)
+NOTE: This paper stems from the work I did as a Machine Learning intern at [Translated](https://translated.com)
 in Rome during the summer of 2021.
