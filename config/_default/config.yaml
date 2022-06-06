@@ -8,6 +8,11 @@ title: Andrej's thoughts # Website name
 baseurl: 'https://andrejleban.netlify.app/' # Website URL
 copyright: '' # Footer text, e.g. '© {year} Me'
 
+sitemap:
+  changefreq: monthly
+  filename: sitemap.xml
+  priority: 1.0
+
 ############################
 ## LANGUAGE
 ############################
