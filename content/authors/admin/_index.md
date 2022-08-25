@@ -1,5 +1,5 @@
 ---
-title: "Andrej Leban"
+title: ""
 education:
   courses:
   - course: M.A. Statistics
