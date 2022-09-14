@@ -29,10 +29,13 @@ superuser: yes
 bio:
 ---
 
+
 I am currently a graduate student in Statistics at the University of California, Berkeley and
 a researcher at the [Berkeley Speech & Computation Lab](https://twitter.com/BerkeleySCLab).
 My interests and experience coincide in seamlessly combining computationally-intensive approaches
 with more traditional analytical methods in diverse fields.
+
+You can get the source code of this website at [https://github.com/andleb/blog](https://github.com/andleb/blog).
 
 
 <!-- {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/leban_andrej-cv.pdf" "newtab" >}}resumé{{< /staticref >}}. -->
@@ -46,6 +49,5 @@ Master's thesis (Diploma) in Mathematical Physics: Time-dependent current throug
 </span>
 -->
 
-You can get the source code of this website at [https://github.com/andleb/blog](https://github.com/andleb/blog).
 
 
