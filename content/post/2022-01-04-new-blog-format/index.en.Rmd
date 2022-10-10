@@ -1,6 +1,6 @@
 ---
 title: New blog format
-author: Andrej Leban
+author: 
 date: '2022-01-04'
 slug: new-blog-format
 categories: []

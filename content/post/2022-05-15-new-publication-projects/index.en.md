@@ -1,6 +1,6 @@
 ---
 title: New publication, projects
-author: Andrej Leban
+author: 
 date: '2022-05-15'
 slug: new-publication-projects
 categories: []

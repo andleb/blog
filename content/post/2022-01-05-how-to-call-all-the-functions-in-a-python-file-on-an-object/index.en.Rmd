@@ -1,6 +1,6 @@
 ---
 title: How to call all the functions in a Python file on an object
-author: Andrej Leban
+author: 
 date: '2022-01-05'
 slug: how-to-call-all-the-functions-in-a-python-file-on-an-object
 categories: []
