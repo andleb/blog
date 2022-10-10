@@ -30,7 +30,8 @@ share: true
 
 
 
-<p>{{% toc %}}</p>
+<p>{{% toc %}}
+<!-- \tableofcontents --></p>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
 </div>
@@ -39,12 +40,29 @@ share: true
 <div id="forward" class="section level3">
 <h3>Forward</h3>
 <ul>
-<li>1-step update Kalman<br />
-<!-- $$a+b$$ -->
-<span class="math display">\[\frac{2}{3}\]</span>
-<span class="math display">\[\begin{equation}
-  \nabla_x
-\end{equation}\]</span></li>
+<li>1-step update Kalman</li>
+</ul>
+<p><span class="math display">\[\begin{equation}
+    q(x_t | x_{t-1}) = \mathcal{N}(\sqrt{1 - \beta_t}x_{t-1}, \beta_t \mathbf{I})
+\end{equation}\]</span></p>
+<p>Usually <span class="math inline">\(\beta_1 &lt; \beta_2 &lt; ... &lt; \beta_T\)</span></p>
+<div id="stochastic-gradient-langevin" class="section level4">
+<h4>Stochastic gradient Langevin</h4>
+</div>
+</div>
+<div id="reverse" class="section level3">
+<h3>Reverse</h3>
+<p>No closed form for <span class="math inline">\(q(x_{t-1}|x_t)\)</span> in general
+Smoothing (needs the whole dataset) / Variational inference</p>
+<p>But tractable <span class="math inline">\(q(x_{t-1}|x_t, x_0)\)</span></p>
+<p>ELBO - sum of closed form terms</p>
+<p>Train a NN to predict the mean</p>
+</div>
+<div id="variance-schedule" class="section level3">
+<h3>Variance schedule</h3>
+<ul>
+<li>simple linspace</li>
+<li>cosine based</li>
 </ul>
 </div>
 </div>
@@ -54,6 +72,9 @@ share: true
 <div id="examples" class="section level2">
 <h2>Examples</h2>
 </div>
+<div id="applications-in-gans" class="section level2">
+<h2>Applications in GANs</h2>
+</div>
 <div id="references" class="section level2">
 <h2>References</h2>
 <ul>
@@ -62,6 +83,8 @@ share: true
 <li>A good blog post: <a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/">Weng, Lilian. (Jul 2021). What are diffusion models? Lil’Log.</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Kalman_filter">The Kalman filter</a><br />
 </li>
-<li><a href="../../uploads/leban_andrej%20-%20continuous%20time%20kalman%20filter.pdf">My presentation on the Continuous-time Kalman filter</a></li>
+<li><a href="../../uploads/leban_andrej%20-%20continuous%20time%20kalman%20filter.pdf">My presentation on the Continuous-time Kalman filter</a><br />
+</li>
+<li><a href="https://arxiv.org/abs/1601.00670">Blei, Kucukelbir, McAuliffe - Variational Inference: A Review for Statisticians</a></li>
 </ul>
 </div>

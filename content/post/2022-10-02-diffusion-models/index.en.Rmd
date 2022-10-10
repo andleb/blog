@@ -29,6 +29,7 @@ share: true
 ---
 
 {{% toc %}}
+<!-- \tableofcontents -->
 
 ## Introduction
 
@@ -38,17 +39,41 @@ share: true
 ### Forward
 
 - 1-step update Kalman  
-<!-- $$a+b$$ -->
-$$\frac{2}{3}$$
+
 \begin{equation}
-    \nabla_x
+    q(x_t | x_{t-1}) = \mathcal{N}(\sqrt{1 - \beta_t}x_{t-1}, \beta_t \mathbf{I})
 \end{equation}
+
+Usually $\beta_1 < \beta_2 < ... < \beta_T$
+
+#### Stochastic gradient Langevin
+
+
+### Reverse
+
+No closed form for $q(x_{t-1}|x_t)$ in general
+Smoothing (needs the whole dataset) / Variational inference
+
+But tractable $q(x_{t-1}|x_t, x_0)$
+
+ELBO - sum of closed form terms
+
+
+Train a NN to predict the mean
+
+### Variance schedule
+
+- simple linspace
+- cosine based
+
 
 
 ## Conditional generation
 
+
 ## Examples
 
+## Applications in GANs
 
 
 ## References
@@ -57,6 +82,8 @@ $$\frac{2}{3}$$
  - A good blog post: [Weng, Lilian. (Jul 2021). What are diffusion models? Lil’Log.](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/) 
  - [The Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter)  
  - [My presentation on the Continuous-time Kalman filter](../../uploads/leban_andrej - continuous time kalman filter.pdf)  
+ - [Blei, Kucukelbir, McAuliffe - Variational Inference: A Review for Statisticians](https://arxiv.org/abs/1601.00670)
+ 
 
 
 
