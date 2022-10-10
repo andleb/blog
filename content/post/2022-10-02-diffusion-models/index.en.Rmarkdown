@@ -1,0 +1,54 @@
+---
+title: "Diffusion models"
+author: ''
+date: '2022-10-02'
+slug: diffusion-models
+categories: []
+tags:
+  - Deep Learning
+  - Statistics
+  - Diffusion
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2022-10-09T21:36:00-07:00'
+featured: no
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+{{% toc %}}
+
+## Introduction
+
+## Forward and reverse diffusion
+
+
+### Forward
+
+- variance schedule $$\beta_t$$
+- 1-step update Kalman
+
+## Conditional generation
+
+ ## Examples
+
+
+
+
+## References
+
+ - One of the earliest papers: [Sohl-Dickstein et al. - Deep Unsupervised Learning using Nonequilibrium Thermodynamics](https://arxiv.org/abs/1503.03585)  
+ - A good blog post: [Weng, Lilian. (Jul 2021). What are diffusion models? Lil’Log.](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/) 
+ - [The Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter)  
+ - {{% staticref "uploads/leban_andrej - continuous time kalman filter.pdf" "newtab" %}}My presentation on the Continuous-time Kalman Filter{{% /staticref %}}
+
+
+
