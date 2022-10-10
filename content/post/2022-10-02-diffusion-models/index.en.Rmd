@@ -32,14 +32,14 @@ share: true
 
 ## Introduction
 
-- We wish to model a complex dataset
-- NESF - destroy structure in the data distribution via a *discrete* forward diffusion
-- Introduce a tractable forward process (inference)
-- **Learn** the reverse diffusion process -> generative model (entropy bounds)
-- Access to the full distributions: **exact sampling**
-- Traditionally methods either inflexible (traditional stats), computationally expensive (MCMC), or non-analytical (boosted trees)
+- *We wish to model a complex dataset*
+- *NESF - destroy structure in the data distribution via a *discrete* forward diffusion*
+- *Introduce a tractable forward process (inference)*
+- ***Learn** the reverse diffusion process -> generative model (entropy bounds)*
+- *Access to the full distributions: **exact sampling***
+- *Traditionally methods either inflexible (traditional stats), computationally expensive (MCMC), or non-analytical (boosted trees)*
 
-- Theoretical underpinning: Langevin dynamics (can reach any smooth distribution $\pi$)
+- *Theoretical underpinning: Langevin dynamics (can reach any smooth distribution $\pi$)*
 
 Similar to Kalman filtering and smoothing, but without the observations $y$.
 
@@ -116,39 +116,54 @@ In the limit of very small $\beta$, both directions become the same, hence we on
 
 We maximize the expected log likelihood of the original data $p(x_0)$ under the original true distribution $q(x_0)$:
 \begin{equation}
-    L(p) = \mathbb{E}_{q(x_0)} [p(x_0)] = \int_{\mathcal{X}} q(x_0) ~ log(p(x_T))~ dx_0
+    L(p, q) = \mathbb{E}_{q(x_0)} [p(x_0)] = \int_{\mathcal{X}} q(x_0) ~ log(p(x_T))~ dx_0
 \end{equation}
 
 This can be *lower bounded* by a closed-form expression:
-<!-- TODO: -->
+\begin{aligned}
+    L \geq K = - \sum_{t=2}^T \int q(x_0, x_t) ~ D(q(x_{t-1}|x_{t-1}, x_{t}) ~||~ p(x_{t-1}|x_{t-1}, x_{t}))~dx_0,~dx_t\\ 
+    + H_q(X_T|X_0) - H_q(X_1|X_0) - H_p(X_T)&
+\end{aligned}
 
-Hence maximizing the latter maximizes the former.
+Where $D$ is the KL divergence and H denotes the (conditional) entropies. Hence maximizing the latter maximizes the former.
 
 
-
-
-
+The goal of training is therefore to estimate the reverse Markov transition densities:
+$$\hat{p}(x_{t-1}|x_t) = \underset{p}{\operatorname{argmax}} K$$
+In the case of the Gaussian and binomial, the reverse process stays in the same family, therefore the task amounts to 
+estimating the parameters.
 
 
 
 ### Variance schedule
 
-- simple linspace
-- cosine based
+Since $\beta_t$ is a free parameter, it can be learned simultaneously with the whole K optimization procedure,
+freezing the other variables and optimizing on $\beta$.
+Alternatively, the first paper also used a linearly increasing $\beta$.
 
+- *simple linspace*
+- *cosine based*
 
+### Posteriors and marginals
+`TODO:`
 
 ## Conditional generation
 
+`TODO:`
+
 
 ## Examples
+
+### Original paper
+
+![Recovery (middle row) of a spiral distribution (top) using a gaussian diffusion model.](sohl-dickstein_spiral.png "Spiral distribution recovery"){width=80%}
 
 ## Applications in GANs
 
 
 ## References
 
- - One of the earliest papers: [Sohl-Dickstein et al. - Deep Unsupervised Learning using Nonequilibrium Thermodynamics](https://arxiv.org/abs/1503.03585)  
+ - The original paper: [Sohl-Dickstein et al. - Deep Unsupervised Learning using Nonequilibrium Thermodynamics](https://arxiv.org/abs/1503.03585)  
  - [Ho et al. - Denoising Diffusion Probabilistic Models](https://arxiv.org/abs/2006.11239)
  - A good blog post: [Weng, Lilian. (Jul 2021). What are diffusion models? Lil’Log.](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/) 
  - [The Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter)  

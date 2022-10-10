@@ -34,13 +34,13 @@ share: true
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
 <ul>
-<li><p>We wish to model a complex dataset</p></li>
-<li><p>NESF - destroy structure in the data distribution via a <em>discrete</em> forward diffusion</p></li>
-<li><p>Introduce a tractable forward process (inference)</p></li>
-<li><p><strong>Learn</strong> the reverse diffusion process -&gt; generative model (entropy bounds)</p></li>
-<li><p>Access to the full distributions: <strong>exact sampling</strong></p></li>
-<li><p>Traditionally methods either inflexible (traditional stats), computationally expensive (MCMC), or non-analytical (boosted trees)</p></li>
-<li><p>Theoretical underpinning: Langevin dynamics (can reach any smooth distribution <span class="math inline">\(\pi\)</span>)</p></li>
+<li><p><em>We wish to model a complex dataset</em></p></li>
+<li><p><em>NESF - destroy structure in the data distribution via a </em>discrete* forward diffusion*</p></li>
+<li><p><em>Introduce a tractable forward process (inference)</em></p></li>
+<li><p><em><strong>Learn</strong> the reverse diffusion process -&gt; generative model (entropy bounds)</em></p></li>
+<li><p><em>Access to the full distributions: <strong>exact sampling</strong></em></p></li>
+<li><p><em>Traditionally methods either inflexible (traditional stats), computationally expensive (MCMC), or non-analytical (boosted trees)</em></p></li>
+<li><p><em>Theoretical underpinning: Langevin dynamics (can reach any smooth distribution <span class="math inline">\(\pi\)</span>)</em></p></li>
 </ul>
 <p>Similar to Kalman filtering and smoothing, but without the observations <span class="math inline">\(y\)</span>.</p>
 </div>
@@ -106,24 +106,46 @@ neural network.</p>
 <h2>Training</h2>
 <p>We maximize the expected log likelihood of the original data <span class="math inline">\(p(x_0)\)</span> under the original true distribution <span class="math inline">\(q(x_0)\)</span>:
 <span class="math display">\[\begin{equation}
-    L(p) = \mathbb{E}_{q(x_0)} [p(x_0)] = \int_{\mathcal{X}} q(x_0) ~ log(p(x_T))~ dx_0
+    L(p, q) = \mathbb{E}_{q(x_0)} [p(x_0)] = \int_{\mathcal{X}} q(x_0) ~ log(p(x_T))~ dx_0
 \end{equation}\]</span></p>
-<p>This can be <em>lower bounded</em> by a closed-form expression:
-<!-- TODO: --></p>
-<p>Hence maximizing the latter maximizes the former.</p>
+This can be <em>lower bounded</em> by a closed-form expression:
+<span class="math display">\[\begin{aligned}
+    L \geq K = - \sum_{t=2}^T \int q(x_0, x_t) ~ D(q(x_{t-1}|x_{t-1}, x_{t}) ~||~ p(x_{t-1}|x_{t-1}, x_{t}))~dx_0,~dx_t\\
+    + H_q(X_T|X_0) - H_q(X_1|X_0) - H_p(X_T)&amp;
+\end{aligned}\]</span>
+<p>Where <span class="math inline">\(D\)</span> is the KL divergence and H denotes the (conditional) entropies. Hence maximizing the latter maximizes the former.</p>
+<p>The goal of training is therefore to estimate the reverse Markov transition densities:
+<span class="math display">\[\hat{p}(x_{t-1}|x_t) = \underset{p}{\operatorname{argmax}} K\]</span>
+In the case of the Gaussian and binomial, the reverse process stays in the same family, therefore the task amounts to
+estimating the parameters.</p>
 <div id="variance-schedule" class="section level3">
 <h3>Variance schedule</h3>
+<p>Since <span class="math inline">\(\beta_t\)</span> is a free parameter, it can be learned simultaneously with the whole K optimization procedure,
+freezing the other variables and optimizing on <span class="math inline">\(\beta\)</span>.
+Alternatively, the first paper also used a linearly increasing <span class="math inline">\(\beta\)</span>.</p>
 <ul>
-<li>simple linspace</li>
-<li>cosine based</li>
+<li><em>simple linspace</em></li>
+<li><em>cosine based</em></li>
 </ul>
+</div>
+<div id="posteriors-and-marginals" class="section level3">
+<h3>Posteriors and marginals</h3>
+<p><code>TODO:</code></p>
 </div>
 </div>
 <div id="conditional-generation" class="section level2">
 <h2>Conditional generation</h2>
+<p><code>TODO:</code></p>
 </div>
 <div id="examples" class="section level2">
 <h2>Examples</h2>
+<div id="original-paper" class="section level3">
+<h3>Original paper</h3>
+<div class="figure">
+<img src="sohl-dickstein_spiral.png" title="Spiral distribution recovery" style="width:80.0%" alt="" />
+<p class="caption">Recovery (middle row) of a spiral distribution (top) using a gaussian diffusion model.</p>
+</div>
+</div>
 </div>
 <div id="applications-in-gans" class="section level2">
 <h2>Applications in GANs</h2>
@@ -131,7 +153,7 @@ neural network.</p>
 <div id="references" class="section level2">
 <h2>References</h2>
 <ul>
-<li>One of the earliest papers: <a href="https://arxiv.org/abs/1503.03585">Sohl-Dickstein et al. - Deep Unsupervised Learning using Nonequilibrium Thermodynamics</a><br />
+<li>The original paper: <a href="https://arxiv.org/abs/1503.03585">Sohl-Dickstein et al. - Deep Unsupervised Learning using Nonequilibrium Thermodynamics</a><br />
 </li>
 <li><a href="https://arxiv.org/abs/2006.11239">Ho et al. - Denoising Diffusion Probabilistic Models</a></li>
 <li>A good blog post: <a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/">Weng, Lilian. (Jul 2021). What are diffusion models? Lil’Log.</a></li>
