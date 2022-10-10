@@ -30,18 +30,37 @@ share: true
 
 
 
-<p>{{% toc %}}
-<!-- \tableofcontents --></p>
+<p>{{% toc %}}</p>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
+<ul>
+<li><p>We wish to model a complex dataset</p></li>
+<li><p>NESF - destroy structure in the data distribution via a <em>discrete</em> forward diffusion</p></li>
+<li><p>Introduce a tractable forward process (inference)</p></li>
+<li><p><strong>Learn</strong> the reverse diffusion process -&gt; generative model (entropy bounds)</p></li>
+<li><p>Access to the full distributions: <strong>exact sampling</strong></p></li>
+<li><p>Traditionally methods either inflexible (traditional stats), computationally expensive (MCMC), or non-analytical (boosted trees)</p></li>
+<li><p>Theoretical underpinning: Langevin dynamics (can reach any smooth distribution <span class="math inline">\(\pi\)</span>)</p></li>
+</ul>
+<p>Similar to Kalman filtering and smoothing, but without the observations <span class="math inline">\(y\)</span>.</p>
 </div>
 <div id="forward-and-reverse-diffusion" class="section level2">
 <h2>Forward and reverse diffusion</h2>
 <div id="forward" class="section level3">
 <h3>Forward</h3>
 <ul>
-<li>1-step update Kalman</li>
+<li>Start with the data and end with a isotropic Gaussian</li>
 </ul>
+<p>General - a <em>Markov diffusion kernel</em> given a final state <span class="math inline">\(\pi(x)\)</span>:
+<span class="math display">\[\begin{equation}
+    q(x_t | x_{t-1}) = T_\pi(x_t | x_{t-1}; \beta_t)
+\end{equation}\]</span></p>
+<p>Since it’s a length one Markov process, we have for the full joint:
+<span class="math display">\[\begin{equation}
+    q(x_{t=0:T} ) = q(x_0) \prod_{i=1}^T q(x_i | x_{i-1})
+\end{equation}\]</span></p>
+<p>Usually, we use Gaussian diffusion for which the posterior is closed form (cf 1-step update in Kalman filtering):</p>
+<!-- TODO: check with Kalman - for Kalman you have observations as well -->
 <p><span class="math display">\[\begin{equation}
     q(x_t | x_{t-1}) = \mathcal{N}(\sqrt{1 - \beta_t}x_{t-1}, \beta_t \mathbf{I})
 \end{equation}\]</span></p>
@@ -52,12 +71,46 @@ share: true
 </div>
 <div id="reverse" class="section level3">
 <h3>Reverse</h3>
-<p>No closed form for <span class="math inline">\(q(x_{t-1}|x_t)\)</span> in general
-Smoothing (needs the whole dataset) / Variational inference</p>
-<p>But tractable <span class="math inline">\(q(x_{t-1}|x_t, x_0)\)</span></p>
-<p>ELBO - sum of closed form terms</p>
-<p>Train a NN to predict the mean</p>
+<ul>
+<li><em>No closed form for <span class="math inline">\(q(x_{t-1}|x_t)\)</span> in general</em></li>
+<li><em>Smoothing (needs the whole dataset) / Variational inference</em></li>
+<li><em>But tractable <span class="math inline">\(q(x_{t-1}|x_t, x_0)\)</span></em><br />
+</li>
+<li><em>ELBO - sum of closed form terms</em><br />
+</li>
+<li><em>Train a NN to predict the mean</em></li>
+</ul>
+<p>A new transition probability <span class="math inline">\(p(x)\)</span></p>
+<p>Starting point- stationary distribution:
+<span class="math display">\[\begin{equation}
+    \pi(x_T) := p(x_T)
+\end{equation}\]</span></p>
+<p>Like before:
+<span class="math display">\[\begin{equation}
+    p(x_{t=T:0}) = p(x_T) \prod_{i=T-1}^1 p(x_i+1 | x_{i})
+\end{equation}\]</span></p>
+<p>For Gaussian (and binomial), still the same family; however, we need to <strong>learn</strong> the parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\Sigma\)</span> via a
+neural network.</p>
+<p>This gives us the likelihood of the original data <span class="math inline">\(p(x_0)\)</span> from marginalizing the full joint:
+<span class="math display">\[\begin{equation}
+    p(x_0) = \int_{\mathcal{X}} p(x_{t=T:0}) ~ dx_1 .... dx_T
+\end{equation}\]</span></p>
+<p>Intractable! Use annealed importance sampling - comparing the relative probability of the backward - <span class="math inline">\(p\)</span> - and the forward trajectories <span class="math inline">\(q\)</span>:
+<span class="math display">\[\begin{equation}
+    p(x_0) = \int_{\mathcal{X}} q(x_{t=1:T}) ~p(x_T)~ \prod_{t=1}^T \frac{p(x_{t-1}|x_t)}{q(x_{t}|x_{t-1})} ~ dx_1 .... dx_T
+\end{equation}\]</span></p>
+<p>In the limit of very small <span class="math inline">\(\beta\)</span>, both directions become the same, hence we only need the forward trajectory <span class="math inline">\(q(x_{t=1:T})\)</span>.</p>
 </div>
+</div>
+<div id="training" class="section level2">
+<h2>Training</h2>
+<p>We maximize the expected log likelihood of the original data <span class="math inline">\(p(x_0)\)</span> under the original true distribution <span class="math inline">\(q(x_0)\)</span>:
+<span class="math display">\[\begin{equation}
+    L(p) = \mathbb{E}_{q(x_0)} [p(x_0)] = \int_{\mathcal{X}} q(x_0) ~ log(p(x_T))~ dx_0
+\end{equation}\]</span></p>
+<p>This can be <em>lower bounded</em> by a closed-form expression:
+<!-- TODO: --></p>
+<p>Hence maximizing the latter maximizes the former.</p>
 <div id="variance-schedule" class="section level3">
 <h3>Variance schedule</h3>
 <ul>
@@ -80,6 +133,7 @@ Smoothing (needs the whole dataset) / Variational inference</p>
 <ul>
 <li>One of the earliest papers: <a href="https://arxiv.org/abs/1503.03585">Sohl-Dickstein et al. - Deep Unsupervised Learning using Nonequilibrium Thermodynamics</a><br />
 </li>
+<li><a href="https://arxiv.org/abs/2006.11239">Ho et al. - Denoising Diffusion Probabilistic Models</a></li>
 <li>A good blog post: <a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/">Weng, Lilian. (Jul 2021). What are diffusion models? Lil’Log.</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Kalman_filter">The Kalman filter</a><br />
 </li>
