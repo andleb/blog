@@ -38,13 +38,16 @@ share: true
 ### Forward
 
 - 1-step update Kalman  
-$$a+b$$
+<!-- $$a+b$$ -->
+$$\frac{2}{3}$$
+\begin{equation}
+    \nabla_x
+\end{equation}
 
 
 ## Conditional generation
 
- ## Examples
-
+## Examples
 
 
 
@@ -53,7 +56,8 @@ $$a+b$$
  - One of the earliest papers: [Sohl-Dickstein et al. - Deep Unsupervised Learning using Nonequilibrium Thermodynamics](https://arxiv.org/abs/1503.03585)  
  - A good blog post: [Weng, Lilian. (Jul 2021). What are diffusion models? Lil’Log.](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/) 
  - [The Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter)  
- - {{% staticref "uploads/leban_andrej - continuous time kalman filter.pdf" "newtab" %}}My presentation on the Continuous-time Kalman Filter{{% /staticref %}}
+ - [My presentation on the Continuous-time Kalman filter](../../uploads/leban_andrej - continuous time kalman filter.pdf)  
+
 
 
 
