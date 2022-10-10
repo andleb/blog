@@ -76,7 +76,7 @@ time_format: '3:04 PM'
 address_format: en-us
 
 # Site features
-
+math: true
 highlight: true
 highlight_languages:
   - r
@@ -86,7 +86,6 @@ highlight_languages:
   - cmake
   - bash
 highlight_style: "monokai-sublime"
-math: true
 diagram: true
 privacy_pack: false
 edit_page:
