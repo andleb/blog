@@ -9,10 +9,11 @@ tags:
   - Statistics
   - Diffusion
 subtitle: ''
-summary: ''
+summary: 'A brief introduction to diffusion models'
 authors: []
 lastmod: '2022-10-09T21:36:00-07:00'
 featured: no
+math: true
 output:
   html_document:
     toc: true
@@ -22,6 +23,9 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+draft: true
+reading_time: true
+share: true
 ---
 
 {{% toc %}}
@@ -33,8 +37,9 @@ projects: []
 
 ### Forward
 
-- variance schedule $$\beta_t$$
-- 1-step update Kalman
+- 1-step update Kalman  
+$$a+b$$
+
 
 ## Conditional generation
 
