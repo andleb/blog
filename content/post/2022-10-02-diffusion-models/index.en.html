@@ -28,55 +28,56 @@ reading_time: true
 share: true
 editor_options: 
   markdown: 
-    wrap: 72
+    wrap: 120
 ---
 
 
 
+<!-- LaTeX preamble -->
 <p>{{% toc %}}</p>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
+<p><code>TODO: - colors</code></p>
 <ul>
 <li><p><em>We wish to model a complex dataset</em></p></li>
-<li><p><em>NESF - destroy structure in the data distribution via a discrete
-forward diffusion</em></p></li>
+<li><p><em>NESF - destroy structure in the data distribution via a discrete forward diffusion</em></p></li>
 <li><p><em>Introduce a tractable forward process (inference)</em></p></li>
-<li><p><em><strong>Learn</strong> the reverse diffusion process -&gt; generative model
-(entropy bounds)</em></p></li>
+<li><p><em><strong>Learn</strong> the reverse diffusion process -&gt; generative model (entropy bounds)</em></p></li>
 <li><p><em>Access to the full distributions: <strong>exact sampling</strong></em></p></li>
-<li><p><em>Traditionally methods either inflexible (traditional stats),
-computationally expensive (MCMC), or non-analytical (boosted trees)</em></p></li>
-<li><p><em>Theoretical underpinning: Langevin dynamics (can reach any smooth
-distribution</em> <span class="math inline">\(\pi\)</span>)</p></li>
+<li><p><em>Traditionally methods either inflexible (traditional stats), computationally expensive (MCMC), or non-analytical
+(boosted trees)</em></p></li>
+<li><p><em>Theoretical underpinning: Langevin dynamics (can reach any smooth distribution</em> <span class="math inline">\(\pi\)</span>)</p></li>
 </ul>
-<p>Similar to Kalman filtering and smoothing, but without the observations
-<span class="math inline">\(y\)</span>.</p>
+<p>Similar to Kalman filtering and smoothing, but without the observations <span class="math inline">\(y\)</span>.</p>
 </div>
 <div id="general-structure" class="section level2">
 <h2>General structure</h2>
+<p><code>TODO: schematic</code></p>
 <div id="forward-diffusion" class="section level3">
 <h3>Forward diffusion</h3>
 <ul>
 <li>Start with the data and end with a isotropic Gaussian</li>
 </ul>
 <p>General - a <em>Markov diffusion kernel</em> given a final state <span class="math inline">\(\pi(x)\)</span>:</p>
-<p><span class="math display">\[\begin{equation}
-    q(x_t | x_{t-1}) = T_\pi(x_t | x_{t-1}; \beta_t)
-\end{equation}\]</span></p>
-<p>Since it’s a length one Markov process, we have for the full joint:
 <span class="math display">\[\begin{equation}
+    q(x_t | x_{t-1}) = T_\pi(x_t | x_{t-1}; \beta_t)
+\end{equation}\]</span>
+<p>Since it’s a length one Markov process, we have for the full joint: <span class="math display">\[\begin{equation}
     q(x_{t=0:T} ) = q(x_0) \prod_{i=1}^T q(x_i | x_{i-1})
 \end{equation}\]</span></p>
-<p>Usually, we use Gaussian diffusion for which the posterior is closed
-form (cf 1-step update in Kalman filtering):</p>
+<p>Usually, we use Gaussian diffusion for which the posterior is closed form (cf 1-step update in Kalman filtering):</p>
 <span class="math display">\[\begin{equation}
     q(x_t | x_{t-1}) = \mathcal{N}(\sqrt{1 - \beta_t}x_{t-1}, \beta_t \mathbf{I})
 \end{equation}\]</span>
-<p>Usually <span class="math inline">\(\beta_1 &lt; \beta_2 &lt; ... &lt; \beta_T\)</span></p>
-<div id="stochastic-gradient-langevin" class="section level4">
-<h4>Stochastic gradient Langevin</h4>
+<p>Usually <span class="math inline">\(\beta_1 &lt; \beta_2 &lt; ... &lt; \beta_T\)</span> - the <strong>variance schedule</strong>.</p>
+<p>Moreover, due to the property of the Gaussian distribution:</p>
+<p><span class="math display">\[\alpha_t := 1 - \beta_t\]</span></p>
+<p><span class="math display">\[\bar{\alpha}_t := \prod_{s=1}^t \alpha_t\]</span></p>
+<span class="math display">\[\begin{equation}
+q(x_t | x_0) = \mathcal{N}(\sqrt{\bar{\alpha_t}}~x_0, (1 - \alpha_t) \mathbf{I}),
+\end{equation}\]</span>
+<p>meaning any state in the forward process can be expressed knowing just the initial one and the variance schedule.</p>
 <p><code>TODO:</code></p>
-</div>
 </div>
 <div id="reverse-diffusion" class="section level3">
 <h3>Reverse diffusion</h3>
@@ -90,104 +91,148 @@ form (cf 1-step update in Kalman filtering):</p>
 <li><em>Train a NN to predict the mean</em></li>
 </ul>
 <p>A new transition probability <span class="math inline">\(p(x)\)</span></p>
-<p>Starting point- stationary distribution: <span class="math display">\[\begin{equation}
+<p>Starting point- stationary distribution:</p>
+<span class="math display">\[\begin{equation}
     \pi(x_T) := p(x_T)
-\end{equation}\]</span></p>
-<p>Like before: <span class="math display">\[\begin{equation}
+\end{equation}\]</span>
+<p>Like before:</p>
+<span class="math display">\[\begin{equation}
     p(x_{t=T:0}) = p(x_T) \prod_{i=T-1}^1 p(x_i+1 | x_{i})
-\end{equation}\]</span></p>
-<p>For Gaussian (and binomial), still the same family; however, we need to
-<strong>learn</strong> the parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\Sigma\)</span> via a neural network.</p>
-<p>This gives us the likelihood of the original data <span class="math inline">\(p(x_0)\)</span> from
-marginalizing the full joint: <span class="math display">\[\begin{equation}
+\end{equation}\]</span>
+<p>For Gaussian (and binomial), still the same family; however, we need to <strong>learn</strong> the parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\Sigma\)</span> via
+a neural network.</p>
+<p>This gives us the likelihood of the original data <span class="math inline">\(p(x_0)\)</span> from marginalizing the full joint: <span class="math display">\[\begin{equation}
     p(x_0) = \int_{\mathcal{X}} p(x_{t=T:0}) ~ dx_1 .... dx_T
 \end{equation}\]</span></p>
-<p>Intractable! Use annealed importance sampling - comparing the relative
-probability of the backward - <span class="math inline">\(p\)</span> - and the forward trajectories <span class="math inline">\(q\)</span>:
+<p>Intractable! Use annealed importance sampling - comparing the relative probability of the backward - <span class="math inline">\(p\)</span> - and the
+forward trajectories <span class="math inline">\(q\)</span>:</p>
 <span class="math display">\[\begin{equation}
     p(x_0) = \int_{\mathcal{X}} q(x_{t=1:T}) ~p(x_T)~ \prod_{t=1}^T \frac{p(x_{t-1}|x_t)}{q(x_{t}|x_{t-1})} ~ dx_1 .... dx_T
-\end{equation}\]</span></p>
-<p>In the limit of very small <span class="math inline">\(\beta\)</span>, both directions become the same,
-hence we only need the forward trajectory <span class="math inline">\(q(x_{t=1:T})\)</span>.</p>
+\end{equation}\]</span>
+<p>In the limit of very small <span class="math inline">\(\beta\)</span>, both directions become the same.</p>
 </div>
 </div>
 <div id="training" class="section level2">
 <h2>Training</h2>
-<p>We maximize the expected log likelihood of the original data <span class="math inline">\(p(x_0)\)</span>
-under the original true distribution <span class="math inline">\(q(x_0)\)</span>:</p>
-<p><span class="math display">\[\begin{equation}
-    L(p, q) = \mathbb{E}_{q(x_0)} [p(x_0)] = \int_{\mathcal{X}} q(x_0) ~ log(p(x_T))~ dx_0
-\end{equation}\]</span></p>
-<p>This can be <em>lower bounded</em> by a closed-form expression:</p>
+<p>We maximize the expected log likelihood of the original data <span class="math inline">\(p(x_0)\)</span> under the original true distribution <span class="math inline">\(q(x_0)\)</span>:</p>
 <span class="math display">\[\begin{aligned}
-    L \geq K = - \sum_{t=2}^T \int q(x_0, x_t) ~ D(q(x_{t-1}|x_{t-1}, x_{t}) ~||~ p(x_{t-1}|x_{t-1}, x_{t}))~dx_0,~dx_t\\
-    + H_q(X_T|X_0) - H_q(X_1|X_0) - H_p(X_T)&amp;
-    =
+    &amp; L(p, q) = \mathbb{E}_{q(x_0)} [p(x_0)] = \int_{\mathcal{X}} q(x_0) ~ \log p(x_T)~ dx_0\\
+    &amp; = \mathbb{E}_{q} \left[ \underbrace{D( q(x_T | x_0) || p(x_T))}_{L_T} + \underbrace{\sum_{t=2}^T D( q(x_{t-1} | x_t, x_0) || p(x_{t-1} || x_t))}_{L_{t-1}} - \underbrace{\log p(x_0 | x+1)}_{L_0}   \right]
 \end{aligned}\]</span>
-<p>Where <span class="math inline">\(D\)</span> is the KL divergence and H denotes the (conditional)
-entropies. Hence maximizing the latter maximizes the former.</p>
-<p>The goal of training is therefore to estimate the reverse Markov
-transition densities:
+<p>The corresponding log-likelihood can be <em>lower bounded</em> by a closed-form expression:</p>
+<span class="math display">\[\begin{aligned}
+    L \geq K = - \sum_{t=2}^T \int q(x_0, x_t) ~ D(q(x_{t-1}|x_{t}, x_{0}) ~||~ p(x_{t-1}|x_{t}))~dx_0,~dx_t\\
+    + H_q(X_T|X_0) - H_q(X_1|X_0) - H_p(X_T),&amp;
+\end{aligned}\]</span>
+<p>where <span class="math inline">\(D\)</span> is the K-L divergence and H denotes the (conditional) entropies. Hence maximizing the latter maximizes the
+former.</p>
+<p>Additionally, conditioning the forward process posteriors on <span class="math inline">\(x_0\)</span> gives us the closed-forms</p>
+<span class="math display">\[\begin{equation}
+q(x\_{t-1}\|x\_{t}, x\_{0}) = \mathcal{N}(\tilde{\mu}_t, \tilde{\beta}_t \mathbf{I})
+\end{equation}\]</span>
+<p><span class="math display">\[\tilde{\mu}_t := \frac{\sqrt{\bar{\alpha}_{t-1}} \beta_t}{1 - \bar{\alpha}_t}~x_0 + \frac{\sqrt{\bar{\alpha}_{t}} (1 - \bar{\alpha}_{t})}{1 - \bar{\alpha}_t}~x_t\]</span></p>
+<p><span class="math display">\[\tilde{\beta}_t := \frac{1 - \bar{\alpha}_{t-1}}{1 - \bar{\alpha}_t} \beta_t\]</span></p>
+<p>The goal of training is therefore to <strong>estimate the reverse Markov transition densities</strong> <span class="math inline">\(p(x_{t-1}|x_t)\)</span>:
 <span class="math display">\[\hat{p}(x_{t-1}|x_t) = \underset{p}{\operatorname{argmax}} K\]</span></p>
-<p>In the case of the Gaussian and binomial, the reverse process stays in
-the same family, therefore the task amounts to estimating the
-parameters. Moreover, for Gaussians, the K-L divergences above have a
-closed form expression.</p>
+<p>In the case of the Gaussian and binomial, the reverse process stays in the same family, therefore the task amounts to
+estimating the parameters. This is done (in principle) by training a neural network for each <span class="math inline">\(t\)</span>.</p>
 <div id="variance-schedule" class="section level3">
 <h3>Variance schedule</h3>
-<p>Since <span class="math inline">\(\beta_t\)</span> is a free parameter, it can be learned simultaneously
-with the whole K optimization procedure, freezing the other variables
-and optimizing on <span class="math inline">\(\beta\)</span>.</p>
-<p>Alternatively, the first paper also treated a sequence as a
-hyperparameter and used a simply linearly increasing <span class="math inline">\(\beta\)</span>.</p>
-<p>This is also the approach of <em>Ho et al.</em></p>
-<ul>
-<li><em>simple linspace</em></li>
-<li><em>cosine based</em></li>
-</ul>
+<p>Since <span class="math inline">\(\beta_t\)</span> is a free parameter, it can be learned simultaneously with the whole <span class="math inline">\(K\)</span> optimization procedure,
+freezing the other variables and optimizing on <span class="math inline">\(\beta\)</span>.</p>
+<p>Alternatively, the first paper also treated a sequence as a hyperparameter and used a simply linearly increasing
+<span class="math inline">\(\beta\)</span>. This is also the approach of <em>Ho et al.</em></p>
 </div>
-<div id="posteriors-and-marginals" class="section level3">
-<h3>Posteriors and marginals</h3>
-<p><code>TODO:</code></p>
+<div id="estimating-p" class="section level3">
+<h3>Estimating <span class="math inline">\(p\)</span></h3>
+<p>The initial guesses are set to</p>
+<p><span class="math display">\[
+p(x_{t-1} | x_t) = \mathcal{N}(\mu(x_t, t), \Sigma(x_t, t)),
+\]</span></p>
+<p>where the parameters are what is to be estimated.</p>
+<p>For the variance, it is simply set to be isotropic with the diagonal entries either fixed at a constant (either
+<span class="math inline">\(\beta_t\)</span> or <span class="math inline">\(\tilde{\beta}_t\)</span>) or learned. The latter proved to be unstable in Ho et al., but has since been
+successfully implemented.</p>
+<p>By inspecting the <span class="math inline">\(L_{t-1}\)</span> term in the likelihood in <a href="#training">Training</a>, the minimizing mean can be expressed by the
+reparametrization: <span class="math display">\[x_t = \sqrt{\bar{\alpha}_t}~x_0 + \sqrt{1 - \bar{\alpha}_t}~\epsilon \]</span>
+<span class="math display">\[\epsilon \sim \mathcal{N}(0, \mathbf{I})\]</span></p>
+<span class="math display">\[\begin{equation}
+\mu(x_t, t) = \frac{1}{\sqrt{\alpha_t}} (x_t - \frac{\beta_t}{\sqrt{1 - \bar{\alpha_t}}} \epsilon_{\theta}(x_t, t)),
+\end{equation}\]</span>
+<p>where we learn the <strong>noise</strong> in the mean term at step <span class="math inline">\(t\)</span>: <span class="math inline">\(\epsilon_{\theta}(x_t, t))\)</span> from the state <span class="math inline">\(x_t\)</span>.</p>
+<p>This can be further simplified by setting <span class="math inline">\(t\)</span> to be <em>continuous</em> on <span class="math inline">\([1, T]\)</span> and optimizing the following simplified
+objective for <span class="math inline">\(\epsilon_\theta(x_t, t)\)</span>:</p>
+<p><span class="math display">\[\begin{equation}
+L_{\text{simple}}(\theta) := \mathbb{E}_{t, x_0, \epsilon} \left[\Vert \epsilon - \epsilon_\theta(\sqrt{\bar{\alpha}_t} x_0 + \sqrt{1 - \bar{\alpha}_t} \epsilon, t) \Vert^2\right]
+\end{equation}\]</span> This can be optimized using standard optimization techniques, such as gradient descent. We can now state
+the two algorithms needed to first, train the noise estimator <span class="math inline">\(\epsilon_\theta\)</span>, and then, obtain a sample from the
+reverse diffusion process: <img src="ho_algos.png" title="The two algorithms due to Ho et al." style="width:75.0%" alt="Algorithms due to Ho et al." /></p>
+</div>
+<div id="architecture" class="section level3">
+<h3>Architecture</h3>
+<p>Ho et al. used a variation of an U-net called <a href="https://arxiv.org/abs/1701.05517">PixelCNN++</a> to estimate
+<span class="math inline">\(\epsilon_{\theta}(x_t, t))\)</span>:</p>
+<div class="figure">
+<img src="pixelcnn.png" title="Salimans et al. - PixelCNN++ structure" style="width:125.0%" alt="" />
+<p class="caption"><em>PixelCNN++ structure</em></p>
+</div>
+<!-- ### Posteriors and marginals -->
+<!-- `TODO:` -->
+<!-- ## Conditional generation -->
+<!-- `TODO:` -->
 </div>
 </div>
-<div id="implementation-by-ho-et-al" class="section level2">
-<h2>Implementation by Ho et al</h2>
-</div>
-<div id="conditional-generation" class="section level2">
-<h2>Conditional generation</h2>
-<p><code>TODO:</code></p>
-</div>
-<div id="examples" class="section level2">
-<h2>Examples</h2>
-<div id="original-paper" class="section level3">
-<h3>Original paper</h3>
+<div id="how-does-it-work-in-practice" class="section level2">
+<h2>How does it work in practice</h2>
+<div id="original-paper---recovery" class="section level3">
+<h3>Original paper - recovery</h3>
 <div class="figure">
 <img src="sohl-dickstein_spiral.png" title="Spiral distribution recovery" style="width:80.0%" alt="" />
-<p class="caption">Recovery (middle row) of a spiral distribution (top) using a Gaussian
-diffusion
-model.</p>
+<p class="caption"><em>Recovery (middle row) of a spiral distribution (top) using a Gaussian diffusion
+model.</em></p>
 </div>
 </div>
+<div id="ho-et-al---generation" class="section level3">
+<h3>Ho et al - generation</h3>
+<p>The authors used the modified network for both <strong>conditional</strong> and <strong>unconditional</strong> generation.</p>
+<p>The <em>unconditional generation</em> was performed by running estimating <span class="math inline">\(x_0\)</span> - the end result of the reverse process, from
+initially random <span class="math inline">\(x_T\)</span>. The following figure shows the order in which features crystallize when the <em>initial state is
+itself sampled from various points of the reverse process</em>. The training dataset was CIFAR10.</p>
+<div class="figure">
+<img src="ho_uncgen.png" title="Unconditional generation from the reverse process sample" width="1500" alt="" />
+<p class="caption"><em>Unconditional generation from the reverse process
+sample</em></p>
 </div>
-<div id="applications-in-gans" class="section level2">
-<h2>Applications in GANs</h2>
+<p>For <em>conditional generation,</em> the authors selected a <span class="math inline">\(x_t\)</span> from the actual distribution and sampled from the predictive
+posterior <span class="math inline">\(p(x_0|x_t)\)</span>. The following figure shows the results conditioned on the bottom-right quadrant, for a network
+trained on CelebA-HQ:</p>
+<div class="figure">
+<img src="ho_condgen.png" title="Conditional generation samples from a given state" width="1500" alt="" />
+<p class="caption"><em>Conditional generation samples from a given state:</em> the earlier the <span class="math inline">\(x_t\)</span>, the more deterministic the outcome.</p>
+</div>
+</div>
+<div id="dall-e-2" class="section level3">
+<h3>Dall-E 2</h3>
+<p><a href="https://arxiv.org/abs/2207.12598">Ho and Salimans</a> improved the above procedure by introducing the notion of <em>guiding</em>
+the model during training on labeled data, i.e. estimating <span class="math inline">\(\epsilon_\theta(x_t, t ∣ y)\)</span>. This was used by Nichol
+et al. in <a href="https://arxiv.org/abs/2112.10741?s=09">GLIDE</a>, which uses information extracted from text to do the guiding,
+combining a transformer with the previously described architecture.</p>
+<!-- ## Applications in GANs -->
+</div>
 </div>
 <div id="references" class="section level2">
 <h2>References</h2>
 <ul>
-<li>The original paper: <a href="https://arxiv.org/abs/1503.03585">Sohl-Dickstein et al. - Deep Unsupervised
-Learning using Nonequilibrium
+<li>The original paper: <a href="https://arxiv.org/abs/1503.03585">Sohl-Dickstein et al. - Deep Unsupervised Learning using Nonequilibrium
 Thermodynamics</a></li>
-<li>Performant implementation: <a href="https://arxiv.org/abs/2006.11239">Ho et al. - Denoising Diffusion
-Probabilistic Models</a></li>
-<li>A good blog post: <a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/">Weng, Lilian. (Jul 2021). What are diffusion
-models?
+<li>Performant implementation: <a href="https://arxiv.org/abs/2006.11239">Ho et al. - Denoising Diffusion Probabilistic Models</a></li>
+<li>A good blog post: <a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/">Weng, Lilian. (Jul 2021). What are diffusion models?
 Lil’Log.</a></li>
+<li>A summary of recent developments:
+<a href="https://maciejdomagala.github.io/generative_models/2022/06/06/The-recent-rise-of-diffusion-based-models.html" class="uri">https://maciejdomagala.github.io/generative_models/2022/06/06/The-recent-rise-of-diffusion-based-models.html</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Kalman_filter">The Kalman filter</a></li>
 <li><a href="../../uploads/leban_andrej%20-%20continuous%20time%20kalman%20filter.pdf">My presentation on the Continuous-time Kalman
 filter</a></li>
-<li><a href="https://arxiv.org/abs/1601.00670">Blei, Kucukelbir, McAuliffe - Variational Inference: A Review for
-Statisticians</a></li>
+<li><a href="https://arxiv.org/abs/1601.00670">Blei, Kucukelbir, McAuliffe - Variational Inference: A Review for Statisticians</a></li>
 </ul>
 </div>
