@@ -188,8 +188,9 @@ reverse diffusion process: <img src="ho_algos.png" title="The two algorithms due
 <h3>Original paper - recovery</h3>
 <div class="figure">
 <img src="sohl-dickstein_spiral.png" title="Spiral distribution recovery" style="width:80.0%" alt="" />
-<p class="caption"><em>Recovery (middle row) of a spiral distribution (top) using a Gaussian diffusion
-model.</em></p>
+<p class="caption"><em>Recovery (middle row) of a spiral distribution (top) using a Gaussian diffusion model. The bottom row represents the
+“drift term”, i.e. the field ordering the particles in the next step of the reverse
+process.</em></p>
 </div>
 </div>
 <div id="ho-et-al---generation" class="section level3">
@@ -208,16 +209,45 @@ posterior <span class="math inline">\(p(x_0|x_t)\)</span>. The following figure 
 trained on CelebA-HQ:</p>
 <div class="figure">
 <img src="ho_condgen.png" title="Conditional generation samples from a given state" width="1500" alt="" />
-<p class="caption"><em>Conditional generation samples from a given state:</em> the earlier the <span class="math inline">\(x_t\)</span>, the more deterministic the outcome.</p>
+<p class="caption"><em>Conditional generation samples from a given state:</em> the earlier the <span class="math inline">\(x_t\)</span>, the more deterministic the
+outcome.</p>
 </div>
 </div>
-<div id="dall-e-2" class="section level3">
-<h3>Dall-E 2</h3>
+<div id="imagen-dall-e-2" class="section level3">
+<h3>Imagen &amp; Dall-E 2</h3>
 <p><a href="https://arxiv.org/abs/2207.12598">Ho and Salimans</a> improved the above procedure by introducing the notion of <em>guiding</em>
-the model during training on labeled data, i.e. estimating <span class="math inline">\(\epsilon_\theta(x_t, t ∣ y)\)</span>. This was used by Nichol
-et al. in <a href="https://arxiv.org/abs/2112.10741?s=09">GLIDE</a>, which uses information extracted from text to do the guiding,
-combining a transformer with the previously described architecture.</p>
-<!-- ## Applications in GANs -->
+the model during training on labeled data, i.e. estimating <span class="math inline">\(\epsilon_\theta(x_t, t ∣ y)\)</span>, where <span class="math inline">\(y\)</span> are the labels. The
+crux of the approach is training both on conditional and unconditional objectives at once by randomly setting the class
+label to a null class with some predetermined probability. Likewise, the samples are drawn from a convex combination
+(with the same coefficient) of both <span class="math inline">\(p\)</span>-s.</p>
+<p>This was used by Nichol et al. in <a href="https://arxiv.org/abs/2112.10741?s=09">GLIDE</a>, which uses information extracted from
+text to do the guiding, combining a transformer with the previously described architecture.</p>
+<p>This approach has been used to construct <a href="https://arxiv.org/pdf/2205.11487.pdf">Imagen</a>, which uses additional diffusion
+models to up-sample the image created by the guided diffusion process. The text embeddings are provided by a
+<em>pretrained</em> transformer’s encoder.</p>
+<div class="figure">
+<img src="imagen.png" width="700" alt="" />
+<p class="caption"><em>Imagen structure</em></p>
+</div>
+<p>The other diffusion-based model to make waves recently - DALL-E 2 - uses a bit more complex approach:</p>
+<div class="figure">
+<img src="dalle2.png" title="DALL-E 2 architecture" alt="" />
+<p class="caption"><em>DALL-E 2 architecture</em></p>
+</div>
+<p>First, it re-uses a model called CLIP (Contrastive Language-Image Pre-training) to construct a <em>mapping between captions
+and images</em> (top of the schematic above). In practice, the net result of this is a <em>joint embedding of text and images</em>
+in a representation space.</p>
+<p>In generation, this model is frozen and a version of the GLIDE guided diffusion model is used to generate images
+<strong>starting from the image representation space</strong> (as opposed to random noise, for instance). As previously, additional
+up-samplers are used in the decoder, as well.</p>
+<p>To generate from text prompts, we need to map the caption text embeddings to the above mentioned image embeddings, which
+are the starting point for the decoder. This is done with an <em>additional diffusion model</em> called <strong>the prior</strong>, which
+generates <em>multiple possible embeddings.</em> In other words, this is a generative model of the image embeddings given the
+text embeddings. The prior trains a decoder-only transformer to predict the conditional reverse process.</p>
+<div class="figure">
+<img src="dalle2_interpolation.png" title="DALL-E 2: interpolation of the image embedding space" alt="" />
+<p class="caption"><em>DALL-E 2: interpolation of the image embedding space</em></p>
+</div>
 </div>
 </div>
 <div id="references" class="section level2">
@@ -230,6 +260,8 @@ Thermodynamics</a></li>
 Lil’Log.</a></li>
 <li>A summary of recent developments:
 <a href="https://maciejdomagala.github.io/generative_models/2022/06/06/The-recent-rise-of-diffusion-based-models.html" class="uri">https://maciejdomagala.github.io/generative_models/2022/06/06/The-recent-rise-of-diffusion-based-models.html</a></li>
+<li>DALL-E 2 initial paper: <a href="https://arxiv.org/abs/2204.06125">Ramesh et al. - Hierarchical Text-Conditional Image Generation with CLIP
+Latents</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Kalman_filter">The Kalman filter</a></li>
 <li><a href="../../uploads/leban_andrej%20-%20continuous%20time%20kalman%20filter.pdf">My presentation on the Continuous-time Kalman
 filter</a></li>

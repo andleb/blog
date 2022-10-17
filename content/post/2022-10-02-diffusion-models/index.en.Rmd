@@ -266,8 +266,9 @@ $\epsilon_{\theta}(x_t, t))$:
 
 ### Original paper - recovery
 
-![*Recovery (middle row) of a spiral distribution (top) using a Gaussian diffusion
-model.*](sohl-dickstein_spiral.png "Spiral distribution recovery"){width="80%"}
+![*Recovery (middle row) of a spiral distribution (top) using a Gaussian diffusion model. The bottom row represents the
+"drift term", i.e. the field ordering the particles in the next step of the reverse
+process.*](sohl-dickstein_spiral.png "Spiral distribution recovery"){width="80%"}
 
 ### Ho et al - generation
 
@@ -284,17 +285,44 @@ For *conditional generation,* the authors selected a $x_t$ from the actual distr
 posterior $p(x_0|x_t)$. The following figure shows the results conditioned on the bottom-right quadrant, for a network
 trained on CelebA-HQ:
 
-![*Conditional generation samples from a given state:* the earlier the $x_t$, the more deterministic the outcome.
-](ho_condgen.png "Conditional generation samples from a given state"){width="1500"}
+![*Conditional generation samples from a given state:* the earlier the $x_t$, the more deterministic the
+outcome.](ho_condgen.png "Conditional generation samples from a given state"){width="1500"}
 
-### Dall-E 2
+### Imagen & Dall-E 2
 
 [Ho and Salimans](https://arxiv.org/abs/2207.12598) improved the above procedure by introducing the notion of *guiding*
-the model during training on labeled data, i.e. estimating $\epsilon_\theta(x_t, t ∣ y)$. This was used by Nichol
-et al. in [GLIDE](https://arxiv.org/abs/2112.10741?s=09), which uses information extracted from text to do the guiding,
-combining a transformer with the previously described architecture.
+the model during training on labeled data, i.e. estimating $\epsilon_\theta(x_t, t ∣ y)$, where $y$ are the labels. The
+crux of the approach is training both on conditional and unconditional objectives at once by randomly setting the class
+label to a null class with some predetermined probability. Likewise, the samples are drawn from a convex combination
+(with the same coefficient) of both $p$-s.
 
-<!-- ## Applications in GANs -->
+This was used by Nichol et al. in [GLIDE](https://arxiv.org/abs/2112.10741?s=09), which uses information extracted from
+text to do the guiding, combining a transformer with the previously described architecture.
+
+This approach has been used to construct [Imagen](https://arxiv.org/pdf/2205.11487.pdf), which uses additional diffusion
+models to up-sample the image created by the guided diffusion process. The text embeddings are provided by a
+*pretrained* transformer's encoder.
+
+![*Imagen structure*](imagen.png){width="700"}
+
+The other diffusion-based model to make waves recently - DALL-E 2 - uses a bit more complex approach:
+
+![*DALL-E 2 architecture*](dalle2.png "DALL-E 2 architecture")
+
+First, it re-uses a model called CLIP (Contrastive Language-Image Pre-training) to construct a *mapping between captions
+and images* (top of the schematic above). In practice, the net result of this is a *joint embedding of text and images*
+in a representation space.
+
+In generation, this model is frozen and a version of the GLIDE guided diffusion model is used to generate images
+**starting from the image representation space** (as opposed to random noise, for instance). As previously, additional
+up-samplers are used in the decoder, as well.
+
+To generate from text prompts, we need to map the caption text embeddings to the above mentioned image embeddings, which
+are the starting point for the decoder. This is done with an *additional diffusion model* called **the prior**, which
+generates *multiple possible embeddings.* In other words, this is a generative model of the image embeddings given the
+text embeddings. The prior trains a decoder-only transformer to predict the conditional reverse process.
+
+![*DALL-E 2: interpolation of the image embedding space*](dalle2_interpolation.png "DALL-E 2: interpolation of the image embedding space")
 
 ## References
 
@@ -305,6 +333,8 @@ combining a transformer with the previously described architecture.
     Lil'Log.](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/)
 -   A summary of recent developments:
     <https://maciejdomagala.github.io/generative_models/2022/06/06/The-recent-rise-of-diffusion-based-models.html>
+-   DALL-E 2 initial paper: [Ramesh et al. - Hierarchical Text-Conditional Image Generation with CLIP
+    Latents](https://arxiv.org/abs/2204.06125)
 -   [The Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter)
 -   [My presentation on the Continuous-time Kalman
     filter](../../uploads/leban_andrej%20-%20continuous%20time%20kalman%20filter.pdf)
