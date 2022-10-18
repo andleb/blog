@@ -67,7 +67,7 @@ Diffusion models seem to have taken the world by storm due to their amazing gene
 advantage, however. With a bit of a tongue in the proverbial cheek, statistical methods can be traditionally classified
 as either inflexible (classical stats), computationally expensive (MCMC), or non-analytical (boosted trees). From this
 perspective, **diffusion models** are a significant outlier since they are extremely flexible, provide access to full
-posterior (and conditional) distributions, and are computationally less expensive than many of competing methods.
+posterior (and conditional) distributions, and are computationally less expensive than many of the competing methods.
 
 ## General structure
 
