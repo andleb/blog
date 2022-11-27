@@ -1,6 +1,8 @@
 ---
 title: A simple GMAT practice set generator
 author: 
+active: false
+draft: true
 date: '2022-01-05'
 slug: a-simple-gmat-practice-set-generator
 categories: []
