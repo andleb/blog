@@ -46,4 +46,4 @@ header:
 - [CS 294 214: Efficient Algorithms and Computational Intractability in Statistics](https://classes.berkeley.edu/content/2022-fall-compsci-294-214-lec-214)  
 
 
-* [ELENG 229A: Information Theory and Coding](https://classes.berkeley.edu/content/2022-fall-eleng-229a-001-lec-001)
+* [ELENG 229A: Information Theory and Coding](https://classes.berkeley.edu/content/2022-fall-eleng-229a-001-lec-001) (audited)  
