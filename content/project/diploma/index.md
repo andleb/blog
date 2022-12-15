@@ -39,3 +39,5 @@ The work is an original examination of the effects that a coupled voltage probe 
 
 The document attached significantly compresses the theoretical background of the thesis (based on the Non-Equilibrium Green's Functions formalism - NEGF), which is to be found in the [referenced works](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.72.035308) since it falls outside of the Diploma program and the recommended Diploma thesis format.
 
+
+([University of Ljubljana Repository reference page](https://repozitorij.uni-lj.si/IzpisGradiva.php?id=97516&lang=eng))
