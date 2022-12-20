@@ -19,12 +19,12 @@ social:
 - icon: github
   icon_pack: fab
   link: https://github.com/andleb
-- icon: linkedin
-  icon_pack: fab
-  link: https://www.linkedin.com/in/andrejleban
-- icon: twitter
-  icon_pack: fab
-  link: https://twitter.com/anleb1
+# - icon: linkedin
+#   icon_pack: fab
+#   link: https://www.linkedin.com/in/andrejleban
+# - icon: twitter
+#   icon_pack: fab
+#   link: https://twitter.com/anleb1
 superuser: yes
 bio:
 ---
