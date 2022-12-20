@@ -18,7 +18,8 @@ image:
 projects: []
 ---
 
-*NOTE: This is a migration of an old post from my [previous blog](https://andleb1.wordpress.com/2020/10/02/the-githubs-arctic-code-vault/)*
+*NOTE: This is a migration of an old post from my previous  blog.*
+<!-- https://andleb1.wordpress.com/2020/10/02/the-githubs-arctic-code-vault/)* -->
 
 Something extremely *cool* happened to two of my GitHub repositories (please pardon the pun). 
 Namely, they were included in Github’s Arctic Vault Archive program. 

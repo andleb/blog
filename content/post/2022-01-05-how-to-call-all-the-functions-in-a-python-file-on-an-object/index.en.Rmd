@@ -21,7 +21,8 @@ image:
 projects: []
 ---
 
-*NOTE: This is a migration of an old post from my [previous blog](https://andleb1.wordpress.com/2020/05/28/how-to-call-all-the-functions-in-a-python-file-on-an-object/)*
+*NOTE: This is a migration of an old post from my previous blog.*
+<!-- (https://andleb1.wordpress.com/2020/05/28/how-to-call-all-the-functions-in-a-python-file-on-an-object/)* -->
 
 
 Recently, I’ve been playing around with some competitions on Kaggle. Given that an inescapable fact of Machine Learning is *Feature Selection*,

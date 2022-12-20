@@ -23,7 +23,8 @@ image:
 projects: []
 ---
 
-*NOTE: This is a migration of an old post from my [previous blog](https://andleb1.wordpress.com/2019/09/29/how-to-backup-git-repositories/)*
+*NOTE: This is a migration of an old post from my previous blog.*
+<!-- ](https://andleb1.wordpress.com/2019/09/29/how-to-backup-git-repositories/)* -->
 
 
 In this post I’d like to briefly sketch my personal setup for git repositories, focusing on their backup.
