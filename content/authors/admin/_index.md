@@ -30,8 +30,7 @@ bio:
 ---
 
 
-I am currently a graduate student in Statistics at the University of California, Berkeley and
-a researcher at the [Berkeley Speech & Computation Lab](https://twitter.com/BerkeleySCLab).
+I am currently a researcher at the [UC Berkeley Speech & Computation Lab](https://twitter.com/BerkeleySCLab).
 My interests and experience coincide in seamlessly combining computationally-intensive approaches
 with more analytical methods in interdisciplinary applications.
 
