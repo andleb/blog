@@ -30,9 +30,9 @@ bio:
 ---
 
 
-I am currently a researcher at the [UC Berkeley Speech & Computation Lab](https://twitter.com/BerkeleySCLab).
-My interests and experience coincide in seamlessly combining computationally-intensive approaches
-with more analytical methods in interdisciplinary applications.
+I am currently a researcher at the [UC Berkeley Speech & Computation Lab](https://twitter.com/BerkeleySCLab), working mostly
+on [Project CETI](https://www.projectceti.org/team), which aims to decipher sperm whale communication with machine learning.
+In general, my interests and experience coincide in seamlessly combining computationally-intensive approaches with more analytical methods in interdisciplinary applications.
 
 You can get the source code of this website at [https://github.com/andleb/blog](https://github.com/andleb/blog).
 
