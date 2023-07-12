@@ -1,9 +1,8 @@
 ---
-title: A talk on our work on whale communication at the Simons Institute for
-  the Theory of Computing
+title: A talk on our work on whale communication at the Simons Institute
 author: ''
 date: '2023-07-01'
-slug: presentation-of-our-work-on-whale-communication-at-the-simons-institute-for-the-theory-of-computing
+slug: presentation-of-our-work-on-whale-communication-at-the-simons-institute
 categories: []
 tags:
   - Deep Learning
