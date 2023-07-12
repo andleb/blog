@@ -22,9 +22,12 @@ social:
 # - icon: linkedin
 #   icon_pack: fab
 #   link: https://www.linkedin.com/in/andrejleban
-# - icon: twitter
-#   icon_pack: fab
-#   link: https://twitter.com/anleb1
+- icon: twitter
+  icon_pack: fab
+  link: https://twitter.com/anleb1
+- icon: google-scholar
+  icon_pack: ai
+  link: https://scholar.google.com/citations?user=dHJ98jAAAAAJ&hl=en
 superuser: yes
 bio:
 ---
@@ -32,7 +35,8 @@ bio:
 
 I am currently a researcher at the [UC Berkeley Speech & Computation Lab](https://twitter.com/BerkeleySCLab), working mostly
 on [Project CETI](https://www.projectceti.org/team), which aims to decipher sperm whale communication with machine learning.
-In general, my interests and experience coincide in seamlessly combining computationally-intensive approaches with more analytical methods in interdisciplinary applications.
+
+<!-- In general, my interests and experience coincide in seamlessly combining computationally-intensive approaches with more analytical methods in interdisciplinary applications. -->
 
 You can get the source code of this website at [https://github.com/andleb/blog](https://github.com/andleb/blog).
 
