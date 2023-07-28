@@ -6,14 +6,14 @@ education:
     institution: University of California, Berkeley
     year: 2022
   - course: M.Sc. (equivalent) Mathematical Physics
-    institution: University of Ljubljana
+    institution: University of Ljubljana, Slovenia
     year: 2016
-email: andrejleban@gmail.com
+email: leban@umich.edu
 highlight_name: yes
 social:
 - icon: envelope
   icon_pack: fas
-  link: mailto:andrejleban@gmail.com
+  link: mailto:leban@umich.edu
 - display:
     header: yes
 - icon: github
@@ -33,7 +33,9 @@ bio:
 ---
 
 
-I am currently a researcher at the [UC Berkeley Speech & Computation Lab](https://twitter.com/BerkeleySCLab), working mostly
+I am a Ph.D. student at the [Department of Statistics, University of Michigan](https://lsa.umich.edu/stats).
+
+Previously, I did research at the [UC Berkeley's Speech & Computation Lab](https://twitter.com/BerkeleySCLab), working mostly
 on [Project CETI](https://www.projectceti.org/about), which aims to decipher sperm whale communication with machine learning.
 
 <!-- In general, my interests and experience coincide in seamlessly combining computationally-intensive approaches with more analytical methods in interdisciplinary applications. -->
