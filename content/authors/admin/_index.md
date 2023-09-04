@@ -35,8 +35,7 @@ bio:
 
 I am a Ph.D. student at the [Department of Statistics, University of Michigan](https://lsa.umich.edu/stats).
 
-Previously, I did research at the [UC Berkeley's Speech & Computation Lab](https://twitter.com/BerkeleySCLab), working mostly
-on [Project CETI](https://www.projectceti.org/about), which aims to decipher sperm whale communication with machine learning.
+Previously, I did research at UC Berkeley, where I was part of [Project CETI](https://www.projectceti.org/about), which aims to decipher sperm whale communication with machine learning.
 
 <!-- In general, my interests and experience coincide in seamlessly combining computationally-intensive approaches with more analytical methods in interdisciplinary applications. -->
 
