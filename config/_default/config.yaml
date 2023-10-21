@@ -6,10 +6,10 @@ theme: "starter-hugo-academic"
 
 title: Andrej's thoughts # Website name
 baseurl: 'https://andleb.netlify.app/' # Website URL
-copyright: '' # Footer text, e.g. '© {year} Me'
+copyright: '© {year} Andrej Leban' # Footer text, e.g. '© {year} Me'
 
 sitemap:
-  changefreq: monthly
+  changefreq: weekly
   filename: sitemap.xml
   priority: 1.0
 
@@ -30,9 +30,9 @@ module:
     - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-netlify-cms
     - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-netlify
     - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-reveal
-    # - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-seo
-    # - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy/v5
-    
+    - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-seo
+    - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy/v5
+
 ############################
 ## ADVANCED
 ############################
