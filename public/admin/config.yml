@@ -798,9 +798,9 @@ collections:
     - label: Body
       name: body
       widget: markdown
-    file: content/privacy.md
-    label: Privacy Policy
-    name: privacy
+    file: content/license.md
+    label: License
+    name: License
   - fields:
     - label: Title
       name: title

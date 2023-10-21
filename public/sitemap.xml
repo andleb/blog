@@ -4,92 +4,136 @@
   
   
   <url>
-    <loc>https://academic-demo.netlify.app/courses/example/python/</loc><lastmod>2021-01-01T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/</loc><lastmod>2023-07-11T22:48:04-07:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/about/</loc></url>
+    <loc>https://andleb.netlify.app/post/presentation-of-our-work-on-whale-communication-at-the-simons-institute/</loc><lastmod>2023-07-11T22:48:04-07:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/courses/example/visualization/</loc><lastmod>2021-01-01T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/tag/causal-inference/</loc><lastmod>2023-07-11T22:48:04-07:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/courses/example/stats/</loc><lastmod>2021-01-01T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/tag/deep-learning/</loc><lastmod>2023-07-11T22:48:04-07:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/</loc><lastmod>2030-06-01T13:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/tag/generative-models/</loc><lastmod>2023-07-11T22:48:04-07:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/talk/example-talk/</loc><lastmod>2030-06-01T13:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/post/</loc><lastmod>2023-07-11T22:48:04-07:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/event/</loc><lastmod>2030-06-01T13:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/tags/</loc><lastmod>2023-07-11T22:48:04-07:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/courses/</loc><lastmod>2021-01-24T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/publication-type/3/</loc><lastmod>2023-03-20T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/courses/example/</loc><lastmod>2021-01-24T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/author/andrej-leban/</loc><lastmod>2023-03-20T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/tag/academic/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/publication/causalceti/</loc><lastmod>2023-03-20T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/author/andrej-leban/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/authors/</loc><lastmod>2023-03-20T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/authors/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/author/gasper-begus/</loc><lastmod>2023-03-20T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/categories/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/post/new-publication-approaching-an-unknown-communication-system/</loc><lastmod>2023-03-20T22:45:27-07:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/category/demo/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/publication_types/</loc><lastmod>2023-03-20T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/post/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/publication/</loc><lastmod>2023-03-20T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/tags/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/author/shane-gero/</loc><lastmod>2023-03-20T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/post/getting-started/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/tag/statistics/</loc><lastmod>2023-03-20T22:45:27-07:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/author/%E5%90%B3%E6%81%A9%E9%81%94/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/tag/diffusion/</loc><lastmod>2022-10-09T21:36:00-07:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/tag/%E5%BC%80%E6%BA%90/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/post/diffusion-models/</loc><lastmod>2022-10-09T21:36:00-07:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/category/%E6%95%99%E7%A8%8B/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/post/new-publication-projects/</loc><lastmod>2022-05-15T14:02:37-07:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/post/2020-12-01-r-rmarkdown/</loc><lastmod>2020-12-01T21:13:14-05:00</lastmod></url>
+    <loc>https://andleb.netlify.app/publication/bayesiantranslators/</loc><lastmod>2022-04-12T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/tag/plot/</loc><lastmod>2020-12-01T21:13:14-05:00</lastmod></url>
+    <loc>https://andleb.netlify.app/author/andrea-tacchella/</loc><lastmod>2022-04-12T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/category/r/</loc><lastmod>2020-12-01T21:13:14-05:00</lastmod></url>
+    <loc>https://andleb.netlify.app/author/andrea-zaccaria/</loc><lastmod>2022-04-12T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/tag/r-markdown/</loc><lastmod>2020-12-01T21:13:14-05:00</lastmod></url>
+    <loc>https://andleb.netlify.app/author/dario-mazzilli/</loc><lastmod>2022-04-12T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/tag/regression/</loc><lastmod>2020-12-01T21:13:14-05:00</lastmod></url>
+    <loc>https://andleb.netlify.app/author/marco-miccheli/</loc><lastmod>2022-04-12T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/post/writing-technical-content/</loc><lastmod>2019-07-12T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/author/sebastien-bratieres/</loc><lastmod>2022-04-12T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/publication-type/3/</loc><lastmod>2019-04-07T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/post/a-simple-gmat-practice-set-generator/</loc><lastmod>2022-01-05T18:09:13-08:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/publication/preprint/</loc><lastmod>2019-04-07T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/tag/bash/</loc><lastmod>2022-01-05T17:33:27-08:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/publication_types/</loc><lastmod>2019-04-07T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/tag/data-science/</loc><lastmod>2022-01-05T18:17:12-08:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/publication/</loc><lastmod>2019-04-07T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/tag/dropbox/</loc><lastmod>2022-01-05T17:33:27-08:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/tag/source-themes/</loc><lastmod>2019-04-07T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/tag/git/</loc><lastmod>2022-01-05T17:33:27-08:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/post/jupyter/</loc><lastmod>2019-09-05T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/tag/github/</loc><lastmod>2022-01-05T18:21:10-08:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/slides/</loc><lastmod>2019-02-05T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/tag/gmat/</loc><lastmod>2022-01-05T18:09:13-08:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/slides/example/</loc><lastmod>2019-02-05T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/post/how-to-backup-git-repositories/</loc><lastmod>2022-01-05T17:33:27-08:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/tag/deep-learning/</loc><lastmod>2016-04-27T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/post/how-to-call-all-the-functions-in-a-python-file-on-an-object/</loc><lastmod>2022-01-05T18:17:12-08:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/tag/demo/</loc><lastmod>2016-04-27T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/tag/linux/</loc><lastmod>2022-01-05T17:33:27-08:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/project/external-project/</loc><lastmod>2016-04-27T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/tag/machine-learning/</loc><lastmod>2022-01-05T18:17:12-08:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/project/internal-project/</loc><lastmod>2016-04-27T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/tag/python/</loc><lastmod>2022-01-05T18:17:12-08:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/project/</loc><lastmod>2016-04-27T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/tag/reflection/</loc><lastmod>2022-01-05T18:17:12-08:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/publication-type/2/</loc><lastmod>2015-09-01T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/post/the-github-s-arctic-code-vault/</loc><lastmod>2022-01-05T18:21:10-08:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/publication/journal-article/</loc><lastmod>2015-09-01T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/post/new-blog-format/</loc><lastmod>2022-01-04T21:59:03-08:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/author/robert-ford/</loc><lastmod>2015-09-01T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/project/ganising/</loc><lastmod>2021-12-15T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/publication-type/1/</loc><lastmod>2013-07-01T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/tag/monte-carlo/</loc><lastmod>2021-12-15T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/publication/conference-paper/</loc><lastmod>2013-07-01T00:00:00+00:00</lastmod></url>
+    <loc>https://andleb.netlify.app/tag/physics/</loc><lastmod>2021-12-15T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
   <url>
-    <loc>https://academic-demo.netlify.app/admin/</loc></url></urlset>
+    <loc>https://andleb.netlify.app/project/</loc><lastmod>2021-12-15T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/slides/</loc><lastmod>2019-02-05T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/slides/example/</loc><lastmod>2019-02-05T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/license/</loc><lastmod>2018-06-28T00:00:00+01:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/terms/</loc><lastmod>2018-06-28T00:00:00+01:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/project/example/</loc><lastmod>2016-04-27T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/publication-type/7/</loc><lastmod>2016-03-05T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/tag/mesoscopic-transport/</loc><lastmod>2016-03-05T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/tag/nanophysics/</loc><lastmod>2016-03-05T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/tag/negf/</loc><lastmod>2016-03-05T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/publication/dipoma/</loc><lastmod>2016-03-05T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/about/</loc><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/admin/</loc><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/author/</loc><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/contact/</loc><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/project/230afinal/</loc><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/tag/c-/</loc><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/categories/</loc><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/courses/</loc><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/project/derivatives/</loc><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/project/diploma/</loc><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/tag/finance/</loc><changefreq>monthly</changefreq><priority>1</priority></url>
+  <url>
+    <loc>https://andleb.netlify.app/tag/quant/</loc><changefreq>monthly</changefreq><priority>1</priority></url></urlset>

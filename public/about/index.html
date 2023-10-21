@@ -43,6 +43,7 @@
   
 
   
+    <meta name="google-site-verification" content="google-site-verification=oJUt4qEgz1nbEKcvDXzsR0LNbHNPGcPECa2xegOaWp8" />
   
   
   
@@ -53,7 +54,7 @@
   
   
 
-  <meta name="author" content="Andrej Leban" />
+  
 
   
   
@@ -63,7 +64,7 @@
   <meta name="description" content="" />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://academic-demo.netlify.app/about/" />
+  <link rel="alternate" hreflang="en-us" href="https://andleb.netlify.app/about/" />
 
   
   
@@ -72,6 +73,9 @@
   
 
   
+  
+    
+    <script src="/js/mathjax-config.js"></script>
   
 
   
@@ -83,29 +87,33 @@
   
     
     
-
-    
-    
-    
-    
-      
-      
-    
-    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
     
     
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    
+
+    
+    
+    
       
     
     
       
       
-        
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
-        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/monokai-sublime.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/monokai-sublime.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
       
     
 
@@ -220,9 +228,9 @@
 
       
       
-        
-      
 
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
       
@@ -248,10 +256,49 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.512574799414e7d36471486881070b0f.css" />
+  <link rel="stylesheet" href="/css/wowchemy.cd9e9a3a9af953d5551c8bdbe43c9303.css" />
 
   
 
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-228705789-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-228705789-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
 
 
   
@@ -276,7 +323,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://academic-demo.netlify.app/about/" />
+  <link rel="canonical" href="https://andleb.netlify.app/about/" />
 
   
   
@@ -298,11 +345,14 @@
   
   <meta property="twitter:card" content="summary" />
   
-  <meta property="og:site_name" content="Academic" />
-  <meta property="og:url" content="https://academic-demo.netlify.app/about/" />
-  <meta property="og:title" content="Biography | Academic" />
-  <meta property="og:description" content="" /><meta property="og:image" content="https://academic-demo.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" />
-    <meta property="twitter:image" content="https://academic-demo.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+    <meta property="twitter:site" content="@anleb1" />
+    <meta property="twitter:creator" content="@anleb1" />
+  
+  <meta property="og:site_name" content="Andrej&#39;s thoughts" />
+  <meta property="og:url" content="https://andleb.netlify.app/about/" />
+  <meta property="og:title" content="Andrej&#39;s thoughts" />
+  <meta property="og:description" content="" /><meta property="og:image" content="https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
     
@@ -322,11 +372,11 @@
 
 
 
-  <title>Biography | Academic</title>
+  <title>Andrej&#39;s thoughts</title>
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="6083a88ee3411b0d17ce02d738f69d47" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class="page-wrapper   " data-wc-page-id="8576ec274c98b3831668a172fa632d80" >
 
   
   
@@ -401,7 +451,7 @@
 
       
       <div class="d-none d-lg-inline-flex">
-        <a class="navbar-brand" href="/">Academic</a>
+        <a class="navbar-brand" href="/">Andrej&#39;s thoughts</a>
       </div>
       
 
@@ -414,7 +464,7 @@
 
       
       <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-        <a class="navbar-brand" href="/">Academic</a>
+        <a class="navbar-brand" href="/">Andrej&#39;s thoughts</a>
       </div>
       
 
@@ -447,17 +497,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#about"><span>Demo</span></a>
+            <a class="nav-link " href="/post"><span>Posts</span></a>
           </li>
 
           
@@ -484,17 +527,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#posts"><span>Posts</span></a>
+            <a class="nav-link " href="/publication"><span>Publications</span></a>
           </li>
 
           
@@ -521,91 +557,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#projects"><span>Projects</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#talks"><span>Talks</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#featured"><span>Publications</span></a>
+            <a class="nav-link " href="/project"><span>Projects</span></a>
           </li>
 
           
@@ -662,17 +617,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+            <a class="nav-link  active" href="/about" data-target="[]"><span>About</span></a>
           </li>
 
           
@@ -738,190 +686,262 @@
   </div>
 
   <div class="page-body">
-    <article class="article">
-
-  
-
-
-
-
-
-
-
+    
+<span class="js-widget-page d-none"></span>
 
 
 
 
 
   
+  
+  
+  
+
+
+
 
   
   
   
-<div class="article-container pt-3">
-  <h1>Biography</h1>
+  
+
+  
 
   
 
   
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  <section id="about" class="home-section wg-about  "  >
+   <div class="home-section-bg " >
+     
+   </div>
+    <div class="container">
+
     
 
+      
 
-<div class="article-metadata">
 
-  
-  
 
-  
 
   
 
-  
 
-  
-  
-  
-  
-  
-  
 
-  
-  
 
-</div>
+
+
+
+
+
+
+<div class="row">
+  <div class="col-12 col-lg-4">
+    <div id="profile">
+
+      
+
+      <div class="portrait-title">
+        
+        <h2></h2>
+        
+        
+
+        
+      </div>
+
+      <ul class="network-icon" aria-hidden="true">
+        
+        
+        
+        
+          
+        
+        
+        
+        
+        
+        <li>
+          <a href="mailto:leban@umich.edu"  aria-label="envelope">
+            <i class="fas fa-envelope big-icon"></i>
+          </a>
+        </li>
+        
+        
+        
+        
+          
+        
+        
+        
+        
+        
+          
+        
+        <li>
+          <a href="/"  aria-label="">
+            <i class="fas fa- big-icon"></i>
+          </a>
+        </li>
+        
+        
+        
+        
+          
+        
+        
+        
+        
+        
+          
+        
+        <li>
+          <a href="https://github.com/andleb" target="_blank" rel="noopener" aria-label="github">
+            <i class="fab fa-github big-icon"></i>
+          </a>
+        </li>
+        
+        
+        
+        
+          
+        
+        
+        
+        
+        
+          
+        
+        <li>
+          <a href="https://twitter.com/anleb1" target="_blank" rel="noopener" aria-label="twitter">
+            <i class="fab fa-twitter big-icon"></i>
+          </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+          
+        
+        <li>
+          <a href="https://scholar.google.com/citations?user=dHJ98jAAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="google-scholar">
+            <i class="ai ai-google-scholar big-icon"></i>
+          </a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </div>
+  <div class="col-12 col-lg-8">
 
     
-
-
-
-
-
-  
-</div>
-
-
-
-  <div class="article-container">
+    <h1>About me</h1>
 
     <div class="article-style">
-      
+      <p>I am a Ph.D. student at the <a href="https://lsa.umich.edu/stats" target="_blank" rel="noopener">Department of Statistics, University of Michigan</a>.</p>
+<p>Previously, I did research at UC Berkeley, where I was part of <a href="https://www.projectceti.org/about" target="_blank" rel="noopener">Project CETI</a>, which aims to decipher sperm whale communication with machine learning.</p>
+<!-- In general, my interests and experience coincide in seamlessly combining computationally-intensive approaches with more analytical methods in interdisciplinary applications. -->
+<p>You can get the source code of this website at <a href="https://github.com/andleb/blog" target="_blank" rel="noopener">https://github.com/andleb/blog</a>.</p>
+<!-- 
+  <i class="fas fa-download  pr-1 fa-fw"></i> Download my <a href="/uploads/leban_andrej-cv.pdf" target="_blank">resumé</a>. -->
+<!--
+
+  <i class="fas fa-download  pr-1 fa-fw"></i> 
+<a href="/uploads/andrej_leban-diploma.pdf" target="_blank"> 
+Master's thesis (Diploma) in Mathematical Physics: Time-dependent current through a quantum dot in the presence of a voltage probe (in Slovene)
+</a>[^1].
+
+[^1]: <span style="font-family:Arial; font-size:0.7em;"> NOTE: The document significantly compresses the theoretical background of the thesis, which is to be found in the referenced works, since it falls outside of the Diploma program and recommended thesis format. The focus of the work is on the empirical results, which can be appreciated even with the compressed background.
+</span>
+-->
+
     </div>
 
-    
+    <div class="row">
 
+      
 
+      
+      <div class="col-md-7">
+        <div class="section-subheading">Education</div>
+        <ul class="ul-edu fa-ul mb-0">
+          
+          <li>
+            <i class="fa-li fas fa-graduation-cap"></i>
+            <div class="description">
+              <p class="course">M.A. Statistics, 2022</p>
+              <p class="institution">University of California, Berkeley</p>
+            </div>
+          </li>
+          
+          <li>
+            <i class="fa-li fas fa-graduation-cap"></i>
+            <div class="description">
+              <p class="course">M.Sc. (equivalent) Mathematical Physics, 2016</p>
+              <p class="institution">University of Ljubljana, Slovenia</p>
+            </div>
+          </li>
+          
+        </ul>
+      </div>
+      
 
-
-
-
-
-
-<div class="share-box">
-  <ul class="share">
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://twitter.com/intent/tweet?url=https://academic-demo.netlify.app/about/&amp;text=Biography" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://academic-demo.netlify.app/about/&amp;t=Biography" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="mailto:?subject=Biography&amp;body=https://academic-demo.netlify.app/about/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://academic-demo.netlify.app/about/&amp;title=Biography" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="whatsapp://send?text=Biography%20https://academic-demo.netlify.app/about/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://academic-demo.netlify.app/about/&amp;title=Biography" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
-          <i class="fab fa-weibo"></i>
-        </a>
-      </li>
-    
-  </ul>
+    </div>
+  </div>
 </div>
 
 
+    
+
+    </div>
+  </section>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-</article>
   </div>
 
   <div class="page-footer">
@@ -936,6 +956,14 @@
 
   
 
+  
+  <p class="powered-by">
+    
+    
+      
+      <a href="/terms/">License</a>
+    
+  </p>
   
 
   
@@ -1011,6 +1039,8 @@
       
 
       
+        <script src="https://cdn.jsdelivr.net/gh/mermaid-js/mermaid@v8.8.4/dist/mermaid.min.js" integrity="sha512-+TNmhaRJf3jyYHTpzEq/5I6b+aGyhzWb21mGdHAjxSGSYwxN9Grug3Y3B9qVxWfKKY8MscE/6mr9walWvFLFvQ==" crossorigin="anonymous" title="mermaid"></script>
+      
 
       
         
@@ -1022,6 +1052,12 @@
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/python.min.js" crossorigin="anonymous"></script>
         
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/cpp.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/cmake.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/bash.min.js" crossorigin="anonymous"></script>
         
       
 

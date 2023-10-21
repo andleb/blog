@@ -1,35 +1,74 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects | Academic</title>
-    <link>https://academic-demo.netlify.app/project/</link>
-      <atom:link href="https://academic-demo.netlify.app/project/index.xml" rel="self" type="application/rss+xml" />
+    <title>Projects | Andrej&#39;s thoughts</title>
+    <link>https://andleb.netlify.app/project/</link>
+      <atom:link href="https://andleb.netlify.app/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 15 Dec 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://academic-demo.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <url>https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
       <title>Projects</title>
-      <link>https://academic-demo.netlify.app/project/</link>
+      <link>https://andleb.netlify.app/project/</link>
     </image>
     
     <item>
-      <title>External Project</title>
-      <link>https://academic-demo.netlify.app/project/external-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://academic-demo.netlify.app/project/external-project/</guid>
-      <description></description>
+      <title>ganIsing</title>
+      <link>https://andleb.netlify.app/project/ganising/</link>
+      <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/project/ganising/</guid>
+      <description>&lt;p&gt;This is my final project for &lt;em&gt;STAT241 / CS281A: Statistical Learning Theory&lt;/em&gt; at UC Berkeley in Fall 2021.&lt;/p&gt;
+&lt;p&gt;Given that I&amp;rsquo;ve gotten out of Physics just about when the Deep Learning &amp;ldquo;revolution&amp;rdquo; hit the field, it was a great reason to try in person how generative adversarial networks can replicate results obtained by time-consuming Monte Carlo simulation, something I am deeply familiar with.&lt;/p&gt;
+&lt;p&gt;The goal of this project was two-fold: to examine the approach on a classic example - the 2D Ising model, and to provide a brief (the final report linked above was limited to 10 pages) overview of the use of GANs in general.&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>Internal Project</title>
-      <link>https://academic-demo.netlify.app/project/internal-project/</link>
+      <title>Example Project</title>
+      <link>https://andleb.netlify.app/project/example/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://academic-demo.netlify.app/project/internal-project/</guid>
+      <guid>https://andleb.netlify.app/project/example/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
 &lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
 &lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
 &lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>230A final</title>
+      <link>https://andleb.netlify.app/project/230afinal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/project/230afinal/</guid>
+      <description>&lt;p&gt;This is my final project for &lt;em&gt;STAT230A: Linear Models&lt;/em&gt; at UC Berkeley in Spring 2022, done jointly with &lt;a href=&#34;https://ischmidt20.github.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Isaac Schmidt&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The goal was to replicate the findings of &lt;a href=&#34;https://www.aeaweb.org/articles?id=10.1257/aer.102.4.1508&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Michalopoulos: The Origins of Ethnolinguistic Diversity&lt;/a&gt;. The project took an additional dimension since we couldn&amp;rsquo;t obtain some of the data used in the paper - the &lt;a href=&#34;https://www.worldgeodatasets.com/language/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;WLMS dataset&lt;/a&gt;, prompting us to recreate a portion of the paper using the &lt;a href=&#34;https://icr.ethz.ch/data/greg/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GREG dataset&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The main finding of the paper, which also bore out in our re-analysis using the alternative dataset, is that the &lt;em&gt;variation&lt;/em&gt; in the elevation and in the land quality (see the map above) are the two most decisive factors in driving a region&amp;rsquo;s ethnolinguistic diversity.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>derivatives</title>
+      <link>https://andleb.netlify.app/project/derivatives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/project/derivatives/</guid>
+      <description>&lt;p&gt;A few years back, I undertook a significant study of mathematical finance. I chiefly followed M. Joshi&amp;rsquo;s &lt;a href=&#34;https://www.amazon.com/gp/product/0521514088&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Concepts and Practice of Mathematical Finance&lt;/a&gt; and &lt;a href=&#34;https://www.amazon.com/gp/product/0987122800&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;More Mathematical Finance&lt;/a&gt;.
+Since the companion practical textbook, &lt;a href=&#34;https://www.amazon.com/gp/product/0521721628&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;C++ Design Patterns and Derivatives Pricing&lt;/a&gt;,
+was based on outdated, pre-&lt;code&gt;C++11&lt;/code&gt; paradigms, and the author has sadly passed away, I decided to rewrite the latter in modern C++.
+The goal was to keep the original spirit while adding advanced functionality.
+I hope that other people studying from the same sources find the project useful, and I have thus, in a small way, helped keep the book relevant.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Diploma Thesis in Mathematical Physics</title>
+      <link>https://andleb.netlify.app/project/diploma/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/project/diploma/</guid>
+      <description>&lt;p&gt;This is the thesis for my Diploma (Master&amp;rsquo;s and Bachelor&amp;rsquo;s combined) in Mathematical Physics at the University of Ljubljana. It was advised by dr. Tomaž Rejec from the Department of Theoretical Physics, Jožef Stefan Institute.&lt;/p&gt;
+&lt;p&gt;The work is an original examination of the effects that a coupled voltage probe has on the current flowing through a quantum dot. This was done by numerically simulating the problem from first principles (i.e. from a version of Schrödinger&amp;rsquo;s equation). The main challenge was to ensure that the voltage on the probe was set just so there was no current flowing in or out of it, &lt;em&gt;while&lt;/em&gt; the system was being integrated - i.e. without knowing what the actual currents at that step were.&lt;/p&gt;
+&lt;p&gt;The document attached significantly compresses the theoretical background of the thesis (based on the Non-Equilibrium Green&amp;rsquo;s Functions formalism - NEGF), which is to be found in the &lt;a href=&#34;https://journals.aps.org/prb/abstract/10.1103/PhysRevB.72.035308&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;referenced works&lt;/a&gt; since it falls outside of the Diploma program and the recommended Diploma thesis format.&lt;/p&gt;
+&lt;p&gt;(&lt;a href=&#34;https://repozitorij.uni-lj.si/IzpisGradiva.php?id=97516&amp;amp;lang=eng&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;University of Ljubljana Repository reference page&lt;/a&gt;)&lt;/p&gt;
 </description>
     </item>
     

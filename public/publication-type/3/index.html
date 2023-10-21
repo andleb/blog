@@ -43,6 +43,7 @@
   
 
   
+    <meta name="google-site-verification" content="google-site-verification=oJUt4qEgz1nbEKcvDXzsR0LNbHNPGcPECa2xegOaWp8" />
   
   
   
@@ -53,7 +54,7 @@
   
   
 
-  <meta name="author" content="Andrej Leban" />
+  
 
   
   
@@ -63,7 +64,7 @@
   <meta name="description" content="" />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://academic-demo.netlify.app/publication-type/3/" />
+  <link rel="alternate" hreflang="en-us" href="https://andleb.netlify.app/publication-type/3/" />
 
   
   
@@ -72,6 +73,9 @@
   
 
   
+  
+    
+    <script src="/js/mathjax-config.js"></script>
   
 
   
@@ -83,29 +87,29 @@
   
     
     
-
-    
-    
-    
-    
-      
-      
-    
-    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
     
     
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
       
     
     
       
       
-        
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
-        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/monokai-sublime.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/monokai-sublime.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
       
     
 
@@ -220,17 +224,9 @@
 
       
       
-        
-      
 
       
-    
-      
-      
-
-      
-      
-
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
       
@@ -241,6 +237,14 @@
 
       
     
+      
+      
+
+      
+      
+
+      
+    
   
 
   
@@ -248,27 +252,66 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.512574799414e7d36471486881070b0f.css" />
-
-  
-
-
-
-  
-
-  
+  <link rel="stylesheet" href="/css/wowchemy.cd9e9a3a9af953d5551c8bdbe43c9303.css" />
 
   
 
 
 
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-228705789-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-228705789-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
   
   
   
 
   
-    <link rel="alternate" href="/publication-type/3/index.xml" type="application/rss+xml" title="Academic" />
+    <link rel="alternate" href="/publication-type/3/index.xml" type="application/rss+xml" title="Andrej&#39;s thoughts" />
   
 
   
@@ -278,7 +321,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://academic-demo.netlify.app/publication-type/3/" />
+  <link rel="canonical" href="https://andleb.netlify.app/publication-type/3/" />
 
   
   
@@ -300,14 +343,17 @@
   
   <meta property="twitter:card" content="summary" />
   
-  <meta property="og:site_name" content="Academic" />
-  <meta property="og:url" content="https://academic-demo.netlify.app/publication-type/3/" />
-  <meta property="og:title" content="3 | Academic" />
-  <meta property="og:description" content="" /><meta property="og:image" content="https://academic-demo.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" />
-    <meta property="twitter:image" content="https://academic-demo.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+    <meta property="twitter:site" content="@anleb1" />
+    <meta property="twitter:creator" content="@anleb1" />
+  
+  <meta property="og:site_name" content="Andrej&#39;s thoughts" />
+  <meta property="og:url" content="https://andleb.netlify.app/publication-type/3/" />
+  <meta property="og:title" content="3 | Andrej&#39;s thoughts" />
+  <meta property="og:description" content="" /><meta property="og:image" content="https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
-      <meta property="og:updated_time" content="2019-04-07T00:00:00&#43;00:00" />
+      <meta property="og:updated_time" content="2023-03-20T00:00:00&#43;00:00" />
     
   
 
@@ -323,7 +369,7 @@
 
 
 
-  <title>3 | Academic</title>
+  <title>3 | Andrej&#39;s thoughts</title>
 </head>
 
 
@@ -402,7 +448,7 @@
 
       
       <div class="d-none d-lg-inline-flex">
-        <a class="navbar-brand" href="/">Academic</a>
+        <a class="navbar-brand" href="/">Andrej&#39;s thoughts</a>
       </div>
       
 
@@ -415,7 +461,7 @@
 
       
       <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-        <a class="navbar-brand" href="/">Academic</a>
+        <a class="navbar-brand" href="/">Andrej&#39;s thoughts</a>
       </div>
       
 
@@ -448,17 +494,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#about"><span>Demo</span></a>
+            <a class="nav-link " href="/post"><span>Posts</span></a>
           </li>
 
           
@@ -485,17 +524,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#posts"><span>Posts</span></a>
+            <a class="nav-link  active" href="/publication"><span>Publications</span></a>
           </li>
 
           
@@ -522,91 +554,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#projects"><span>Projects</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#talks"><span>Talks</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#featured"><span>Publications</span></a>
+            <a class="nav-link " href="/project"><span>Projects</span></a>
           </li>
 
           
@@ -663,17 +614,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+            <a class="nav-link " href="/about"><span>About</span></a>
           </li>
 
           
@@ -797,13 +741,13 @@
   <div class="media-body">
 
     <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/publication/preprint/" >An example preprint / working paper</a>
+      <a href="/publication/causalceti/" >Approaching an unknown communication system by latent space exploration and causal inference</a>
     </div>
 
     
-    <a href="/publication/preprint/"  class="summary-link">
+    <a href="/publication/causalceti/"  class="summary-link">
       <div class="article-style">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
+        In the paper, we combine approaches that help discover how known properties of human language are learned by generative models when trained on labeled speech audio data with methodology inspired by causal inference and apply it to the communication system of sperm whales, for which we do not have any such ground truth. With this, we can propose what components of their communication might serve as the carriers of meaning, not only giving credence to existing theories but also suggesting additional ways the whales might encode information.
       </div>
     </a>
     
@@ -816,8 +760,10 @@
       <div>
         
 
-  <span class="author-highlighted">
-      <a href="/author/andrej-leban/">Andrej Leban</a></span>
+  <span >
+      <a href="/author/gasper-begus/">Gašper Beguš</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Equal contribution"></i>, <span >
+      <a href="/author/andrej-leban/">Andrej Leban</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Equal contribution"></i>, <span >
+      <a href="/author/shane-gero/">Shane Gero</a></span>
       </div>
       
     </div>
@@ -829,9 +775,78 @@
     
     
     
-    <a href="/publication/preprint/" >
-      <img src="/publication/preprint/featured_hu559a5add5185b02575aa8333502ab2cc_220813_150x0_resize_q75_h2_lanczos.webp" height="100" width="150"
-           alt="An example preprint / working paper" loading="lazy">
+    <a href="/publication/causalceti/" >
+      <img src="/publication/causalceti/featured_hu632986ae512f260ddaa4d4655d74abe4_197702_150x0_resize_q75_h2_lanczos_3.webp" height="114" width="150"
+           alt="Approaching an unknown communication system by latent space exploration and causal inference" loading="lazy">
+    </a>
+    
+  </div>
+</div>
+
+  
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item view-compact">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/publication/bayesiantranslators/" >A Bayesian approach to translators&#39; reliability assessment</a>
+    </div>
+
+    
+    <a href="/publication/bayesiantranslators/"  class="summary-link">
+      <div class="article-style">
+        NOTE: This paper stems from the work I did as a Machine Learning intern at Translated in Rome during the summer of 2021.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+      <div>
+        
+
+  <span >
+      <a href="/author/marco-miccheli/">Marco Miccheli</a></span>, <span >
+      <a href="/author/andrej-leban/">Andrej Leban</a></span>, <span >
+      <a href="/author/andrea-tacchella/">Andrea Tacchella</a></span>, <span >
+      <a href="/author/andrea-zaccaria/">Andrea Zaccaria</a></span>, <span >
+      <a href="/author/dario-mazzilli/">Dario Mazzilli</a></span>, <span >
+      <a href="/author/sebastien-bratieres/">Sébastien Bratières</a></span>
+      </div>
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    <a href="/publication/bayesiantranslators/" >
+      <img src="/publication/bayesiantranslators/featured_hu2510370904d5cfb408729cde2c87d2b2_30881_150x0_resize_q75_h2_lanczos_3.webp" height="104" width="150"
+           alt="A Bayesian approach to translators&#39; reliability assessment" loading="lazy">
     </a>
     
   </div>
@@ -856,6 +871,14 @@
 
   
 
+  
+  <p class="powered-by">
+    
+    
+      
+      <a href="/terms/">License</a>
+    
+  </p>
   
 
   
@@ -931,6 +954,8 @@
       
 
       
+        <script src="https://cdn.jsdelivr.net/gh/mermaid-js/mermaid@v8.8.4/dist/mermaid.min.js" integrity="sha512-+TNmhaRJf3jyYHTpzEq/5I6b+aGyhzWb21mGdHAjxSGSYwxN9Grug3Y3B9qVxWfKKY8MscE/6mr9walWvFLFvQ==" crossorigin="anonymous" title="mermaid"></script>
+      
 
       
         
@@ -942,6 +967,12 @@
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/python.min.js" crossorigin="anonymous"></script>
         
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/cpp.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/cmake.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/bash.min.js" crossorigin="anonymous"></script>
         
       
 

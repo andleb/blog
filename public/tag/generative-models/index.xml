@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Generative models | Andrej&#39;s thoughts</title>
+    <link>https://andleb.netlify.app/tag/generative-models/</link>
+      <atom:link href="https://andleb.netlify.app/tag/generative-models/index.xml" rel="self" type="application/rss+xml" />
+    <description>Generative models</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Generative models</title>
+      <link>https://andleb.netlify.app/tag/generative-models/</link>
+    </image>
+    
+    <item>
+      <title>A talk on our work on whale communication at the Simons Institute</title>
+      <link>https://andleb.netlify.app/post/presentation-of-our-work-on-whale-communication-at-the-simons-institute/</link>
+      <pubDate>Sat, 01 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/post/presentation-of-our-work-on-whale-communication-at-the-simons-institute/</guid>
+      <description>&lt;p&gt;I recently helped present our work (together with &lt;a href=&#34;https://twitter.com/BerkeleySCLab&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Prof. Gašper Beguš&lt;/a&gt;, &lt;a href=&#34;https://andleb.netlify.app/publication/causalceti/&#34;&gt;paper&lt;/a&gt;)
+on the usage of deep generative models for discovering the building blocks of sperm whale communication at the &lt;a href=&#34;https://simons.berkeley.edu/workshops/decoding-communication-nonhuman-species-ii-co-hosted-project-ceti&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;Decoding Communication in Nonhuman Species&lt;/em&gt;&lt;/a&gt; symposium hosted
+at the &lt;a href=&#34;https://simons.berkeley.edu/homepage&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Simons Institute for the Theory of Computing&lt;/a&gt;, UC Berkeley:&lt;/p&gt;
+&lt;br/&gt;
+&lt;iframe width=&#34;875&#34; height=&#34;492&#34; src=&#34;https://www.youtube.com/embed/jFo59fDlOho&#34; 
+title=&#34;Generative AI and What Is Meaningful Sperm Whale Communication&#34; frameborder=&#34;0&#34; 
+allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen&gt;&lt;/iframe&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,615 +1,492 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Academic</title>
-    <link>https://academic-demo.netlify.app/</link>
-      <atom:link href="https://academic-demo.netlify.app/index.xml" rel="self" type="application/rss+xml" />
-    <description>Academic</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
+    <title>Andrej&#39;s thoughts</title>
+    <link>https://andleb.netlify.app/</link>
+      <atom:link href="https://andleb.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <description>Andrej&#39;s thoughts</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jul 2023 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://academic-demo.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
-      <title>Academic</title>
-      <link>https://academic-demo.netlify.app/</link>
+      <url>https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Andrej&#39;s thoughts</title>
+      <link>https://andleb.netlify.app/</link>
     </image>
     
     <item>
-      <title>Python basics</title>
-      <link>https://academic-demo.netlify.app/courses/example/python/</link>
-      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://academic-demo.netlify.app/courses/example/python/</guid>
-      <description>&lt;p&gt;Build a foundation in Python.&lt;/p&gt;
-&lt;p&gt;
-  &lt;i class=&#34;fas fa-clock  pr-1 fa-fw&#34;&gt;&lt;/i&gt; 1-2 hours per week, for 8 weeks&lt;/p&gt;
-&lt;h2 id=&#34;learn&#34;&gt;Learn&lt;/h2&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/rfscVS0vtbw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;quiz&#34;&gt;Quiz&lt;/h2&gt;
-&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-2&#34;&gt;
-  &lt;summary&gt;What is the difference between lists and tuples?&lt;/summary&gt;
-  &lt;p&gt;&lt;p&gt;Lists&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Lists are mutable - they can be changed&lt;/li&gt;
-&lt;li&gt;Slower than tuples&lt;/li&gt;
-&lt;li&gt;Syntax: &lt;code&gt;a_list = [1, 2.0, &#39;Hello world&#39;]&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Tuples&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Tuples are immutable - they can&amp;rsquo;t be changed&lt;/li&gt;
-&lt;li&gt;Tuples are faster than lists&lt;/li&gt;
-&lt;li&gt;Syntax: &lt;code&gt;a_tuple = (1, 2.0, &#39;Hello world&#39;)&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/p&gt;
-&lt;/details&gt;
-&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-3&#34;&gt;
-  &lt;summary&gt;Is Python case-sensitive?&lt;/summary&gt;
-  &lt;p&gt;Yes&lt;/p&gt;
-&lt;/details&gt;</description>
+      <title>A talk on our work on whale communication at the Simons Institute</title>
+      <link>https://andleb.netlify.app/post/presentation-of-our-work-on-whale-communication-at-the-simons-institute/</link>
+      <pubDate>Sat, 01 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/post/presentation-of-our-work-on-whale-communication-at-the-simons-institute/</guid>
+      <description>&lt;p&gt;I recently helped present our work (together with &lt;a href=&#34;https://twitter.com/BerkeleySCLab&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Prof. Gašper Beguš&lt;/a&gt;, &lt;a href=&#34;https://andleb.netlify.app/publication/causalceti/&#34;&gt;paper&lt;/a&gt;)
+on the usage of deep generative models for discovering the building blocks of sperm whale communication at the &lt;a href=&#34;https://simons.berkeley.edu/workshops/decoding-communication-nonhuman-species-ii-co-hosted-project-ceti&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;Decoding Communication in Nonhuman Species&lt;/em&gt;&lt;/a&gt; symposium hosted
+at the &lt;a href=&#34;https://simons.berkeley.edu/homepage&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Simons Institute for the Theory of Computing&lt;/a&gt;, UC Berkeley:&lt;/p&gt;
+&lt;br/&gt;
+&lt;iframe width=&#34;875&#34; height=&#34;492&#34; src=&#34;https://www.youtube.com/embed/jFo59fDlOho&#34; 
+title=&#34;Generative AI and What Is Meaningful Sperm Whale Communication&#34; frameborder=&#34;0&#34; 
+allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     
     <item>
-      <title>Biography</title>
-      <link>https://academic-demo.netlify.app/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://academic-demo.netlify.app/about/</guid>
+      <title>Approaching an unknown communication system by latent space exploration and causal inference</title>
+      <link>https://andleb.netlify.app/publication/causalceti/</link>
+      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/publication/causalceti/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Visualization</title>
-      <link>https://academic-demo.netlify.app/courses/example/visualization/</link>
-      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://academic-demo.netlify.app/courses/example/visualization/</guid>
-      <description>&lt;p&gt;Learn how to visualize data with Plotly.&lt;/p&gt;
-&lt;p&gt;
-  &lt;i class=&#34;fas fa-clock  pr-1 fa-fw&#34;&gt;&lt;/i&gt; 1-2 hours per week, for 8 weeks&lt;/p&gt;
-&lt;h2 id=&#34;learn&#34;&gt;Learn&lt;/h2&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/hSPmj7mK6ng&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;quiz&#34;&gt;Quiz&lt;/h2&gt;
-&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-2&#34;&gt;
-  &lt;summary&gt;When is a heatmap useful?&lt;/summary&gt;
-  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
-&lt;/details&gt;
-&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-3&#34;&gt;
-  &lt;summary&gt;Write Plotly code to render a bar chart&lt;/summary&gt;
-  &lt;p&gt;&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import plotly.express as px
-data_canada = px.data.gapminder().query(&amp;quot;country == &#39;Canada&#39;&amp;quot;)
-fig = px.bar(data_canada, x=&#39;year&#39;, y=&#39;pop&#39;)
-fig.show()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/p&gt;
-&lt;/details&gt;</description>
-    </item>
-    
-    <item>
-      <title>Statistics</title>
-      <link>https://academic-demo.netlify.app/courses/example/stats/</link>
-      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://academic-demo.netlify.app/courses/example/stats/</guid>
-      <description>&lt;p&gt;Introduction to statistics for data science.&lt;/p&gt;
-&lt;p&gt;
-  &lt;i class=&#34;fas fa-clock  pr-1 fa-fw&#34;&gt;&lt;/i&gt; 1-2 hours per week, for 8 weeks&lt;/p&gt;
-&lt;h2 id=&#34;learn&#34;&gt;Learn&lt;/h2&gt;
-&lt;p&gt;The general form of the &lt;strong&gt;normal&lt;/strong&gt; probability density function is:&lt;/p&gt;
-&lt;p&gt;$$
-f(x) = \frac{1}{\sigma \sqrt{2\pi} } e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
-$$&lt;/p&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    The parameter $\mu$ is the mean or expectation of the distribution.
-$\sigma$ is its standard deviation.
-The variance of the distribution is $\sigma^{2}$.
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;quiz&#34;&gt;Quiz&lt;/h2&gt;
-&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-2&#34;&gt;
-  &lt;summary&gt;What is the parameter $\mu$?&lt;/summary&gt;
-  &lt;p&gt;The parameter $\mu$ is the mean or expectation of the distribution.&lt;/p&gt;
-&lt;/details&gt;</description>
-    </item>
-    
-    <item>
-      <title>Example Talk</title>
-      <link>https://academic-demo.netlify.app/talk/example-talk/</link>
-      <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
-      <guid>https://academic-demo.netlify.app/talk/example-talk/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Wowchemy&amp;rsquo;s &lt;a href=&#34;https://wowchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/a&gt; feature and link using &lt;code&gt;slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt; an existing slide deck to &lt;code&gt;static/&lt;/code&gt; and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Further event details, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;page elements&lt;/a&gt; such as image galleries, can be added to the body of this page.&lt;/p&gt;
+      <title>New publication: Approaching an unknown communication system</title>
+      <link>https://andleb.netlify.app/post/new-publication-approaching-an-unknown-communication-system/</link>
+      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/post/new-publication-approaching-an-unknown-communication-system/</guid>
+      <description>&lt;p&gt;We have a &lt;a href=&#34;https://andleb.netlify.app/publication/causalceti/&#34;&gt;pre-print&lt;/a&gt; out based on our work with &lt;a href=&#34;https://www.projectceti.org/team&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Project CETI&lt;/a&gt;,
+an initiative to decipher sperm whale communication using machine learning.&lt;/p&gt;
+&lt;p&gt;In the paper, we combine approaches that help discover how known properties of human language are learned by generative models when trained on labeled speech audio data with methodology inspired by causal inference and apply it to the communication system of sperm whales, for which we do not have any such ground truth. With this, we can propose what components of their communication might serve as the carriers of meaning, not only giving credence to existing theories but also suggesting additional ways the whales might encode information.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Welcome to Wowchemy, the website builder for Hugo</title>
-      <link>https://academic-demo.netlify.app/post/getting-started/</link>
-      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://academic-demo.netlify.app/post/getting-started/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;The Wowchemy website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations - although it can be used to create any kind of site&lt;/li&gt;
-&lt;li&gt;The template can be modified and customised to suit your needs. It&amp;rsquo;s a good platform for anyone looking to take control of their data and online identity whilst having the convenience to start off with a &lt;strong&gt;no-code solution (write in Markdown and customize with YAML parameters)&lt;/strong&gt; and having &lt;strong&gt;flexibility to later add even deeper personalization with HTML and CSS&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;You can work with all your favourite tools and apps with hundreds of plugins and integrations to speed up your workflows, interact with your readers, and much more&lt;/li&gt;
-&lt;/ol&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-the-template-is-mobile-first-with-a-responsive-design-to-ensure-that-your-site-looks-stunning-on-every-device&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/wowchemy/wowchemy-hugo-modules/master/academic.png&#34; alt=&#34;The template is mobile first with a responsive design to ensure that your site looks stunning on every device.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption&gt;
-      The template is mobile first with a responsive design to ensure that your site looks stunning on every device.
-    &lt;/figcaption&gt;&lt;/figure&gt;
-&lt;h2 id=&#34;get-started&#34;&gt;Get Started&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;👉 &lt;a href=&#34;https://wowchemy.com/templates/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Create a new site&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;📚 &lt;a href=&#34;https://wowchemy.com/docs/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Personalize your site&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💬 &lt;a href=&#34;https://discord.gg/z8wNYzb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chat with the &lt;strong&gt;Wowchemy community&lt;/strong&gt;&lt;/a&gt; or &lt;a href=&#34;https://discourse.gohugo.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Hugo community&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;🐦 Twitter: &lt;a href=&#34;https://twitter.com/wowchemy&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@wowchemy&lt;/a&gt; &lt;a href=&#34;https://twitter.com/GeorgeCushen&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@GeorgeCushen&lt;/a&gt; &lt;a href=&#34;https://twitter.com/search?q=%28%23MadeWithWowchemy%20OR%20%23MadeWithAcademic%29&amp;amp;src=typed_query&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#MadeWithWowchemy&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💡 &lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Request a &lt;strong&gt;feature&lt;/strong&gt; or report a &lt;strong&gt;bug&lt;/strong&gt; for &lt;em&gt;Wowchemy&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;⬆️ &lt;strong&gt;Updating Wowchemy?&lt;/strong&gt; View the &lt;a href=&#34;https://wowchemy.com/docs/guide/update/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Update Guide&lt;/a&gt; and &lt;a href=&#34;https://wowchemy.com/updates/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Release Notes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;crowd-funded-open-source-software&#34;&gt;Crowd-funded open-source software&lt;/h2&gt;
-&lt;p&gt;To help us develop this template and software sustainably under the MIT license, we ask all individuals and businesses that use it to help support its ongoing maintenance and development via sponsorship.&lt;/p&gt;
-&lt;h3 id=&#34;-click-here-to-become-a-sponsor-and-help-support-wowchemys-future-httpswowchemycomplans&#34;&gt;&lt;a href=&#34;https://wowchemy.com/plans/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;❤️ Click here to become a sponsor and help support Wowchemy&amp;rsquo;s future ❤️&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;As a token of appreciation for sponsoring, you can &lt;strong&gt;unlock &lt;a href=&#34;https://wowchemy.com/plans/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;these&lt;/a&gt; awesome rewards and extra features 🦄✨&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ecosystem&#34;&gt;Ecosystem&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/wowchemy/hugo-academic-cli&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo Academic CLI&lt;/a&gt;:&lt;/strong&gt; Automatically import publications from BibTeX&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;inspiration&#34;&gt;Inspiration&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Check out the latest &lt;strong&gt;demo&lt;/strong&gt;&lt;/a&gt; of what you&amp;rsquo;ll get in less than 10 minutes, or &lt;a href=&#34;https://wowchemy.com/user-stories/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;view the &lt;strong&gt;showcase&lt;/strong&gt;&lt;/a&gt; of personal, project, and business sites.&lt;/p&gt;
-&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Page builder&lt;/strong&gt; - Create &lt;em&gt;anything&lt;/em&gt; with &lt;a href=&#34;https://wowchemy.com/docs/page-builder/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;widgets&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;elements&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Edit any type of content&lt;/strong&gt; - Blog posts, publications, talks, slides, projects, and more!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Create content&lt;/strong&gt; in &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Markdown&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://wowchemy.com/docs/import/jupyter/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Jupyter&lt;/strong&gt;&lt;/a&gt;, or &lt;a href=&#34;https://wowchemy.com/docs/install-locally/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;RStudio&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Plugin System&lt;/strong&gt; - Fully customizable &lt;a href=&#34;https://wowchemy.com/docs/customization/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;color&lt;/strong&gt; and &lt;strong&gt;font themes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Display Code and Math&lt;/strong&gt; - Code highlighting and &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LaTeX math&lt;/a&gt; supported&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Integrations&lt;/strong&gt; - &lt;a href=&#34;https://analytics.google.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Analytics&lt;/a&gt;, &lt;a href=&#34;https://disqus.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Disqus commenting&lt;/a&gt;, Maps, Contact Forms, and more!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Beautiful Site&lt;/strong&gt; - Simple and refreshing one page design&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Industry-Leading SEO&lt;/strong&gt; - Help get your website found on search engines and social media&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Media Galleries&lt;/strong&gt; - Display your images and videos with captions in a customizable gallery&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Mobile Friendly&lt;/strong&gt; - Look amazing on every screen with a mobile friendly version of your site&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Multi-language&lt;/strong&gt; - 34+ language packs including English, 中文, and Português&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Multi-user&lt;/strong&gt; - Each author gets their own profile page&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Privacy Pack&lt;/strong&gt; - Assists with GDPR&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stand Out&lt;/strong&gt; - Bring your site to life with animation, parallax backgrounds, and scroll effects&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;One-Click Deployment&lt;/strong&gt; - No servers. No databases. Only files.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
-&lt;p&gt;Wowchemy and its templates come with &lt;strong&gt;automatic day (light) and night (dark) mode&lt;/strong&gt; built-in. Alternatively, visitors can choose their preferred mode - click the moon icon in the top right of the &lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Demo&lt;/a&gt; to see it in action! Day/night mode can also be disabled by the site admin in &lt;code&gt;params.toml&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/customization&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Choose a stunning &lt;strong&gt;theme&lt;/strong&gt; and &lt;strong&gt;font&lt;/strong&gt;&lt;/a&gt; for your site. Themes are fully customizable.&lt;/p&gt;
-&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
-&lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Released under the &lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/blob/master/LICENSE.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>https://academic-demo.netlify.app/post/2020-12-01-r-rmarkdown/</link>
-      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
-      <guid>https://academic-demo.netlify.app/post/2020-12-01-r-rmarkdown/</guid>
+      <title>Diffusion models: an introduction</title>
+      <link>https://andleb.netlify.app/post/diffusion-models/</link>
+      <pubDate>Sun, 02 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/post/diffusion-models/</guid>
       <description>
-&lt;script src=&#34;https://academic-demo.netlify.app/post/2020-12-01-r-rmarkdown/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
-&lt;div id=&#34;r-markdown&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;R Markdown&lt;/h1&gt;
-&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &amp;lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;including-plots&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Including Plots&lt;/h1&gt;
-&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&amp;#39;Sky&amp;#39;, &amp;#39;Sunny side of pyramid&amp;#39;, &amp;#39;Shady side of pyramid&amp;#39;),
-  col = c(&amp;#39;#0292D8&amp;#39;, &amp;#39;#F7EA39&amp;#39;, &amp;#39;#C4B632&amp;#39;),
-  init.angle = -50, border = NA
-)&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span style=&#34;display:block;&#34; id=&#34;fig:pie&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;https://academic-demo.netlify.app/post/2020-12-01-r-rmarkdown/index.en_files/figure-html/pie-1.png&#34; alt=&#34;A fancy pie chart.&#34; width=&#34;672&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 1: A fancy pie chart.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Writing technical content in Academic</title>
-      <link>https://academic-demo.netlify.app/post/writing-technical-content/</link>
-      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>https://academic-demo.netlify.app/post/writing-technical-content/</guid>
-      <description>&lt;p&gt;Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;On this page, you&amp;rsquo;ll find some examples of the types of technical content that can be rendered with Academic.&lt;/p&gt;
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-&lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
-&lt;p&gt;Academic supports a Markdown extension for highlighting code syntax. You can enable this feature by toggling the &lt;code&gt;highlight&lt;/code&gt; option in your &lt;code&gt;config/_default/params.toml&lt;/code&gt; file.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```python
-import pandas as pd
-data = pd.read_csv(&amp;quot;data.csv&amp;quot;)
-data.head()
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
-data = pd.read_csv(&amp;quot;data.csv&amp;quot;)
-data.head()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;charts&#34;&gt;Charts&lt;/h3&gt;
-&lt;p&gt;Academic supports the popular &lt;a href=&#34;https://plot.ly/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Plotly&lt;/a&gt; chart format.&lt;/p&gt;
-&lt;p&gt;Save your Plotly JSON in your page folder, for example &lt;code&gt;chart.json&lt;/code&gt;, and then add the &lt;code&gt;{{&amp;lt; chart data=&amp;quot;chart&amp;quot; &amp;gt;}}&lt;/code&gt; shortcode where you would like the chart to appear.&lt;/p&gt;
-&lt;p&gt;Demo:&lt;/p&gt;
-
-
-&lt;div id=&#34;chart-931824576&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
-&lt;script&gt;
-  (function() {
-    let a = setInterval( function() {
-      if ( typeof window.Plotly === &#39;undefined&#39; ) {
-        return;
-      }
-      clearInterval( a );
-
-      Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-931824576&#39;, chart.data, chart.layout, {responsive: true});
-      });
-    }, 500 );
-  })();
-&lt;/script&gt;
-&lt;p&gt;You might also find the &lt;a href=&#34;http://plotly-json-editor.getforge.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Plotly JSON Editor&lt;/a&gt; useful.&lt;/p&gt;
-&lt;h3 id=&#34;math&#34;&gt;Math&lt;/h3&gt;
-&lt;p&gt;Academic supports a Markdown extension for $\LaTeX$ math. You can enable this feature by toggling the &lt;code&gt;math&lt;/code&gt; option in your &lt;code&gt;config/_default/params.toml&lt;/code&gt; file.&lt;/p&gt;
-&lt;p&gt;To render &lt;em&gt;inline&lt;/em&gt; or &lt;em&gt;block&lt;/em&gt; math, wrap your LaTeX math with &lt;code&gt;$...$&lt;/code&gt; or &lt;code&gt;$$...$$&lt;/code&gt;, respectively.&lt;/p&gt;
-&lt;p&gt;Example &lt;strong&gt;math block&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;$$\gamma_{n} = \frac{ 
-\left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T 
-\left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}
-{\left \|\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right \|^2}$$
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;p&gt;$$\gamma_{n} = \frac{ \left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T \left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}{\left |\nabla F(\mathbf{x}&lt;em&gt;{n}) - \nabla F(\mathbf{x}&lt;/em&gt;{n-1}) \right |^2}$$&lt;/p&gt;
-&lt;p&gt;Example &lt;strong&gt;inline math&lt;/strong&gt; &lt;code&gt;$\nabla F(\mathbf{x}_{n})$&lt;/code&gt; renders as $\nabla F(\mathbf{x}_{n})$.&lt;/p&gt;
-&lt;p&gt;Example &lt;strong&gt;multi-line math&lt;/strong&gt; using the &lt;code&gt;\\\\&lt;/code&gt; math linebreak:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;$$f(k;p_{0}^{*}) = \begin{cases}p_{0}^{*} &amp;amp; \text{if }k=1, \\\\
-1-p_{0}^{*} &amp;amp; \text{if }k=0.\end{cases}$$
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;p&gt;$$f(k;p_{0}^{&lt;em&gt;}) = \begin{cases}p_{0}^{&lt;/em&gt;} &amp;amp; \text{if }k=1, \\
-1-p_{0}^{*} &amp;amp; \text{if }k=0.\end{cases}$$&lt;/p&gt;
-&lt;h3 id=&#34;diagrams&#34;&gt;Diagrams&lt;/h3&gt;
-&lt;p&gt;Academic supports a Markdown extension for diagrams. You can enable this feature by toggling the &lt;code&gt;diagram&lt;/code&gt; option in your &lt;code&gt;config/_default/params.toml&lt;/code&gt; file or by adding &lt;code&gt;diagram: true&lt;/code&gt; to your page front matter.&lt;/p&gt;
-&lt;p&gt;An example &lt;strong&gt;flowchart&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-graph TD
-A[Hard] --&amp;gt;|Text| B(Round)
-B --&amp;gt; C{Decision}
-C --&amp;gt;|One| D[Result 1]
-C --&amp;gt;|Two| E[Result 2]
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;graph TD
-A[Hard] --&amp;gt;|Text| B(Round)
-B --&amp;gt; C{Decision}
-C --&amp;gt;|One| D[Result 1]
-C --&amp;gt;|Two| E[Result 2]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;An example &lt;strong&gt;sequence diagram&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-sequenceDiagram
-Alice-&amp;gt;&amp;gt;John: Hello John, how are you?
-loop Healthcheck
-    John-&amp;gt;&amp;gt;John: Fight against hypochondria
-end
-Note right of John: Rational thoughts!
-John--&amp;gt;&amp;gt;Alice: Great!
-John-&amp;gt;&amp;gt;Bob: How about you?
-Bob--&amp;gt;&amp;gt;John: Jolly good!
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;sequenceDiagram
-Alice-&amp;gt;&amp;gt;John: Hello John, how are you?
-loop Healthcheck
-    John-&amp;gt;&amp;gt;John: Fight against hypochondria
-end
-Note right of John: Rational thoughts!
-John--&amp;gt;&amp;gt;Alice: Great!
-John-&amp;gt;&amp;gt;Bob: How about you?
-Bob--&amp;gt;&amp;gt;John: Jolly good!
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;An example &lt;strong&gt;Gantt diagram&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-gantt
-section Section
-Completed :done,    des1, 2014-01-06,2014-01-08
-Active        :active,  des2, 2014-01-07, 3d
-Parallel 1   :         des3, after des1, 1d
-Parallel 2   :         des4, after des1, 1d
-Parallel 3   :         des5, after des3, 1d
-Parallel 4   :         des6, after des4, 1d
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;gantt
-section Section
-Completed :done,    des1, 2014-01-06,2014-01-08
-Active        :active,  des2, 2014-01-07, 3d
-Parallel 1   :         des3, after des1, 1d
-Parallel 2   :         des4, after des1, 1d
-Parallel 3   :         des5, after des3, 1d
-Parallel 4   :         des6, after des4, 1d
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;An example &lt;strong&gt;class diagram&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-classDiagram
-Class01 &amp;lt;|-- AveryLongClass : Cool
-&amp;lt;&amp;lt;interface&amp;gt;&amp;gt; Class01
-Class09 --&amp;gt; C2 : Where am i?
-Class09 --* C3
-Class09 --|&amp;gt; Class07
-Class07 : equals()
-Class07 : Object[] elementData
-Class01 : size()
-Class01 : int chimp
-Class01 : int gorilla
-class Class10 {
-  &amp;lt;&amp;lt;service&amp;gt;&amp;gt;
-  int id
-  size()
-}
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;classDiagram
-Class01 &amp;lt;|-- AveryLongClass : Cool
-&amp;lt;&amp;lt;interface&amp;gt;&amp;gt; Class01
-Class09 --&amp;gt; C2 : Where am i?
-Class09 --* C3
-Class09 --|&amp;gt; Class07
-Class07 : equals()
-Class07 : Object[] elementData
-Class01 : size()
-Class01 : int chimp
-Class01 : int gorilla
-class Class10 {
-  &amp;lt;&amp;lt;service&amp;gt;&amp;gt;
-  int id
-  size()
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;An example &lt;strong&gt;state diagram&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-stateDiagram
-[*] --&amp;gt; Still
-Still --&amp;gt; [*]
-Still --&amp;gt; Moving
-Moving --&amp;gt; Still
-Moving --&amp;gt; Crash
-Crash --&amp;gt; [*]
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;stateDiagram
-[*] --&amp;gt; Still
-Still --&amp;gt; [*]
-Still --&amp;gt; Moving
-Moving --&amp;gt; Still
-Moving --&amp;gt; Crash
-Crash --&amp;gt; [*]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;todo-lists&#34;&gt;Todo lists&lt;/h3&gt;
-&lt;p&gt;You can even write your todo lists in Academic too:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;- [x] Write math example
-- [x] Write diagram example
-- [ ] Do something else
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Write math example&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Write diagram example&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Do something else&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;tables&#34;&gt;Tables&lt;/h3&gt;
-&lt;p&gt;Represent your data in tables:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;First Header&lt;/th&gt;
-&lt;th&gt;Second Header&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;callouts&#34;&gt;Callouts&lt;/h3&gt;
-&lt;p&gt;Academic supports a &lt;a href=&#34;https://wowchemy.com/docs/content/writing-markdown-latex/#callouts&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;shortcode for callouts&lt;/a&gt;, also referred to as &lt;em&gt;asides&lt;/em&gt;, &lt;em&gt;hints&lt;/em&gt;, or &lt;em&gt;alerts&lt;/em&gt;. By wrapping a paragraph in &lt;code&gt;{{% callout note %}} ... {{% /callout %}}&lt;/code&gt;, it will render as an aside.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% callout note %}}
-A Markdown aside is useful for displaying notices, hints, or definitions to your readers.
-{{% /callout %}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    A Markdown aside is useful for displaying notices, hints, or definitions to your readers.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;h3 id=&#34;spoilers&#34;&gt;Spoilers&lt;/h3&gt;
-&lt;p&gt;Add a spoiler to a page to reveal text, such as an answer to a question, after a button is clicked.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; spoiler text=&amp;quot;Click to view the spoiler&amp;quot; &amp;gt;}}
-You found me!
-{{&amp;lt; /spoiler &amp;gt;}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-2&#34;&gt;
-  &lt;summary&gt;Click to view the spoiler&lt;/summary&gt;
-  &lt;p&gt;You found me!&lt;/p&gt;
+&lt;!-- LaTeX preamble --&gt;
+&lt;p&gt;&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;Table of Contents&lt;/summary&gt;
+  
 &lt;/details&gt;
-&lt;h3 id=&#34;icons&#34;&gt;Icons&lt;/h3&gt;
-&lt;p&gt;Academic enables you to use a wide range of &lt;a href=&#34;https://sourcethemes.com/academic/docs/page-builder/#icons&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;icons from &lt;em&gt;Font Awesome&lt;/em&gt; and &lt;em&gt;Academicons&lt;/em&gt;&lt;/a&gt; in addition to &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/#emojis&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;emojis&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Here are some examples using the &lt;code&gt;icon&lt;/code&gt; shortcode to render icons:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; icon name=&amp;quot;terminal&amp;quot; pack=&amp;quot;fas&amp;quot; &amp;gt;}} Terminal  
-{{&amp;lt; icon name=&amp;quot;python&amp;quot; pack=&amp;quot;fab&amp;quot; &amp;gt;}} Python  
-{{&amp;lt; icon name=&amp;quot;r-project&amp;quot; pack=&amp;quot;fab&amp;quot; &amp;gt;}} R
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;p&gt;
-  &lt;i class=&#34;fas fa-terminal  pr-1 fa-fw&#34;&gt;&lt;/i&gt; Terminal&lt;br&gt;
-
-  &lt;i class=&#34;fab fa-python  pr-1 fa-fw&#34;&gt;&lt;/i&gt; Python&lt;br&gt;
-
-  &lt;i class=&#34;fab fa-r-project  pr-1 fa-fw&#34;&gt;&lt;/i&gt; R&lt;/p&gt;
-&lt;h3 id=&#34;did-you-find-this-page-helpful-consider-sharing-it-&#34;&gt;Did you find this page helpful? Consider sharing it 🙌&lt;/h3&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>An example preprint / working paper</title>
-      <link>https://academic-demo.netlify.app/publication/preprint/</link>
-      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>https://academic-demo.netlify.app/publication/preprint/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code, math, and images&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Display Jupyter Notebooks with Academic</title>
-      <link>https://academic-demo.netlify.app/post/jupyter/</link>
-      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://academic-demo.netlify.app/post/jupyter/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from IPython.core.display import Image
-Image(&#39;https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./index_1_0.png&#34; alt=&#34;png&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&amp;quot;Welcome to Academic!&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;Welcome to Academic!
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;install-python-and-jupyterlab&#34;&gt;Install Python and JupyterLab&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.anaconda.com/distribution/#download-section&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Install Anaconda&lt;/a&gt; which includes Python 3 and JupyterLab.&lt;/p&gt;
-&lt;p&gt;Alternatively, install JupyterLab with &lt;code&gt;pip3 install jupyterlab&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;create-or-upload-a-jupyter-notebook&#34;&gt;Create or upload a Jupyter notebook&lt;/h2&gt;
-&lt;p&gt;Run the following commands in your Terminal, substituting &lt;code&gt;&amp;lt;MY-WEBSITE-FOLDER&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;SHORT-POST-TITLE&amp;gt;&lt;/code&gt; with the file path to your Academic website folder and a short title for your blog post (use hyphens instead of spaces), respectively:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir -p &amp;lt;MY-WEBSITE-FOLDER&amp;gt;/content/post/&amp;lt;SHORT-POST-TITLE&amp;gt;/
-cd &amp;lt;MY-WEBSITE-FOLDER&amp;gt;/content/post/&amp;lt;SHORT-POST-TITLE&amp;gt;/
-jupyter lab index.ipynb
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The &lt;code&gt;jupyter&lt;/code&gt; command above will launch the JupyterLab editor, allowing us to add Academic metadata and write the content.&lt;/p&gt;
-&lt;h2 id=&#34;edit-your-post-metadata&#34;&gt;Edit your post metadata&lt;/h2&gt;
-&lt;p&gt;The first cell of your Jupter notebook will contain your post metadata (&lt;a href=&#34;https://sourcethemes.com/academic/docs/front-matter/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;front matter&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;In Jupter, choose &lt;em&gt;Markdown&lt;/em&gt; as the type of the first cell and wrap your Academic metadata in three dashes, indicating that it is YAML front matter:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: My post&#39;s title
-date: 2019-09-01
+&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Diffusion models seem to have taken the world by storm due to their amazing generative powers. That is not their only
+advantage, however. With a bit of a tongue in the proverbial cheek, statistical methods can be traditionally classified
+as either inflexible (classical stats), computationally expensive (MCMC), or non-analytical (boosted trees). From this
+perspective, &lt;strong&gt;diffusion models&lt;/strong&gt; are a significant outlier since they are extremely flexible, provide access to the full
+posterior (and conditional) distributions, and are computationally less expensive than many of the competing methods.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;general-structure&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;General structure&lt;/h2&gt;
+&lt;div class=&#34;float&#34;&gt;
+&lt;img src=&#34;generative-overview.png&#34; title=&#34;Overview of Generative models&#34; style=&#34;width:70.0%&#34; alt=&#34;An overview of generative models (source)&#34; /&gt;
+&lt;div class=&#34;figcaption&#34;&gt;&lt;em&gt;An overview of generative models&lt;/em&gt;
+(&lt;a href=&#34;https://lilianweng.github.io/posts/2021-07-11-diffusion-models/&#34;&gt;source&lt;/a&gt;)&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Diffusion models are composed of two separate processes, &lt;strong&gt;the forward&lt;/strong&gt; and &lt;strong&gt;the backward&lt;/strong&gt;.&lt;/p&gt;
+&lt;div id=&#34;forward-diffusion&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Forward diffusion&lt;/h3&gt;
+&lt;p&gt;In general - a diffusion process can be characterized by a &lt;em&gt;Markov diffusion kernel&lt;/em&gt; given a final state &lt;span class=&#34;math inline&#34;&gt;\(\pi(x)\)&lt;/span&gt;:&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    q(x_t | x_{t-1}) = T_\pi(x_t | x_{t-1}; \beta_t)
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;Since it’s a length-one Markov process, we have for the full joint: &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    q(x_{t=0:T} ) = q(x_0) \prod_{i=1}^T q(x_i | x_{i-1})
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Usually, we use a Gaussian diffusion, for which the posterior is closed form (c.f. the 1-step update in &lt;em&gt;Kalman filtering&lt;/em&gt;):&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    q(x_t | x_{t-1}) = \mathcal{N}(\sqrt{1 - \beta_t}x_{t-1}, \beta_t \mathbf{I})
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\beta_i\)&lt;/span&gt;s are called the &lt;strong&gt;variance schedule&lt;/strong&gt;, with usually &lt;span class=&#34;math inline&#34;&gt;\(\beta_1 &amp;lt; \beta_2 &amp;lt; ... &amp;lt; \beta_T\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Moreover, due to the property of the Gaussian distribution:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\alpha_t := 1 - \beta_t\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\bar{\alpha}_t := \prod_{s=1}^t \alpha_t\]&lt;/span&gt;&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+q(x_t | x_0) = \mathcal{N}(\sqrt{\bar{\alpha_t}}~x_0, (1 - \alpha_t) \mathbf{I}),
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;meaning any state in the forward process can be expressed knowing &lt;em&gt;just the initial one&lt;/em&gt; and the &lt;em&gt;variance schedule&lt;/em&gt;. In
+general, the theoretical underpinning of &lt;em&gt;Langevin dynamics&lt;/em&gt; guarantees any smooth distribution can be corrupted into
+Gaussian noise, meaning the initial distribution can be almost arbitrarily complex, giving the model its expressive power.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;reverse-diffusion&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Reverse diffusion&lt;/h3&gt;
+&lt;p&gt;The reverse process is characterized by a new transition probability &lt;span class=&#34;math inline&#34;&gt;\(p(x)\)&lt;/span&gt;.
+Its starting point is the stationary distribution at the final time &lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt;:&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    \pi(x_T) := p(x_T)
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;Like before:&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    p(x_{t=T:0}) = p(x_T) \prod_{i=T-1}^1 p(x_i+1 | x_{i})
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;For Gaussian (and binomial), the joint is still in the same family; however, there is no closed-form for the parameters &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\Sigma\)&lt;/span&gt;.
+These need to be estimated, in this case via neural networks.&lt;/p&gt;
+&lt;p&gt;A natural training target is the likelihood of the original data &lt;span class=&#34;math inline&#34;&gt;\(p(x_0)\)&lt;/span&gt; as given by the learned reverse process’ distribution,
+obtained by marginalizing the full joint:
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    p(x_0) = \int_{\mathcal{X}} p(x_{t=T:0}) ~ dx_1 .... dx_T
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;This is computationally intractable! A trick is to use annealed importance sampling - comparing the relative probability of the backward - &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; - and the forward trajectories &lt;span class=&#34;math inline&#34;&gt;\(q\)&lt;/span&gt;, where the latter are known in closed form:&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    p(x_0) = \int_{\mathcal{X}} q(x_{t=1:T}) ~p(x_T)~ \prod_{t=1}^T \frac{p(x_{t-1}|x_t)}{q(x_{t}|x_{t-1})} ~ dx_1 .... dx_T
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;In the limit of very small &lt;span class=&#34;math inline&#34;&gt;\(\beta\)&lt;/span&gt;, both directions become the same.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;training&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Training&lt;/h2&gt;
+&lt;p&gt;We maximize the &lt;strong&gt;expected&lt;/strong&gt; log likelihood of the original data &lt;span class=&#34;math inline&#34;&gt;\(p(x_0)\)&lt;/span&gt; under the original true distribution &lt;span class=&#34;math inline&#34;&gt;\(q(x_0)\)&lt;/span&gt;:&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{aligned}
+    &amp;amp; L(p, q) = \mathbb{E}_{q(x_0)} [p(x_0)] = \int_{\mathcal{X}} q(x_0) ~ \log p(x_T)~ dx_0\\
+    &amp;amp; = -~\mathbb{E}_{q} \left[ \underbrace{D( q(x_T | x_0) || p(x_T))}_{L_T} + \underbrace{\sum_{t=2}^T D( q(x_{t-1} | x_t, x_0) || p(x_{t-1} || x_t))}_{L_{t-1}} - \underbrace{\log p(x_0 | x+1)}_{L_0}   \right]
+\end{aligned}\]&lt;/span&gt;
+&lt;p&gt;It can be &lt;em&gt;lower bounded&lt;/em&gt; by a closed-form expression:&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{aligned}
+    L \geq K = - \sum_{t=2}^T \int q(x_0, x_t) ~ D(q(x_{t-1}|x_{t}, x_{0}) ~||~ p(x_{t-1}|x_{t}))~dx_0,~dx_t\\
+    + H_q(X_T|X_0) - H_q(X_1|X_0) - H_p(X_T),&amp;amp;
+\end{aligned}\]&lt;/span&gt;
+&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; is the K-L divergence and H denotes the (conditional) entropies. Hence maximizing the latter maximizes the
+former.&lt;/p&gt;
+&lt;p&gt;Additionally, conditioning the forward process posteriors on &lt;span class=&#34;math inline&#34;&gt;\(x_0\)&lt;/span&gt; gives us the closed-forms&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+q(x_{t-1}|x_{t}, x_{0}) = \mathcal{N}(\tilde{\mu}_t, \tilde{\beta}_t \mathbf{I})
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\tilde{\mu}_t := \frac{\sqrt{\bar{\alpha}_{t-1}} \beta_t}{1 - \bar{\alpha}_t}~x_0 + \frac{\sqrt{\bar{\alpha}_{t}} (1 - \bar{\alpha}_{t})}{1 - \bar{\alpha}_t}~x_t\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\tilde{\beta}_t := \frac{1 - \bar{\alpha}_{t-1}}{1 - \bar{\alpha}_t} \beta_t\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The goal of training is therefore to &lt;strong&gt;estimate the reverse Markov transition densities&lt;/strong&gt; &lt;span class=&#34;math inline&#34;&gt;\(p(x_{t-1}|x_t)\)&lt;/span&gt;:
+&lt;span class=&#34;math display&#34;&gt;\[\hat{p}(x_{t-1}|x_t) = \underset{p}{\operatorname{argmax}} K\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;As mentioned, in the case of the Gaussian and binomial, the reverse process stays in the same family, therefore the task amounts to
+estimating the parameters.&lt;/p&gt;
+&lt;div id=&#34;variance-schedule&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Variance schedule&lt;/h3&gt;
+&lt;p&gt;Since &lt;span class=&#34;math inline&#34;&gt;\(\beta_t\)&lt;/span&gt; is a free parameter, it can be learned simultaneously with the whole &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; optimization procedure,
+freezing the other variables and optimizing on &lt;span class=&#34;math inline&#34;&gt;\(\beta\)&lt;/span&gt;. Alternatively, the first paper also treated a sequence as a
+hyperparameter and used a simply linearly increasing &lt;span class=&#34;math inline&#34;&gt;\(\beta\)&lt;/span&gt;. This is also the approach of &lt;em&gt;Ho et al.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;estimating-p&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Estimating &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Our goal is to learn the following:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+p(x_{t-1} | x_t) = \mathcal{N}(\mu(x_t, t), \Sigma(x_t, t)), ~~ t \in [T, 0]
+\]&lt;/span&gt;
+which corresponds to estimating &lt;span class=&#34;math inline&#34;&gt;\(\mu(x_t, t), \Sigma(x_t, t)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;For the variance, it is simply set to be isotropic with the diagonal entries either &lt;strong&gt;fixed&lt;/strong&gt; at a constant (either
+&lt;span class=&#34;math inline&#34;&gt;\(\beta_t\)&lt;/span&gt; or &lt;span class=&#34;math inline&#34;&gt;\(\tilde{\beta}_t\)&lt;/span&gt;) or &lt;strong&gt;learned&lt;/strong&gt;. The latter proved to be unstable in Ho et al., but has since been
+successfully implemented.&lt;/p&gt;
+&lt;p&gt;The mean is, of course, learned in all implementations and proceeds as follows: by inspecting the &lt;span class=&#34;math inline&#34;&gt;\(L_{t-1}\)&lt;/span&gt; term in the likelihood in &lt;a href=&#34;#training&#34;&gt;Training&lt;/a&gt;, the minimizing mean can be expressed by the reparametrization:
+&lt;span class=&#34;math display&#34;&gt;\[x_t = \sqrt{\bar{\alpha}_t}~x_0 + \sqrt{1 - \bar{\alpha}_t}~\epsilon \]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\epsilon \sim \mathcal{N}(0, \mathbf{I})\]&lt;/span&gt;&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\mu(x_t, t) = \frac{1}{\sqrt{\alpha_t}} (x_t - \frac{\beta_t}{\sqrt{1 - \bar{\alpha_t}}} \epsilon_{\theta}(x_t, t)),
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;meaning we instead learn the estimator of the &lt;strong&gt;noise&lt;/strong&gt; in the mean term at step &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;: &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_{\theta}(x_t, t))\)&lt;/span&gt; from the state &lt;span class=&#34;math inline&#34;&gt;\(x_t\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;This can be further simplified by setting &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; to be &lt;em&gt;continuous&lt;/em&gt; on &lt;span class=&#34;math inline&#34;&gt;\([1, T]\)&lt;/span&gt; and optimizing the following simplified
+objective for &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_\theta(x_t, t)\)&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+L_{\text{simple}}(\theta) := \mathbb{E}_{t, x_0, \epsilon} \left[\Vert \epsilon - \epsilon_\theta(\sqrt{\bar{\alpha}_t} x_0 + \sqrt{1 - \bar{\alpha}_t} \epsilon, t) \Vert^2\right]
+\end{equation}\]&lt;/span&gt; This can be optimized using standard optimization techniques, such as gradient descent. We can now state
+the two algorithms needed to first, train the noise estimator &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_\theta\)&lt;/span&gt;, and then, obtain a sample from the
+reverse diffusion process: &lt;img src=&#34;ho_algos.png&#34; title=&#34;The two algorithms due to Ho et al.&#34; style=&#34;width:75.0%&#34; alt=&#34;Algorithms due to Ho et al.&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;architecture&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Architecture&lt;/h3&gt;
+&lt;p&gt;Ho et al. used a variation of an U-net called &lt;a href=&#34;https://arxiv.org/abs/1701.05517&#34;&gt;PixelCNN++&lt;/a&gt; to estimate
+&lt;span class=&#34;math inline&#34;&gt;\(\epsilon_{\theta}(x_t, t))\)&lt;/span&gt;:&lt;/p&gt;
+&lt;div class=&#34;float&#34;&gt;
+&lt;img src=&#34;u-net-architecture.png&#34; title=&#34;The original U-net&#34; style=&#34;width:50.0%&#34; alt=&#34;The original U-net&#34; /&gt;
+&lt;div class=&#34;figcaption&#34;&gt;&lt;em&gt;The original U-net&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;float&#34;&gt;
+&lt;img src=&#34;pixelcnn.png&#34; title=&#34;Salimans et al. - PixelCNN++ structure&#34; style=&#34;width:125.0%&#34; alt=&#34;PixelCNN++ structure&#34; /&gt;
+&lt;div class=&#34;figcaption&#34;&gt;&lt;em&gt;PixelCNN++ structure&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;how-does-it-work-in-practice&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;How does it work in practice?&lt;/h2&gt;
+&lt;div id=&#34;example---recovery&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Example - recovery&lt;/h3&gt;
+&lt;div class=&#34;float&#34;&gt;
+&lt;img src=&#34;sohl-dickstein_spiral.png&#34; title=&#34;Spiral distribution recovery&#34; style=&#34;width:80.0%&#34; alt=&#34;Recovery (middle row) of a spiral distribution (top) using a Gaussian diffusion model. The bottom row represents the “drift term”, i.e. the field controlling the mean for the “particles” in the next step of the reverse process.&#34; /&gt;
+&lt;div class=&#34;figcaption&#34;&gt;&lt;em&gt;Recovery (middle row) of a spiral distribution (top) using a Gaussian diffusion model. The bottom row represents the
+“drift term”, i.e. the field controlling the mean for the “particles” in the next step of the reverse
+process.&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example---generation&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Example - generation&lt;/h3&gt;
+&lt;p&gt;Ho et al. used the modified network for both &lt;strong&gt;conditional&lt;/strong&gt; and &lt;strong&gt;unconditional&lt;/strong&gt; generation.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;unconditional generation&lt;/em&gt; was performed by estimating &lt;span class=&#34;math inline&#34;&gt;\(x_0\)&lt;/span&gt; - the end result of the reverse process - from
+initially random &lt;span class=&#34;math inline&#34;&gt;\(x_T\)&lt;/span&gt;. The following figure shows the order in which features crystallize when the &lt;em&gt;initial state is
+itself sampled from various points of the reverse process&lt;/em&gt;. The training dataset was CIFAR10.&lt;/p&gt;
+&lt;div class=&#34;float&#34;&gt;
+&lt;img src=&#34;ho_uncgen.png&#34; title=&#34;Unconditional generation from the reverse process sample&#34; width=&#34;1500&#34; alt=&#34;Unconditional generation from the reverse process sample&#34; /&gt;
+&lt;div class=&#34;figcaption&#34;&gt;&lt;em&gt;Unconditional generation from the reverse process
+sample&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;For &lt;em&gt;conditional generation,&lt;/em&gt; the authors selected a &lt;span class=&#34;math inline&#34;&gt;\(x_t\)&lt;/span&gt; from the actual distribution and sampled from the predictive
+posterior &lt;span class=&#34;math inline&#34;&gt;\(p(x_0|x_t)\)&lt;/span&gt;. The following figure shows the results conditioned on the bottom-right quadrant, for a network
+trained on CelebA-HQ:&lt;/p&gt;
+&lt;div class=&#34;float&#34;&gt;
+&lt;img src=&#34;ho_condgen.png&#34; title=&#34;Conditional generation samples from a given state&#34; width=&#34;1500&#34; alt=&#34;Conditional generation samples from a given state: the earlier the x_t, the more deterministic the outcome.&#34; /&gt;
+&lt;div class=&#34;figcaption&#34;&gt;&lt;em&gt;Conditional generation samples from a given state:&lt;/em&gt; the earlier the &lt;span class=&#34;math inline&#34;&gt;\(x_t\)&lt;/span&gt;, the more deterministic the
+outcome.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;imagen-dall-e-2&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Imagen &amp;amp; DALL-E 2&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2207.12598&#34;&gt;Ho and Salimans&lt;/a&gt; improved the above procedure by introducing the notion of &lt;em&gt;guiding&lt;/em&gt;
+the model during training on labeled data, i.e. estimating &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_\theta(x_t, t ∣ y)\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt; are the labels. The
+crux of the approach is training both on conditional and unconditional objectives at once by randomly setting the class
+label to a null class with some predetermined probability. Likewise, the samples are drawn from a convex combination
+(with the same coefficient) of both &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt;-s.&lt;/p&gt;
+&lt;p&gt;This was used by Nichol et al. in &lt;a href=&#34;https://arxiv.org/abs/2112.10741?s=09&#34;&gt;GLIDE&lt;/a&gt;, which uses information extracted from
+text to do the guiding, combining a transformer with the previously described architecture.&lt;/p&gt;
+&lt;p&gt;This approach has been used to construct &lt;a href=&#34;https://arxiv.org/pdf/2205.11487.pdf&#34;&gt;Imagen&lt;/a&gt;, which uses additional diffusion
+models to up-sample the image created by the guided diffusion process. The text embeddings are provided by a
+&lt;em&gt;pretrained&lt;/em&gt; transformer’s encoder.&lt;/p&gt;
+&lt;div class=&#34;float&#34;&gt;
+&lt;img src=&#34;imagen.png&#34; width=&#34;700&#34; alt=&#34;Imagen structure&#34; /&gt;
+&lt;div class=&#34;figcaption&#34;&gt;&lt;em&gt;Imagen structure&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The other diffusion-based model to make waves recently - DALL-E 2 - uses a bit more complex approach:&lt;/p&gt;
+&lt;div class=&#34;float&#34;&gt;
+&lt;img src=&#34;dalle2.png&#34; title=&#34;DALL-E 2 architecture&#34; alt=&#34;DALL-E 2 architecture&#34; /&gt;
+&lt;div class=&#34;figcaption&#34;&gt;&lt;em&gt;DALL-E 2 architecture&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;First, it re-uses a model called CLIP (Contrastive Language-Image Pre-training) to construct a &lt;em&gt;mapping between captions
+and images&lt;/em&gt; (top of the schematic above). In practice, the net result of this is a &lt;em&gt;joint embedding of text and images&lt;/em&gt;
+in a representation space.&lt;/p&gt;
+&lt;p&gt;In generation, this model is frozen and a version of the GLIDE guided diffusion model is used to generate images
+&lt;strong&gt;starting from the image representation space&lt;/strong&gt; (as opposed to random noise, for instance). As previously, additional
+up-samplers are used in the decoder, as well.&lt;/p&gt;
+&lt;p&gt;To generate from text prompts, we need to map the caption text embeddings to the above mentioned image embeddings, which
+are the starting point for the decoder. This is done with an &lt;em&gt;additional diffusion model&lt;/em&gt; called &lt;strong&gt;the prior&lt;/strong&gt;, which
+generates &lt;em&gt;multiple possible embeddings.&lt;/em&gt; In other words, this is a generative model of the image embeddings given the
+text embeddings. The prior trains a decoder-only transformer to predict the conditional reverse process, as opposed to the U-net
+used in other examples.&lt;/p&gt;
+&lt;div class=&#34;float&#34;&gt;
+&lt;img src=&#34;dalle2_interpolation.png&#34; title=&#34;DALL-E 2: interpolation of the image embedding space&#34; alt=&#34;DALL-E 2: interpolation of the image embedding space by the decoder&#34; /&gt;
+&lt;div class=&#34;figcaption&#34;&gt;&lt;em&gt;DALL-E 2: interpolation of the image embedding
+space by the decoder&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The original paper: &lt;a href=&#34;https://arxiv.org/abs/1503.03585&#34;&gt;Sohl-Dickstein et al. - Deep Unsupervised Learning using Non-equilibrium
+Thermodynamics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Performant implementation: &lt;a href=&#34;https://arxiv.org/abs/2006.11239&#34;&gt;Ho et al. - Denoising Diffusion Probabilistic Models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A good blog post: &lt;a href=&#34;https://lilianweng.github.io/posts/2021-07-11-diffusion-models/&#34;&gt;Weng, Lilian. (Jul 2021). What are diffusion models?
+Lil’Log.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A summary of recent developments:
+&lt;a href=&#34;https://maciejdomagala.github.io/generative_models/2022/06/06/The-recent-rise-of-diffusion-based-models.html&#34; class=&#34;uri&#34;&gt;https://maciejdomagala.github.io/generative_models/2022/06/06/The-recent-rise-of-diffusion-based-models.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;DALL-E 2 initial paper: &lt;a href=&#34;https://arxiv.org/abs/2204.06125&#34;&gt;Ramesh et al. - Hierarchical Text-Conditional Image Generation with CLIP
+Latents&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Related:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Kalman_filter&#34;&gt;The Kalman filter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../uploads/leban_andrej%20-%20continuous%20time%20kalman%20filter.pdf&#34;&gt;My presentation on the Continuous-time Kalman
+filter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://arxiv.org/abs/1601.00670&#34;&gt;Blei, Kucukelbir, McAuliffe - Variational Inference: A Review for Statisticians&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>New publication, projects</title>
+      <link>https://andleb.netlify.app/post/new-publication-projects/</link>
+      <pubDate>Sun, 15 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/post/new-publication-projects/</guid>
+      <description>&lt;p&gt;Given that the semester&amp;rsquo;s over, I have finally gotten around to updating the site.&lt;/p&gt;
+&lt;p&gt;We have a &lt;a href=&#34;https://andleb.netlify.app/publication/bayesiantranslators/&#34;&gt;pre-print&lt;/a&gt; out based on the work I did during my internship last summer.
+It examines the problem of inferring the characteristics of different people involved in the process of translating and
+reviewing text by using Hierarchical Bayesian Models. Specifically, I came to the idea of using zero-inflated and fat-tailed
+distributions to model the number of mistakes; this was influenced both by the statistical properties of the raw data
+and by the peculiarities of the process of translation.&lt;/p&gt;
+&lt;p&gt;Additionally, I have made public the repositories for two of the final projects I did this year at UC Berkeley:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://andleb.netlify.app/project/ganising/&#34;&gt;ganIsing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://andleb.netlify.app/project/230afinal/&#34;&gt;230Afinal&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(I might make public more in the future&amp;hellip;)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Bayesian approach to translators&#39; reliability assessment</title>
+      <link>https://andleb.netlify.app/publication/bayesiantranslators/</link>
+      <pubDate>Tue, 12 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/publication/bayesiantranslators/</guid>
+      <description>&lt;p&gt;NOTE: This paper stems from the work I did as a Machine Learning intern at &lt;a href=&#34;https://translated.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Translated&lt;/a&gt;
+in Rome during the summer of 2021.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A simple GMAT practice set generator</title>
+      <link>https://andleb.netlify.app/post/a-simple-gmat-practice-set-generator/</link>
+      <pubDate>Wed, 05 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/post/a-simple-gmat-practice-set-generator/</guid>
+      <description>
 
-# Put any other Academic metadata here...
----
+
+&lt;p&gt;&lt;em&gt;NOTE: This is a migration of an old post from my &lt;a href=&#34;https://andleb1.wordpress.com/2020/03/08/a-simple-gmat-practice-set-generator/&#34;&gt;previous blog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I recently sat for the GMAT. To practice smarter, I came up with a simple &lt;em&gt;Official Guide 2020&lt;/em&gt; problem set generator in Python.
+The motivation came from my dissatisfaction with available solutions, for example, the solution you get by registering the book online.
+Some don’t allow you to narrow the problems down by sub-category, others aren’t random generators or don’t keep track of done problems.
+On the other hand, using my simple generator, you can still input the answers in any online system and thus take advantage of any statistics offered.&lt;/p&gt;
+&lt;p&gt;The code and more details at: &lt;a href=&#34;https://github.com/andleb/set_generator&#34; class=&#34;uri&#34;&gt;https://github.com/andleb/set_generator&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to backup git repositories</title>
+      <link>https://andleb.netlify.app/post/how-to-backup-git-repositories/</link>
+      <pubDate>Wed, 05 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/post/how-to-backup-git-repositories/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;em&gt;NOTE: This is a migration of an old post from my previous blog.&lt;/em&gt;
+&lt;!-- ](https://andleb1.wordpress.com/2019/09/29/how-to-backup-git-repositories/)* --&gt;&lt;/p&gt;
+&lt;p&gt;In this post I’d like to briefly sketch my personal setup for git repositories, focusing on their backup.&lt;/p&gt;
+&lt;div id=&#34;repository-architecture-overview&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Repository architecture overview&lt;/h1&gt;
+&lt;p&gt;Generally, each repository on my desktop system will have at least two remotes. The first, the ubiquitous &lt;em&gt;origin&lt;/em&gt;, will be located inside an encrypted folder that is mounted inside the &lt;em&gt;Dropbox&lt;/em&gt; directory and hence automatically synced to the cloud. This setup is replicated across all my other machines; its setup could be a topic of a future post.&lt;/p&gt;
+&lt;p&gt;The second, which I usually name &lt;em&gt;backup&lt;/em&gt;, is located on a separate hard drive reserved for this purpose. It mirrors the whole repository, which is achieved using:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git push --mirror backup&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;on the first-time push.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;using-git-aliases-to-sync-the-backup-on-each-push&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Using git aliases to sync the backup on each push&lt;/h1&gt;
+&lt;p&gt;Since this repository is (hopefully) never pulled from, but only kept up to date with an acceptable state of the working repository,
+it is therefore convenient to avoid having to push to it manually. For this purpose I set up a &lt;em&gt;git alias&lt;/em&gt; in my &lt;code&gt;.gitconfig&lt;/code&gt;,
+which tries to push to all remotes of a particular repository.
+In the case of the aforementioned &lt;em&gt;origin&lt;/em&gt;, this command will naturally fail on the occasions where the paths have diverged.
+This I let happen and move on, since the motto is &lt;em&gt;“fast–forward if possible”&lt;/em&gt;.
+Due to the nature of the &lt;em&gt;backup&lt;/em&gt; repository, however, pushing to it should never fail:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;[alias]
+    ...
+    pushallbr = !&amp;quot;git remote -v | grep -v &amp;#39;github&amp;#39; | grep -Eo ^\\w+&amp;#39;|\
+     xargs -L1 -I R git push R&amp;quot;
+    ...&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;“pushallbr”&lt;/em&gt; stands for &lt;em&gt;“push all branches”&lt;/em&gt;, one can of course pick a different alias.
+Note that I filter out &lt;em&gt;github&lt;/em&gt; repositories explicitly (the -v flag in &lt;code&gt;grep&lt;/code&gt; inverts the match).
+The purpose of this command is just syncing the local repositories, for the ones on github I want to retain manual control.
+In my workflow I usually use this command over the common push origin master and thus sync the backup “automatically”.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;syncing-all-sub-directories&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Syncing all sub-directories&lt;/h1&gt;
+&lt;p&gt;Having set up our backup repository and added an alias that syncs it, an useful thing to have would be a shell
+script that descends into a hierarchy of repositories and tries to sync them all:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;#! /bin/bash
+{find . -maxdepth 8 -type d -exec bash -c &amp;quot;git --git-dir={}/.git --work-tree=$PWD/{} pushallbr&amp;quot; \;} 2&amp;gt;/dev/null
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Edit the metadata of your post, using the &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;documentation&lt;/a&gt; as a guide to the available options.&lt;/p&gt;
-&lt;p&gt;To set a &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#featured-image&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;featured image&lt;/a&gt;, place an image named &lt;code&gt;featured&lt;/code&gt; into your post&amp;rsquo;s folder.&lt;/p&gt;
-&lt;p&gt;For other tips, such as using math, see the guide on &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;writing content with Academic&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;convert-notebook-to-markdown&#34;&gt;Convert notebook to Markdown&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;jupyter nbconvert index.ipynb --to markdown --NbConvertApp.output_files_dir=.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
-&lt;p&gt;This post was created with Jupyter. The orginal files can be found at &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Things to note:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Since we expect the command to fail in some (or many) cases without adverse side effects,
+we ignore the error messages by redirecting them to &lt;code&gt;/dev/null&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;To be able to use a complex git alias within a &lt;code&gt;find ... -exec&lt;/code&gt; command,
+one must invoke the whole thing as an inline script via &lt;code&gt;bash -c &#34;...&#34;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to call all the functions in a Python file on an object</title>
+      <link>https://andleb.netlify.app/post/how-to-call-all-the-functions-in-a-python-file-on-an-object/</link>
+      <pubDate>Wed, 05 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/post/how-to-call-all-the-functions-in-a-python-file-on-an-object/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;em&gt;NOTE: This is a migration of an old post from my previous blog.&lt;/em&gt;
+&lt;!-- (https://andleb1.wordpress.com/2020/05/28/how-to-call-all-the-functions-in-a-python-file-on-an-object/)* --&gt;&lt;/p&gt;
+&lt;p&gt;Recently, I’ve been playing around with some competitions on Kaggle. Given that an inescapable fact of Machine Learning is &lt;em&gt;Feature Selection&lt;/em&gt;,
+I’ve been finding myself in the situation of having to call a dozen or more functions that add synthetic features,
+infer missing values, etc., on the same &lt;code&gt;Pandas DataFrame&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The following code snippet will call every function in its &lt;code&gt;.py&lt;/code&gt; file but itself on the object,
+using tail recursion (nested helper function &lt;code&gt;recCall&lt;/code&gt;):&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import inspect
+import sys
+ 
+import pandas as pd
+ 
+def addAllFeatures(data: pd.DataFrame):
+    currFunc  = inspect.getframeinfo(inspect.currentframe()).function
+    functions = [obj for name, obj in
+                 inspect.getmembers(sys.modules[__name__])
+                 if (inspect.isfunction(obj) and name != currFunc)]
+ 
+    def recCall(modifiedData, remFuncs):
+        if len(remFuncs) == 0:
+            return modifiedData
+         
+        return recCall(remFuncs[0](modifiedData), remFuncs[1:])
+ 
+    return recCall(data, functions)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For this specific example, the general form of the feature-adding functions is:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;def addFeature(data: pd.DataFrame, *args, **kwargs):
+     
+    # add the feature ...
+     
+    return data&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Also notable is the fact that the data gets modified between calls of the recursion;
+if your features depend on each other, then the &lt;code&gt;functions&lt;/code&gt; list would need to be in the correct dependency order.
+Determining this can, however, quickly become non-trivial.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The GitHub’s Arctic Code Vault</title>
+      <link>https://andleb.netlify.app/post/the-github-s-arctic-code-vault/</link>
+      <pubDate>Wed, 05 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/post/the-github-s-arctic-code-vault/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;em&gt;NOTE: This is a migration of an old post from my previous blog.&lt;/em&gt;
+&lt;!-- https://andleb1.wordpress.com/2020/10/02/the-githubs-arctic-code-vault/)* --&gt;&lt;/p&gt;
+&lt;p&gt;Something extremely &lt;em&gt;cool&lt;/em&gt; happened to two of my GitHub repositories (please pardon the pun).
+Namely, they were included in Github’s Arctic Vault Archive program.&lt;/p&gt;
+&lt;p&gt;In short, GitHub has partnered with a Norwegian company to write some of the repositories to special,
+durable film reels and deposit them 250 meters underground in an abandoned coal mine in the remote &lt;a href=&#34;https://en.wikipedia.org/wiki/Svalbard&#34;&gt;Svalbard islands&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;All in all, about 200 3500-foot (1km) reels of film were thus deposited.&lt;/p&gt;
+&lt;p&gt;Given how often we hear the familiar complaint of the supposed transience of modern products,
+it is uplifting to see a company take a concrete action to remedy this.
+As for myself, I am deeply honored to have something that I created preserved for posterity.&lt;/p&gt;
+&lt;iframe width=&#34;728&#34; height=&#34;410&#34; src=&#34;https://www.youtube.com/embed/fzI9FNjXQ0o&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; 
+autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>New blog format</title>
+      <link>https://andleb.netlify.app/post/new-blog-format/</link>
+      <pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/post/new-blog-format/</guid>
+      <description>
+
+
+&lt;p&gt;Since Wordpress was just annoying enough for typesetting math &amp;amp; code to dissuade me from posting regularly, I have decided to migrate to &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34;&gt;blogdown&lt;/a&gt;.
+&lt;!-- My old blog can be found [here](https://andleb1.wordpress.com/). --&gt;&lt;/p&gt;
+&lt;p&gt;I will, however, move over some of the posts there.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ganIsing</title>
+      <link>https://andleb.netlify.app/project/ganising/</link>
+      <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/project/ganising/</guid>
+      <description>&lt;p&gt;This is my final project for &lt;em&gt;STAT241 / CS281A: Statistical Learning Theory&lt;/em&gt; at UC Berkeley in Fall 2021.&lt;/p&gt;
+&lt;p&gt;Given that I&amp;rsquo;ve gotten out of Physics just about when the Deep Learning &amp;ldquo;revolution&amp;rdquo; hit the field, it was a great reason to try in person how generative adversarial networks can replicate results obtained by time-consuming Monte Carlo simulation, something I am deeply familiar with.&lt;/p&gt;
+&lt;p&gt;The goal of this project was two-fold: to examine the approach on a classic example - the 2D Ising model, and to provide a brief (the final report linked above was limited to 10 pages) overview of the use of GANs in general.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Slides</title>
-      <link>https://academic-demo.netlify.app/slides/example/</link>
+      <link>https://andleb.netlify.app/slides/example/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://academic-demo.netlify.app/slides/example/</guid>
+      <guid>https://andleb.netlify.app/slides/example/</guid>
       <description>&lt;h1 id=&#34;create-slides-in-markdown-with-wowchemy&#34;&gt;Create slides in Markdown with Wowchemy&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://wowchemy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wowchemy&lt;/a&gt; | &lt;a href=&#34;https://owchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -735,18 +612,34 @@ $$&lt;/p&gt;
     </item>
     
     <item>
-      <title>External Project</title>
-      <link>https://academic-demo.netlify.app/project/external-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://academic-demo.netlify.app/project/external-project/</guid>
-      <description></description>
+      <title>License</title>
+      <link>https://andleb.netlify.app/license/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      <guid>https://andleb.netlify.app/license/</guid>
+      <description>&lt;p&gt;My &lt;a href=&#34;https://andleb.netlify.app/post/&#34;&gt;blog posts&lt;/a&gt; are released under a &lt;a href=&#34;http://creativecommons.org/licenses/by-sa/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Creative Commons Attribution-ShareAlike 4.0 International License&lt;/a&gt;.&lt;/p&gt;
+&lt;center&gt;
+&lt;i class=&#34;fab fa-creative-commons fa-2x&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-creative-commons-by fa-2x&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-creative-commons-sa fa-2x&#34;&gt;&lt;/i&gt;
+&lt;/center&gt;
+</description>
     </item>
     
     <item>
-      <title>Internal Project</title>
-      <link>https://academic-demo.netlify.app/project/internal-project/</link>
+      <title>License</title>
+      <link>https://andleb.netlify.app/terms/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      <guid>https://andleb.netlify.app/terms/</guid>
+      <description>&lt;p&gt;My &lt;a href=&#34;https://andleb.netlify.app/post/&#34;&gt;blog posts&lt;/a&gt; are released under a &lt;a href=&#34;http://creativecommons.org/licenses/by-sa/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Creative Commons Attribution-ShareAlike 4.0 International License&lt;/a&gt;.&lt;/p&gt;
+&lt;center&gt;
+&lt;i class=&#34;fab fa-creative-commons fa-2x&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-creative-commons-by fa-2x&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-creative-commons-sa fa-2x&#34;&gt;&lt;/i&gt;
+&lt;/center&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Example Project</title>
+      <link>https://andleb.netlify.app/project/example/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://academic-demo.netlify.app/project/internal-project/</guid>
+      <guid>https://andleb.netlify.app/project/example/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
 &lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
@@ -756,49 +649,71 @@ $$&lt;/p&gt;
     </item>
     
     <item>
-      <title>An example journal article</title>
-      <link>https://academic-demo.netlify.app/publication/journal-article/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>https://academic-demo.netlify.app/publication/journal-article/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code, math, and images&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>An example conference paper</title>
-      <link>https://academic-demo.netlify.app/publication/conference-paper/</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
-      <guid>https://academic-demo.netlify.app/publication/conference-paper/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code, math, and images&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <title>Time-dependent current through a quantum dot in the presence of a voltage probe</title>
+      <link>https://andleb.netlify.app/publication/dipoma/</link>
+      <pubDate>Sat, 05 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/publication/dipoma/</guid>
+      <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://academic-demo.netlify.app/admin/config.yml</link>
+      <link>https://andleb.netlify.app/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://academic-demo.netlify.app/admin/config.yml</guid>
+      <guid>https://andleb.netlify.app/about/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://andleb.netlify.app/admin/config.yml</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/admin/config.yml</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://andleb.netlify.app/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/contact/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>230A final</title>
+      <link>https://andleb.netlify.app/project/230afinal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/project/230afinal/</guid>
+      <description>&lt;p&gt;This is my final project for &lt;em&gt;STAT230A: Linear Models&lt;/em&gt; at UC Berkeley in Spring 2022, done jointly with &lt;a href=&#34;https://ischmidt20.github.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Isaac Schmidt&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The goal was to replicate the findings of &lt;a href=&#34;https://www.aeaweb.org/articles?id=10.1257/aer.102.4.1508&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Michalopoulos: The Origins of Ethnolinguistic Diversity&lt;/a&gt;. The project took an additional dimension since we couldn&amp;rsquo;t obtain some of the data used in the paper - the &lt;a href=&#34;https://www.worldgeodatasets.com/language/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;WLMS dataset&lt;/a&gt;, prompting us to recreate a portion of the paper using the &lt;a href=&#34;https://icr.ethz.ch/data/greg/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GREG dataset&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The main finding of the paper, which also bore out in our re-analysis using the alternative dataset, is that the &lt;em&gt;variation&lt;/em&gt; in the elevation and in the land quality (see the map above) are the two most decisive factors in driving a region&amp;rsquo;s ethnolinguistic diversity.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>derivatives</title>
+      <link>https://andleb.netlify.app/project/derivatives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/project/derivatives/</guid>
+      <description>&lt;p&gt;A few years back, I undertook a significant study of mathematical finance. I chiefly followed M. Joshi&amp;rsquo;s &lt;a href=&#34;https://www.amazon.com/gp/product/0521514088&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Concepts and Practice of Mathematical Finance&lt;/a&gt; and &lt;a href=&#34;https://www.amazon.com/gp/product/0987122800&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;More Mathematical Finance&lt;/a&gt;.
+Since the companion practical textbook, &lt;a href=&#34;https://www.amazon.com/gp/product/0521721628&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;C++ Design Patterns and Derivatives Pricing&lt;/a&gt;,
+was based on outdated, pre-&lt;code&gt;C++11&lt;/code&gt; paradigms, and the author has sadly passed away, I decided to rewrite the latter in modern C++.
+The goal was to keep the original spirit while adding advanced functionality.
+I hope that other people studying from the same sources find the project useful, and I have thus, in a small way, helped keep the book relevant.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Diploma Thesis in Mathematical Physics</title>
+      <link>https://andleb.netlify.app/project/diploma/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/project/diploma/</guid>
+      <description>&lt;p&gt;This is the thesis for my Diploma (Master&amp;rsquo;s and Bachelor&amp;rsquo;s combined) in Mathematical Physics at the University of Ljubljana. It was advised by dr. Tomaž Rejec from the Department of Theoretical Physics, Jožef Stefan Institute.&lt;/p&gt;
+&lt;p&gt;The work is an original examination of the effects that a coupled voltage probe has on the current flowing through a quantum dot. This was done by numerically simulating the problem from first principles (i.e. from a version of Schrödinger&amp;rsquo;s equation). The main challenge was to ensure that the voltage on the probe was set just so there was no current flowing in or out of it, &lt;em&gt;while&lt;/em&gt; the system was being integrated - i.e. without knowing what the actual currents at that step were.&lt;/p&gt;
+&lt;p&gt;The document attached significantly compresses the theoretical background of the thesis (based on the Non-Equilibrium Green&amp;rsquo;s Functions formalism - NEGF), which is to be found in the &lt;a href=&#34;https://journals.aps.org/prb/abstract/10.1103/PhysRevB.72.035308&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;referenced works&lt;/a&gt; since it falls outside of the Diploma program and the recommended Diploma thesis format.&lt;/p&gt;
+&lt;p&gt;(&lt;a href=&#34;https://repozitorij.uni-lj.si/IzpisGradiva.php?id=97516&amp;amp;lang=eng&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;University of Ljubljana Repository reference page&lt;/a&gt;)&lt;/p&gt;
+</description>
     </item>
     
   </channel>

@@ -43,6 +43,7 @@
   
 
   
+    <meta name="google-site-verification" content="google-site-verification=oJUt4qEgz1nbEKcvDXzsR0LNbHNPGcPECa2xegOaWp8" />
   
   
   
@@ -53,7 +54,7 @@
   
   
 
-  <meta name="author" content="Andrej Leban" />
+  
 
   
   
@@ -63,7 +64,7 @@
   <meta name="description" content="" />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://academic-demo.netlify.app/courses/" />
+  <link rel="alternate" hreflang="en-us" href="https://andleb.netlify.app/courses/" />
 
   
   
@@ -72,6 +73,9 @@
   
 
   
+  
+    
+    <script src="/js/mathjax-config.js"></script>
   
 
   
@@ -83,29 +87,29 @@
   
     
     
-
-    
-    
-    
-    
-      
-      
-    
-    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
     
     
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
       
     
     
       
       
-        
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
-        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/monokai-sublime.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/monokai-sublime.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
       
     
 
@@ -220,17 +224,9 @@
 
       
       
-        
-      
 
       
-    
-      
-      
-
-      
-      
-
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
       
@@ -241,6 +237,14 @@
 
       
     
+      
+      
+
+      
+      
+
+      
+    
   
 
   
@@ -248,27 +252,66 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.512574799414e7d36471486881070b0f.css" />
-
-  
-
-
-
-  
-
-  
+  <link rel="stylesheet" href="/css/wowchemy.cd9e9a3a9af953d5551c8bdbe43c9303.css" />
 
   
 
 
 
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-228705789-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-228705789-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
   
   
   
 
   
-    <link rel="alternate" href="/courses/index.xml" type="application/rss+xml" title="Academic" />
+    <link rel="alternate" href="/courses/index.xml" type="application/rss+xml" title="Andrej&#39;s thoughts" />
   
 
   
@@ -278,7 +321,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://academic-demo.netlify.app/courses/" />
+  <link rel="canonical" href="https://andleb.netlify.app/courses/" />
 
   
   
@@ -300,15 +343,16 @@
   
   <meta property="twitter:card" content="summary" />
   
-  <meta property="og:site_name" content="Academic" />
-  <meta property="og:url" content="https://academic-demo.netlify.app/courses/" />
-  <meta property="og:title" content="Courses | Academic" />
-  <meta property="og:description" content="" /><meta property="og:image" content="https://academic-demo.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" />
-    <meta property="twitter:image" content="https://academic-demo.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+    <meta property="twitter:site" content="@anleb1" />
+    <meta property="twitter:creator" content="@anleb1" />
+  
+  <meta property="og:site_name" content="Andrej&#39;s thoughts" />
+  <meta property="og:url" content="https://andleb.netlify.app/courses/" />
+  <meta property="og:title" content="Courses taken at UC Berkeley | Andrej&#39;s thoughts" />
+  <meta property="og:description" content="" /><meta property="og:image" content="https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
-      <meta property="og:updated_time" content="2021-01-24T00:00:00&#43;00:00" />
-    
   
 
   
@@ -323,7 +367,7 @@
 
 
 
-  <title>Courses | Academic</title>
+  <title>Courses taken at UC Berkeley | Andrej&#39;s thoughts</title>
 </head>
 
 
@@ -402,7 +446,7 @@
 
       
       <div class="d-none d-lg-inline-flex">
-        <a class="navbar-brand" href="/">Academic</a>
+        <a class="navbar-brand" href="/">Andrej&#39;s thoughts</a>
       </div>
       
 
@@ -415,7 +459,7 @@
 
       
       <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-        <a class="navbar-brand" href="/">Academic</a>
+        <a class="navbar-brand" href="/">Andrej&#39;s thoughts</a>
       </div>
       
 
@@ -448,17 +492,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#about"><span>Demo</span></a>
+            <a class="nav-link " href="/post"><span>Posts</span></a>
           </li>
 
           
@@ -485,17 +522,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#posts"><span>Posts</span></a>
+            <a class="nav-link " href="/publication"><span>Publications</span></a>
           </li>
 
           
@@ -522,91 +552,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#projects"><span>Projects</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#talks"><span>Talks</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#featured"><span>Publications</span></a>
+            <a class="nav-link " href="/project"><span>Projects</span></a>
           </li>
 
           
@@ -663,17 +612,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+            <a class="nav-link " href="/about"><span>About</span></a>
           </li>
 
           
@@ -760,7 +702,7 @@
     
   
 <div class="universal-wrapper pt-3">
-  <h1>Courses</h1>
+  <h1>Courses taken at UC Berkeley</h1>
 
   
 
@@ -771,101 +713,50 @@
 
 <div class="universal-wrapper">
   
-    <div class="article-style"><p>I teach the following courses:</p>
+    <div class="article-style"><p>(Cumulative GPA: 3.97)</p>
+<ul>
+<li><a href="https://classes.berkeley.edu/content/2021-fall-stat-215a-001-lec-001" target="_blank" rel="noopener">STAT 215A: Statistical Models I</a> (Stat. PhD core)</li>
+</ul>
+<ul>
+<li><a href="https://classes.berkeley.edu/content/2021-fall-compsci-c281a-001-lec-001" target="_blank" rel="noopener">CS281/STAT241A Statistical Learning Theory</a></li>
+</ul>
+<ul>
+<li><a href="https://classes.berkeley.edu/content/2021-fall-indeng-262a-001-lec-001" target="_blank" rel="noopener">INDENG 262A: Mathematical Programming I</a> (IEOR PhD core)</li>
+</ul>
+<ul>
+<li><a href="http://classes.berkeley.edu/content/2021-fall-stat-201a-001-lec-001" target="_blank" rel="noopener">STAT 201A: Introduction to Probability at an Advanced Level</a></li>
+</ul>
+<ul>
+<li><a href="https://classes.berkeley.edu/content/2021-fall-stat-201b-001-lec-001" target="_blank" rel="noopener">STAT 201B: Introduction to Statistics at an Advanced Level</a></li>
+</ul>
+<ul>
+<li><a href="https://classes.berkeley.edu/content/2022-spring-stat-248-001-lec-001" target="_blank" rel="noopener">STAT 248: Analysis of Time Series</a></li>
+</ul>
+<ul>
+<li><a href="https://classes.berkeley.edu/content/2021-spring-stat-230a-001-lec-001" target="_blank" rel="noopener">STAT 230: Linear Models</a></li>
+</ul>
+<ul>
+<li><a href="https://classes.berkeley.edu/content/2022-spring-stat-222-001-sem-001" target="_blank" rel="noopener">STAT 222: Masters of Statistics Capstone Project</a></li>
+</ul>
+<ul>
+<li><a href="https://classes.berkeley.edu/content/2022-spring-compsci-282a-001-lec-001" target="_blank" rel="noopener">CS 282A: Designing, Visualizing and Understanding Deep Neural Networks</a> (audited)</li>
+</ul>
+<ul>
+<li><a href="https://classes.berkeley.edu/content/2022-fall-stat-210a-001-lec-001" target="_blank" rel="noopener">STAT 210A: Theoretical Statistics</a> (Stat. PhD core)</li>
+</ul>
+<ul>
+<li><a href="https://classes.berkeley.edu/content/2022-fall-stat-256-001-lec-001" target="_blank" rel="noopener">STAT 256: Causal Inference</a></li>
+</ul>
+<ul>
+<li><a href="https://classes.berkeley.edu/content/2022-fall-compsci-294-214-lec-214" target="_blank" rel="noopener">CS 294 214: Efficient Algorithms and Computational Intractability in Statistics</a></li>
+</ul>
+<ul>
+<li><a href="https://classes.berkeley.edu/content/2022-fall-eleng-229a-001-lec-001" target="_blank" rel="noopener">ELENG 229A: Information Theory and Coding</a> (audited)</li>
+</ul>
 </div>
   
 
   
-  
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/courses/example/" >📊 Learn Data Science</a>
-    </div>
-
-    
-    <a href="/courses/example/"  class="summary-link">
-      <div class="article-style">
-        An example of using Wowchemy&rsquo;s Book layout for publishing online courses.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    Jan 24, 2021
-  </span>
-  
-
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/courses/example/" >
-      <img src="/courses/example/featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_150x0_resize_q75_h2_lanczos.webp" height="100" width="150"
-           alt="📊 Learn Data Science" loading="lazy">
-    </a>
-    
-  </div>
-</div>
-
   
 
   
@@ -885,6 +776,14 @@
 
   
 
+  
+  <p class="powered-by">
+    
+    
+      
+      <a href="/terms/">License</a>
+    
+  </p>
   
 
   
@@ -960,6 +859,8 @@
       
 
       
+        <script src="https://cdn.jsdelivr.net/gh/mermaid-js/mermaid@v8.8.4/dist/mermaid.min.js" integrity="sha512-+TNmhaRJf3jyYHTpzEq/5I6b+aGyhzWb21mGdHAjxSGSYwxN9Grug3Y3B9qVxWfKKY8MscE/6mr9walWvFLFvQ==" crossorigin="anonymous" title="mermaid"></script>
+      
 
       
         
@@ -971,6 +872,12 @@
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/python.min.js" crossorigin="anonymous"></script>
         
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/cpp.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/cmake.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/bash.min.js" crossorigin="anonymous"></script>
         
       
 

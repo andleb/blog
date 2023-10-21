@@ -43,6 +43,7 @@
   
 
   
+    <meta name="google-site-verification" content="google-site-verification=oJUt4qEgz1nbEKcvDXzsR0LNbHNPGcPECa2xegOaWp8" />
   
   
   
@@ -53,7 +54,7 @@
   
   
 
-  <meta name="author" content="Andrej Leban" />
+  
 
   
   
@@ -63,7 +64,7 @@
   <meta name="description" content="" />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://academic-demo.netlify.app/" />
+  <link rel="alternate" hreflang="en-us" href="https://andleb.netlify.app/" />
 
   
   
@@ -72,6 +73,9 @@
   
 
   
+  
+    
+    <script src="/js/mathjax-config.js"></script>
   
 
   
@@ -82,6 +86,8 @@
   
   
     
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
@@ -118,10 +124,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -136,10 +138,8 @@
     
       
       
-        
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
-        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/monokai-sublime.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/monokai-sublime.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
       
     
 
@@ -254,9 +254,9 @@
 
       
       
-        
-      
 
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
       
@@ -282,10 +282,49 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.512574799414e7d36471486881070b0f.css" />
+  <link rel="stylesheet" href="/css/wowchemy.cd9e9a3a9af953d5551c8bdbe43c9303.css" />
 
   
 
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-228705789-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-228705789-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
 
 
   
@@ -304,7 +343,7 @@
   
 
   
-    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Academic" />
+    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Andrej&#39;s thoughts" />
   
 
   
@@ -314,7 +353,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://academic-demo.netlify.app/" />
+  <link rel="canonical" href="https://andleb.netlify.app/" />
 
   
   
@@ -336,14 +375,17 @@
   
   <meta property="twitter:card" content="summary" />
   
-  <meta property="og:site_name" content="Academic" />
-  <meta property="og:url" content="https://academic-demo.netlify.app/" />
-  <meta property="og:title" content="Academic" />
-  <meta property="og:description" content="" /><meta property="og:image" content="https://academic-demo.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" />
-    <meta property="twitter:image" content="https://academic-demo.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+    <meta property="twitter:site" content="@anleb1" />
+    <meta property="twitter:creator" content="@anleb1" />
+  
+  <meta property="og:site_name" content="Andrej&#39;s thoughts" />
+  <meta property="og:url" content="https://andleb.netlify.app/" />
+  <meta property="og:title" content="Andrej&#39;s thoughts" />
+  <meta property="og:description" content="" /><meta property="og:image" content="https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
-      <meta property="og:updated_time" content="2030-06-01T13:00:00&#43;00:00" />
+      <meta property="og:updated_time" content="2023-07-01T00:00:00&#43;00:00" />
     
   
 
@@ -355,10 +397,10 @@
   "@type": "WebSite",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://academic-demo.netlify.app/?q={search_term_string}",
+    "target": "https://andleb.netlify.app/?q={search_term_string}",
     "query-input": "required name=search_term_string"
   },
-  "url": "https://academic-demo.netlify.app/"
+  "url": "https://andleb.netlify.app/"
 }
 </script>
 
@@ -373,7 +415,7 @@
 
 
 
-  <title>Academic</title>
+  <title>Andrej&#39;s thoughts</title>
 </head>
 
 
@@ -452,7 +494,7 @@
 
       
       <div class="d-none d-lg-inline-flex">
-        <a class="navbar-brand" href="/">Academic</a>
+        <a class="navbar-brand" href="/">Andrej&#39;s thoughts</a>
       </div>
       
 
@@ -465,7 +507,7 @@
 
       
       <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-        <a class="navbar-brand" href="/">Academic</a>
+        <a class="navbar-brand" href="/">Andrej&#39;s thoughts</a>
       </div>
       
 
@@ -498,17 +540,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#about" data-target="#about"><span>Demo</span></a>
+            <a class="nav-link " href="/post"><span>Posts</span></a>
           </li>
 
           
@@ -535,17 +570,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#posts" data-target="#posts"><span>Posts</span></a>
+            <a class="nav-link " href="/publication"><span>Publications</span></a>
           </li>
 
           
@@ -572,91 +600,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#projects" data-target="#projects"><span>Projects</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#talks" data-target="#talks"><span>Talks</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#featured" data-target="#featured"><span>Publications</span></a>
+            <a class="nav-link " href="/project"><span>Projects</span></a>
           </li>
 
           
@@ -713,17 +660,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#contact" data-target="#contact"><span>Contact</span></a>
+            <a class="nav-link " href="/about"><span>About</span></a>
           </li>
 
           
@@ -799,8 +739,6 @@
 
 
 
-
-
   
 <span class="js-widget-page d-none"></span>
 
@@ -815,973 +753,6 @@
 
 
 
-
-  
-  
-  
-  
-
-  
-
-  
-    
-    
-  
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-  <section id="hero" class="home-section wg-hero dark fullscreen"  >
-   <div class="home-section-bg " style="background-image: linear-gradient(90deg, #004ba0, #1976d2);">
-     
-   </div>
-    <div class="container">
-
-    
-
-      
-
-
-
-
-<div class="row">
-  <div class="col-12 col-md-6 text-center text-md-left">
-
-
-    
-      <h1 class="hero-title">Hugo Academic Theme</h1>
-    
-
-    
-      <div class="hero-lead"><p><strong>The FREE, Hugo-based open source website builder and template trusted by 500,000+ sites.</strong></p>
-<p><strong>Build anything with widgets</strong> - from landing pages, knowledge bases, and courses to academic resumés, conferences, and tech blogs.</p>
-</div>
-    
-
-    
-    
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-    <p class="cta-btns">
-      <a href="https://wowchemy.com/hugo-themes/" target="_blank" rel="noopener" class="btn btn-light btn-lg mb-md-1"><strong>Get Started</strong></a>
-
-      
-      
-        
-        
-        
-        
-          
-        
-      <a href="https://discord.gg/z8wNYzb" target="_blank" rel="noopener" class="hero-cta-alt btn-lg pl-md-4">Ask a question <i class="fas fa-angle-right"></i></a>
-      
-    </p>
-    
-
-    
-    
-    <p class="hero-note text-muted mb-3 mb-md-1">
-      <a class="js-github-release" href="https://github.com/wowchemy/wowchemy-hugo-themes/releases" data-repo="wowchemy/wowchemy-hugo-themes">Latest release<!-- V --></a><div style="text-shadow: none;"><a class="github-button" href="https://github.com/wowchemy/wowchemy-hugo-themes" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star">Star Wowchemy site builder for Hugo</a></div><div style="text-shadow: none;"><a class="github-button" href="https://github.com/wowchemy/starter-hugo-academic" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star">Star the Academic template</a></div>
-    </p>
-    
-
-  
-  
-  </div>
-  <div class="col-12 mx-auto col-md-6  hero-media">
-      
-      
-
-        
-        
-        
-        
-
-        
-          
-          
-            
-          
-          
-        
-          
-          
-          
-        
-          
-          
-          
-        
-        
-
-        <img src="/home/hero-academic_huc70d93133c25ab28042d15d1ecec0cb0_7012_400x0_resize_lanczos_3.png" srcset="/home/hero-academic_huc70d93133c25ab28042d15d1ecec0cb0_7012_1200x0_resize_lanczos_3.png 1200w,/home/hero-academic_huc70d93133c25ab28042d15d1ecec0cb0_7012_800x0_resize_lanczos_3.png 800w,/home/hero-academic_huc70d93133c25ab28042d15d1ecec0cb0_7012_400x0_resize_lanczos_3.png 400w" width="359" height="400" alt="Hugo Academic Theme">
-      
-    
-  </div>
-</div>
-
-
-
-    
-
-    </div>
-  </section>
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-  
-  
-  
-
-  
-    
-    
-    
-      
-      
-    
-    
-      
-      
-    
-    
-      
-      
-    
-  
-
-  
-    
-  
-
-  
-    
-    
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-  <section id="demo" class="home-section wg-blank light " style="padding: 20px 0 20px 0;" >
-   <div class="home-section-bg  bg-image parallax" style="background-image: url(&#39;https://academic-demo.netlify.app/media/open-book_hu0d86f8f808d8a156f6efd32fd52b11ce_54109_1920x1920_fit_q75_h2_lanczos.webp&#39;);background-size: cover;background-position: center;filter: brightness(1);">
-     
-   </div>
-    <div class="container">
-
-    
-      <div class="row  justify-content-center">
-      
-        
-          <div class="section-heading col-12 mb-3 text-center">
-            <h1 class="mb-0">Hugo Academic Theme Demo</h1>
-            
-          </div>
-        
-      
-    
-
-      
-
-
-
-  <div class="col-12">
-    <p>Welcome to the demo of the <strong>academic resumé template</strong> for Wowchemy, the Website Builder for Hugo.</p>
-<p><a href="https://wowchemy.com/templates/" target="_blank" rel="noopener">Explore similar templates</a></p>
-<p><strong>Over 500,000 <a href="https://wowchemy.com/" target="_blank" rel="noopener">Amazing Websites</a> have Already Been Built with Wowchemy</strong></p>
-<p><strong><a href="https://wowchemy.com/templates/" target="_blank" rel="noopener">Join</a> the Most Empowered Hugo Community</strong></p>
-<div class="alert alert-note">
-  <div>
-    <p>This homepage section is an example of adding <a href="https://wowchemy.com/docs/content/writing-markdown-latex/">elements</a> to the <a href="https://wowchemy.com/docs/getting-started/page-builder/"><em>Blank</em> widget</a>.</p>
-<p>Backgrounds can be applied to any section. Here, the <em>background</em> option is set give an <em>image parallax</em> effect.</p>
-  </div>
-</div>
-
-  </div>
-
-
-
-    
-      </div>
-    
-
-    </div>
-  </section>
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-  <section id="about" class="home-section wg-about  "  >
-   <div class="home-section-bg " >
-     
-   </div>
-    <div class="container">
-
-    
-
-      
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-<div class="row">
-  <div class="col-12 col-lg-4">
-    <div id="profile">
-
-      
-      
-      <img class="avatar avatar-circle"
-           width="270" height="270"
-           src="/author/andrej-leban/avatar_hu3c64bd0f98018e2d901b7c60447ac42e_1387900_270x270_fill_q75_lanczos_center.jpg" alt="Andrej Leban">
-      
-
-      <div class="portrait-title">
-        
-        <h2>Andrej Leban</h2>
-        
-        
-
-        
-      </div>
-
-      <ul class="network-icon" aria-hidden="true">
-        
-        
-        
-        
-          
-        
-        
-        
-        
-        
-          
-        
-        <li>
-          <a href="/#contact"  aria-label="envelope">
-            <i class="fas fa-envelope big-icon"></i>
-          </a>
-        </li>
-        
-        
-        
-        
-          
-        
-        
-        
-        
-        
-          
-        
-        <li>
-          <a href="/"  aria-label="">
-            <i class="fas fa- big-icon"></i>
-          </a>
-        </li>
-        
-        
-        
-        
-          
-        
-        
-        
-        
-        
-          
-        
-        <li>
-          <a href="https://github.com/andleb" target="_blank" rel="noopener" aria-label="github">
-            <i class="fab fa-github big-icon"></i>
-          </a>
-        </li>
-        
-        
-        
-        
-          
-        
-        
-        
-        
-        
-          
-        
-        <li>
-          <a href="https://www.linkedin.com/in/andrejleban" target="_blank" rel="noopener" aria-label="linkedin">
-            <i class="fab fa-linkedin big-icon"></i>
-          </a>
-        </li>
-        
-      </ul>
-
-    </div>
-  </div>
-  <div class="col-12 col-lg-8">
-
-    
-    <h1>Biography</h1>
-
-    <div class="article-style">
-      <p>
-  <i class="fas fa-download  pr-1 fa-fw"></i> Download my <a href="/uploads/leban_andrej-cv.pdf" target="_blank">resumé</a>.</p>
-<p>
-  <i class="fas fa-download  pr-1 fa-fw"></i> Download my <a href="/uploads/andrej_leban-diploma.pdf" target="_blank">Master's thesis (Diploma)</a>.</p>
-
-    </div>
-
-    <div class="row">
-
-      
-
-      
-      <div class="col-md-7">
-        <div class="section-subheading">Education</div>
-        <ul class="ul-edu fa-ul mb-0">
-          
-          <li>
-            <i class="fa-li fas fa-graduation-cap"></i>
-            <div class="description">
-              <p class="course">M.A. Statistics, 2022</p>
-              <p class="institution">University of California, Berkeley</p>
-            </div>
-          </li>
-          
-          <li>
-            <i class="fa-li fas fa-graduation-cap"></i>
-            <div class="description">
-              <p class="course">M. Sc. Mathematical Physics, 2016</p>
-              <p class="institution">University of Ljubljana</p>
-            </div>
-          </li>
-          
-        </ul>
-      </div>
-      
-
-    </div>
-  </div>
-</div>
-
-
-    
-
-    </div>
-  </section>
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-  <section id="skills" class="home-section wg-featurette  "  >
-   <div class="home-section-bg " >
-     
-   </div>
-    <div class="container">
-
-    
-
-      
-
-
-<div class="row featurette">
-  
-  <div class="col-md-12 section-heading">
-    <h1>Skills</h1>
-    
-  </div>
-  
-
-  
-
-  
-  
-  
-  
-    
-  
-  <div class="col-12 col-sm-4">
-    
-    <div class="featurette-icon"><i class="fab fa-r-project"></i></div>
-    
-    <div class="section-subheading">R</div>
-    <p>90%</p>
-  </div>
-  
-  
-  
-  
-    
-  
-  <div class="col-12 col-sm-4">
-    
-    <div class="featurette-icon"><i class="fas fa-chart-line"></i></div>
-    
-    <div class="section-subheading">Statistics</div>
-    <p>100%</p>
-  </div>
-  
-  
-  
-  
-    
-  
-  <div class="col-12 col-sm-4">
-    
-    <div class="featurette-icon"><i class="fas fa-camera-retro"></i></div>
-    
-    <div class="section-subheading">Photography</div>
-    <p>10%</p>
-  </div>
-  
-</div>
-
-
-    
-
-    </div>
-  </section>
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-  <section id="experience" class="home-section wg-experience  "  >
-   <div class="home-section-bg " >
-     
-   </div>
-    <div class="container">
-
-    
-      <div class="row  ">
-      
-        
-          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
-            <h1 class="mb-0">Experience</h1>
-            
-          </div>
-        
-      
-    
-
-      
-
-
-
-
-<div class="col-12 col-lg-8">
-  
-
-  
-  
-
-  
-  
-  <div class="row experience">
-    
-    <div class="col-auto text-center flex-column d-none d-sm-flex">
-      <div class="row h-50">
-        <div class="col ">&nbsp;</div>
-        <div class="col">&nbsp;</div>
-      </div>
-      <div class="m-2">
-        <span class="badge badge-pill border exp-fill">&nbsp;</span>
-      </div>
-      <div class="row h-50">
-        <div class="col border-right">&nbsp;</div>
-        <div class="col">&nbsp;</div>
-      </div>
-    </div>
-    
-    <div class="col py-2">
-      <div class="card">
-        <div class="card-body">
-          <div class="d-flex align-content-start">
-            <div class="mr-2 mb-2"><img src="/media/icons/brands/org-gc.svg" width="56px" height="56px" alt="GenCoin" loading="lazy"></div>
-            <div>
-          
-
-              <div class="section-subheading card-title exp-title text-muted my-0">CEO</div>
-              <div class="section-subheading card-title exp-company text-muted my-0">GenCoin</div>
-              <div class="text-muted exp-meta">
-                Jan 2021 –
-                
-                  Present
-                
-                
-                  <span class="middot-divider"></span>
-                  <span>California</span>
-                
-              </div>
-            </div>
-          </div>
-          
-
-          <div class="card-text"><p>Responsibilities include:</p>
-<ul>
-<li>Analysing</li>
-<li>Modelling</li>
-<li>Deploying</li>
-</ul>
-</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="row experience">
-    
-    <div class="col-auto text-center flex-column d-none d-sm-flex">
-      <div class="row h-50">
-        <div class="col border-right">&nbsp;</div>
-        <div class="col">&nbsp;</div>
-      </div>
-      <div class="m-2">
-        <span class="badge badge-pill border ">&nbsp;</span>
-      </div>
-      <div class="row h-50">
-        <div class="col ">&nbsp;</div>
-        <div class="col">&nbsp;</div>
-      </div>
-    </div>
-    
-    <div class="col py-2">
-      <div class="card">
-        <div class="card-body">
-          <div class="d-flex align-content-start">
-            <div class="mr-2 mb-2"><img src="/media/icons/brands/org-x.svg" width="56px" height="56px" alt="University X" loading="lazy"></div>
-            <div>
-          
-
-              <div class="section-subheading card-title exp-title text-muted my-0">Professor of Semiconductor Physics</div>
-              <div class="section-subheading card-title exp-company text-muted my-0">University X</div>
-              <div class="text-muted exp-meta">
-                Jan 2016 –
-                
-                  Dec 2020
-                
-                
-                  <span class="middot-divider"></span>
-                  <span>California</span>
-                
-              </div>
-            </div>
-          </div>
-          
-
-          <div class="card-text">Taught electronic engineering and researched semiconductor physics.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  
-</div>
-
-
-    
-      </div>
-    
-
-    </div>
-  </section>
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-  <section id="accomplishments" class="home-section wg-accomplishments  "  >
-   <div class="home-section-bg " >
-     
-   </div>
-    <div class="container">
-
-    
-      <div class="row  ">
-      
-        
-          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
-            <h1 class="mb-0">Accomplish­ments</h1>
-            
-          </div>
-        
-      
-    
-
-      
-
-
-
-
-<div class="col-12 col-lg-8">
-  
-
-  
-  
-    <div class="card experience course">
-      <div class="card-body">
-        <div class="d-flex align-content-start">
-          <div class="mr-2 mb-2"><a href="https://www.coursera.org" target="_blank" rel="noopener"><img src="/media/icons/brands/coursera.svg" width="56px" height="56px" alt="Coursera" loading="lazy"></a></div>
-          <div>
-        <div class="section-subheading card-title exp-title text-muted my-0">Neural Networks and Deep Learning</div><div class="card-subtitle my-0 article-metadata"><a href="https://www.coursera.org" target="_blank" rel="noopener">Coursera</a><span class="middot-divider"></span>
-
-              Jan 2021
-              
-            </div>
-          </div>
-        </div>
-        
-
-        
-
-        
-          <a class="card-link" href="https://www.coursera.org" target="_blank" rel="noopener">
-            See certificate
-          </a>
-        
-      </div>
-    </div>
-  
-    <div class="card experience course">
-      <div class="card-body">
-        <div class="d-flex align-content-start">
-          <div class="mr-2 mb-2"><a href="https://www.edx.org" target="_blank" rel="noopener"><img src="/media/icons/brands/edx.svg" width="56px" height="56px" alt="edX" loading="lazy"></a></div>
-          <div>
-        <a href="https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals" target="_blank" rel="noopener"><div class="section-subheading card-title exp-title text-muted my-0">Blockchain Fundamentals</div></a><div class="card-subtitle my-0 article-metadata"><a href="https://www.edx.org" target="_blank" rel="noopener">edX</a><span class="middot-divider"></span>
-
-              Jan 2021
-              
-            </div>
-          </div>
-        </div>
-        
-
-        
-          <div class="card-text">Formulated informed blockchain models, hypotheses, and use cases.</div>
-        
-
-        
-          <a class="card-link" href="https://www.edx.org" target="_blank" rel="noopener">
-            See certificate
-          </a>
-        
-      </div>
-    </div>
-  
-    <div class="card experience course">
-      <div class="card-body">
-        <div class="d-flex align-content-start">
-          <div class="mr-2 mb-2"><a href="https://www.datacamp.com" target="_blank" rel="noopener"><img src="/media/icons/brands/datacamp.svg" width="56px" height="56px" alt="DataCamp" loading="lazy"></a></div>
-          <div>
-        <div class="section-subheading card-title exp-title text-muted my-0">Object-Oriented Programming in R</div><div class="card-subtitle my-0 article-metadata"><a href="https://www.datacamp.com" target="_blank" rel="noopener">DataCamp</a><span class="middot-divider"></span>
-
-              Jul 2020
-              
-              – Dec 2020
-              
-            </div>
-          </div>
-        </div>
-        
-
-        
-
-        
-          <a class="card-link" href="https://www.datacamp.com" target="_blank" rel="noopener">
-            See certificate
-          </a>
-        
-      </div>
-    </div>
-  
-  
-</div>
-
-
-    
-      </div>
-    
-
-    </div>
-  </section>
 
   
   
@@ -1925,123 +896,13 @@
   <div class="media-body">
 
     <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/post/getting-started/" >Welcome to Wowchemy, the website builder for Hugo</a>
+      <a href="/post/presentation-of-our-work-on-whale-communication-at-the-simons-institute/" >A talk on our work on whale communication at the Simons Institute</a>
     </div>
 
     
-    <a href="/post/getting-started/"  class="summary-link">
+    <a href="/post/presentation-of-our-work-on-whale-communication-at-the-simons-institute/"  class="summary-link">
       <div class="article-style">
-        Welcome 👋 We know that first impressions are important, so we&rsquo;ve populated your new site with some initial content to help you get familiar with everything in no time.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-  
-  
-  <div>
-    
-
-  <span class="author-highlighted">
-      <a href="/author/andrej-leban/">Andrej Leban</a></span>, <span >
-      <a href="/author/%E5%90%B3%E6%81%A9%E9%81%94/">吳恩達</a></span>
-  </div>
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    Dec 13, 2020
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    3 min read
-  </span>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/category/demo/">Demo</a>, <a href="/category/%E6%95%99%E7%A8%8B/">教程</a></span>
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/post/getting-started/" >
-      <img src="/post/getting-started/featured_hub9ee31969f44a6711206a2baf9f065b4_241861_150x0_resize_q75_h2_lanczos.webp" height="84" width="150"
-           alt="Welcome to Wowchemy, the website builder for Hugo" loading="lazy">
-    </a>
-    
-  </div>
-</div>
-
-  
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/post/2020-12-01-r-rmarkdown/" >Hello R Markdown</a>
-    </div>
-
-    
-    <a href="/post/2020-12-01-r-rmarkdown/"  class="summary-link">
-      <div class="article-style">
-        R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.
+        I recently helped present our work (together with Prof. Gašper Beguš, paper) on the usage of deep generative models for discovering the building blocks of sperm whale communication at the Decoding Communication in Nonhuman Species symposium hosted at the Simons Institute for the Theory of Computing, UC Berkeley:
       </div>
     </a>
     
@@ -2064,8 +925,10 @@
     
     
       
+          Last updated on
+      
     
-    Dec 1, 2020
+    Jul 11, 2023
   </span>
   
 
@@ -2087,100 +950,6 @@
 
   
   
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/category/r/">R</a></span>
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-  
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/post/writing-technical-content/" >Writing technical content in Academic</a>
-    </div>
-
-    
-    <a href="/post/writing-technical-content/"  class="summary-link">
-      <div class="article-style">
-        Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.
-Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    Jul 12, 2019
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    5 min read
-  </span>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-  
 
 </div>
 
@@ -2194,9 +963,9 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
     
     
     
-    <a href="/post/writing-technical-content/" >
-      <img src="/post/writing-technical-content/featured_huc72159e0fc0d14b85f60d34436a630f0_266353_150x0_resize_q75_h2_lanczos.webp" height="100" width="150"
-           alt="Writing technical content in Academic" loading="lazy">
+    <a href="/post/presentation-of-our-work-on-whale-communication-at-the-simons-institute/" >
+      <img src="/post/presentation-of-our-work-on-whale-communication-at-the-simons-institute/featured_hu063dd136cb01c6fff63ab655079b3ce6_15151_150x0_resize_q75_h2_lanczos.webp" height="113" width="150"
+           alt="A talk on our work on whale communication at the Simons Institute" loading="lazy">
     </a>
     
   </div>
@@ -2224,13 +993,14 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
   <div class="media-body">
 
     <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/post/jupyter/" >Display Jupyter Notebooks with Academic</a>
+      <a href="/post/new-publication-approaching-an-unknown-communication-system/" >New publication: Approaching an unknown communication system</a>
     </div>
 
     
-    <a href="/post/jupyter/"  class="summary-link">
+    <a href="/post/new-publication-approaching-an-unknown-communication-system/"  class="summary-link">
       <div class="article-style">
-        Learn how to blog in Academic using Jupyter notebooks
+        We have a pre-print out based on our work with Project CETI, an initiative to decipher sperm whale communication using machine learning.
+In the paper, we combine approaches that help discover how known properties of human language are learned by generative models when trained on labeled speech audio data with methodology inspired by causal inference and apply it to the communication system of sperm whales, for which we do not have any such ground truth.
       </div>
     </a>
     
@@ -2245,16 +1015,6 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
 
 <div class="article-metadata">
 
-  
-  
-  
-  
-  <div>
-    
-
-  <span class="author-highlighted">
-      <a href="/author/andrej-leban/">Andrej Leban</a></span>
-  </div>
   
   
 
@@ -2266,7 +1026,7 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
           Last updated on
       
     
-    Sep 5, 2019
+    Mar 20, 2023
   </span>
   
 
@@ -2275,7 +1035,7 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    2 min read
+    1 min read
   </span>
   
 
@@ -2301,10 +1061,291 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
     
     
     
-    <a href="/post/jupyter/" >
-      <img src="/post/jupyter/featured_hub1daa031c2af6888ff37bd93eb033a1a_71549_150x0_resize_q75_h2_lanczos_3.webp" height="65" width="150"
-           alt="Display Jupyter Notebooks with Academic" loading="lazy">
+    <a href="/post/new-publication-approaching-an-unknown-communication-system/" >
+      <img src="/post/new-publication-approaching-an-unknown-communication-system/featured_hu0c73f8c49a5ac16135a4ee3d6e45055b_1737936_150x0_resize_q75_h2_lanczos_3.webp" height="84" width="150"
+           alt="New publication: Approaching an unknown communication system" loading="lazy">
     </a>
+    
+  </div>
+</div>
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item view-compact">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/post/diffusion-models/" >Diffusion models: an introduction</a>
+    </div>
+
+    
+    <a href="/post/diffusion-models/"  class="summary-link">
+      <div class="article-style">
+        A brief introduction to diffusion models
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Oct 9, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    <a href="/post/diffusion-models/" >
+      <img src="/post/diffusion-models/featured_hu2548f22b72f3b69286d51c0a8d133041_592271_150x0_resize_q75_h2_lanczos_3.webp" height="51" width="150"
+           alt="Diffusion models: an introduction" loading="lazy">
+    </a>
+    
+  </div>
+</div>
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item view-compact">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/post/new-publication-projects/" >New publication, projects</a>
+    </div>
+
+    
+    <a href="/post/new-publication-projects/"  class="summary-link">
+      <div class="article-style">
+        Given that the semester&rsquo;s over, I have finally gotten around to updating the site.
+We have a pre-print out based on the work I did during my internship last summer. It examines the problem of inferring the characteristics of different people involved in the process of translating and reviewing text by using Hierarchical Bayesian Models.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    May 15, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item view-compact">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/post/a-simple-gmat-practice-set-generator/" >A simple GMAT practice set generator</a>
+    </div>
+
+    
+    <a href="/post/a-simple-gmat-practice-set-generator/"  class="summary-link">
+      <div class="article-style">
+        NOTE: This is a migration of an old post from my previous blog
+I recently sat for the GMAT. To practice smarter, I came up with a simple Official Guide 2020 problem set generator in Python.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Jan 5, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
     
   </div>
 </div>
@@ -2313,6 +1354,28 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
 
   
   
+  
+
+    
+    
+      
+    
+
+    
+    
+    
+    
+      
+    
+
+    
+
+    <div class="see-all">
+      <a href="/post/">
+        See all posts
+        <i class="fas fa-angle-right"></i>
+      </a>
+    </div>
   
 
 </div>
@@ -2408,48 +1471,6 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
 
   
 
-    
-
-    
-    
-    
-    
-      
-    
-
-    <span class="d-none default-project-filter">*</span>
-
-    
-    
-    <div class="project-toolbar">
-      <div class="project-filters">
-        <div class="btn-toolbar">
-          <div class="btn-group flex-wrap">
-            
-              
-              
-              
-                
-              
-              <a href="#" data-filter="*" class="btn btn-primary btn-lg active">All</a>
-            
-              
-              
-              
-              <a href="#" data-filter=".js-id-Deep-Learning" class="btn btn-primary btn-lg">Deep Learning</a>
-            
-              
-              
-              
-              <a href="#" data-filter=".js-id-Demo" class="btn btn-primary btn-lg">Other</a>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  
-
   <div class="isotope projects-container js-layout-masonry ">
 
     
@@ -2460,7 +1481,7 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
     
       
         
-          <div class="project-card project-item isotope-item js-id-Demo">
+          <div class="project-card project-item isotope-item js-id-Deep-Learning js-id-Monte-Carlo js-id-Physics">
         
         
 
@@ -2469,9 +1490,6 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
 
 
 
-
-  
-  
 
 
 
@@ -2497,7 +1515,7 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
     
       
     
-    Apr 27, 2016
+    Dec 15, 2021
   </span>
   
 
@@ -2523,22 +1541,22 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
   
   
   
-  <a href="http://example.org" target="_blank" rel="noopener">
+  <a href="/project/ganising/" >
     <div class="img-hover-zoom">
-      <img src="/project/external-project/featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_329522_808x455_fill_q75_h2_lanczos_smart1.webp" height="455" width="808"
-           class="article-banner" alt="External Project" loading="lazy">
+      <img src="/project/ganising/featured_huc3d4bf137e8e38b5c19a47e330f38061_7855_808x455_fill_q75_h2_lanczos_smart1_3.webp" height="455" width="808"
+           class="article-banner" alt="ganIsing" loading="lazy">
     </div>
   </a>
   
 
   <div class="section-subheading article-title mb-1 mt-3">
-    <a href="http://example.org" target="_blank" rel="noopener">External Project</a>
+    <a href="/project/ganising/" >ganIsing</a>
   </div>
 
   
-  <a href="http://example.org" target="_blank" rel="noopener" class="summary-link">
+  <a href="/project/ganising/"  class="summary-link">
     <div class="article-style">
-      <p>An example of linking directly to an external project website using <code>external_link</code>.</p>
+      <p>Solving the 2D Ising model using GANs</p>
     </div>
   </a>
   
@@ -2611,20 +1629,20 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
   
   
   
-  <a href="/project/internal-project/" >
+  <a href="/project/example/" >
     <div class="img-hover-zoom">
-      <img src="/project/internal-project/featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_224363_808x455_fill_q75_h2_lanczos_smart1.webp" height="455" width="808"
-           class="article-banner" alt="Internal Project" loading="lazy">
+      <img src="/project/example/featured.bak_hu3d03a01dcc18bc5be0e67db3d8d209a6_224363_808x455_fill_q75_h2_lanczos_smart1.webp" height="455" width="808"
+           class="article-banner" alt="Example Project" loading="lazy">
     </div>
   </a>
   
 
   <div class="section-subheading article-title mb-1 mt-3">
-    <a href="/project/internal-project/" >Internal Project</a>
+    <a href="/project/example/" >Example Project</a>
   </div>
 
   
-  <a href="/project/internal-project/"  class="summary-link">
+  <a href="/project/example/"  class="summary-link">
     <div class="article-style">
       <p>An example of using the in-built project page.</p>
     </div>
@@ -2637,503 +1655,11 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
 
       </div>
     
-
-  </div>
-</div>
-
-
-    
-      </div>
-    
-
-    </div>
-  </section>
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-  <section id="gallery" class="home-section wg-blank  "  >
-   <div class="home-section-bg " >
-     
-   </div>
-    <div class="container">
-
-    
-      <div class="row  ">
       
         
-          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
-            <h1 class="mb-0">Gallery</h1>
-            
-          </div>
+          <div class="project-card project-item isotope-item js-id-Statistics">
         
-      
-    
-
-      
-
-
-
-  <div class="col-12 col-lg-8">
-    
-
-
-
-
-
-
-
-
-
-
-<div class="gallery">
-
-  
-  
-  
-    
-    
-    
-    
-    
-    <a data-fancybox="gallery-themes" href="/media/albums/themes/theme-1950s.png" >
-      <img src="/media/albums/themes/theme-1950s_huaf5482f8cea0c5a703a328640e3b7509_21614_0x190_resize_q75_h2_lanczos_3.webp" loading="lazy" alt="theme-1950s.png" width="124" height="190">
-    </a>
-  
-    
-    
-    
-    
-    
-    <a data-fancybox="gallery-themes" href="/media/albums/themes/theme-apogee.png" >
-      <img src="/media/albums/themes/theme-apogee_hu4b45d99db97150df01464c393bfd17d4_24119_0x190_resize_q75_h2_lanczos_3.webp" loading="lazy" alt="theme-apogee.png" width="124" height="190">
-    </a>
-  
-    
-    
-    
-    
-    
-    <a data-fancybox="gallery-themes" href="/media/albums/themes/theme-coffee-playfair.png" >
-      <img src="/media/albums/themes/theme-coffee-playfair_hu446a8f670cc5622adcc77b97ba95f6c5_22462_0x190_resize_q75_h2_lanczos_3.webp" loading="lazy" alt="theme-coffee-playfair.png" width="124" height="190">
-    </a>
-  
-    
-    
-    
-    
-    
-    <a data-fancybox="gallery-themes" href="/media/albums/themes/theme-dark.png" >
-      <img src="/media/albums/themes/theme-dark_hu1e8601ecc47f58eada7743fdcd709d3d_21456_0x190_resize_q75_h2_lanczos_3.webp" loading="lazy" alt="theme-dark.png" width="124" height="190">
-    </a>
-  
-    
-    
-    
-    
-    
-    <a data-fancybox="gallery-themes" href="/media/albums/themes/theme-default.png" >
-      <img src="/media/albums/themes/theme-default_huba6228b7bdf30e2f03f12ea91b2cba0d_21751_0x190_resize_q75_h2_lanczos_3.webp" loading="lazy" alt="theme-default.png" width="124" height="190">
-    </a>
-  
-    
-    
-    
-    
-    
-    <a data-fancybox="gallery-themes" href="/media/albums/themes/theme-forest.png" >
-      <img src="/media/albums/themes/theme-forest_hu4f093a1c683134431456584193ea41ee_21797_0x190_resize_q75_h2_lanczos_3.webp" loading="lazy" alt="theme-forest.png" width="124" height="190">
-    </a>
-  
-    
-    
-    
-    
-    
-    <a data-fancybox="gallery-themes" href="/media/albums/themes/theme-ocean.png" >
-      <img src="/media/albums/themes/theme-ocean_hu14831ccafc2219f30a7a096fa7617e01_21760_0x190_resize_q75_h2_lanczos_3.webp" loading="lazy" alt="theme-ocean.png" width="124" height="190">
-    </a>
-  
-    
-    
-    
-    
-    
-    <a data-fancybox="gallery-themes" href="/media/albums/themes/theme-strawberry.png" >
-      <img src="/media/albums/themes/theme-strawberry_hu36b0b347fcca08bd39e2df22dcedbdfb_39532_0x190_resize_q75_h2_lanczos_3.webp" loading="lazy" alt="theme-strawberry.png" width="124" height="190">
-    </a>
-  
-
-</div>
-
-  </div>
-
-
-
-    
-      </div>
-    
-
-    </div>
-  </section>
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-  <section id="talks" class="home-section wg-pages  "  >
-   <div class="home-section-bg " >
-     
-   </div>
-    <div class="container">
-
-    
-      <div class="row  ">
-      
         
-          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
-            <h1 class="mb-0">Recent &amp; Upcoming Talks</h1>
-            
-          </div>
-        
-      
-    
-
-      
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-<div class="col-12 col-lg-8">
-
-  
-
-  
-    
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/talk/example-talk/" >Example Talk</a>
-    </div>
-
-    
-    <a href="/talk/example-talk/"  class="summary-link">
-      <div class="article-style">
-        An example talk using Wowchemy&rsquo;s Markdown slides feature.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-      <div>
-        <span>
-          Jun 1, 2030 1:00 PM &mdash; 3:00 PM
-        </span>
-        
-        <span class="middot-divider"></span>
-        <span>Wowchemy HQ</span>
-        
-      </div>
-      
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/talk/example-talk/" >
-      <img src="/talk/example-talk/featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_620088_150x0_resize_q75_h2_lanczos.webp" height="107" width="150"
-           alt="Example Talk" loading="lazy">
-    </a>
-    
-  </div>
-</div>
-
-  
-
-  
-  
-  
-
-</div>
-
-
-    
-      </div>
-    
-
-    </div>
-  </section>
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-  <section id="featured" class="home-section wg-featured  "  >
-   <div class="home-section-bg " >
-     
-   </div>
-    <div class="container">
-
-    
-      <div class="row  ">
-      
-        
-          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
-            <h1 class="mb-0">Featured Publications</h1>
-            
-          </div>
-        
-      
-    
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-<div class="col-12 col-lg-8">
-
-  
-
-  
-    
 
 
 
@@ -3158,15 +1684,92 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
 
   
   
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jan 1, 0001
+  </span>
+  
+
+  
+
+  
+
   
   
-  <div>
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+  
+  
+  
+  
+  <a href="/project/230afinal/" >
+    <div class="img-hover-zoom">
+      <img src="/project/230afinal/featured_hu4f29a534663090dbc06735441d55e32f_97014_808x455_fill_q75_h2_lanczos_smart1_3.webp" height="455" width="808"
+           class="article-banner" alt="230A final" loading="lazy">
+    </div>
+  </a>
+  
+
+  <div class="section-subheading article-title mb-1 mt-3">
+    <a href="/project/230afinal/" >230A final</a>
+  </div>
+
+  
+  <a href="/project/230afinal/"  class="summary-link">
+    <div class="article-style">
+      <p>Replication of Michalopoulos: The Origins of Ethnolinguistic Diversity</p>
+    </div>
+  </a>
+  
+
+  
+
+</div>
+
+      </div>
+    
+      
+        
+          <div class="project-card project-item isotope-item js-id-Quant js-id-Finance js-id-C&#43;&#43;">
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="card-simple view-card">
+
+  
     
 
-  <span class="author-highlighted">
-      <a href="/author/andrej-leban/">Andrej Leban</a></span>, <span >
-      <a href="/author/robert-ford/">Robert Ford</a></span>
-  </div>
+
+<div class="article-metadata">
+
   
   
 
@@ -3176,17 +1779,10 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
     
       
     
-    July 2013
+    Jan 1, 0001
   </span>
   
 
-  
-  <span class="middot-divider"></span>
-  <span class="pub-publication">
-    
-      In <em>STC</em>
-    
-  </span>
   
 
   
@@ -3209,26 +1805,84 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
   
   
   
-  <a href="/publication/conference-paper/" >
+  <a href="/project/derivatives/" >
     <div class="img-hover-zoom">
-      <img src="/publication/conference-paper/featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_312700_808x455_fill_q75_h2_lanczos_smart1.webp" height="455" width="808"
-           class="article-banner" alt="An example conference paper" loading="lazy">
+      <img src="/project/derivatives/featured_hu01fe31d669a2115219a9c2cfdbd39a73_546003_808x455_fill_q75_h2_lanczos_smart1_3.webp" height="455" width="808"
+           class="article-banner" alt="derivatives" loading="lazy">
     </div>
   </a>
   
 
   <div class="section-subheading article-title mb-1 mt-3">
-    <a href="/publication/conference-paper/" >An example conference paper</a>
+    <a href="/project/derivatives/" >derivatives</a>
   </div>
 
   
-  <a href="/publication/conference-paper/"  class="summary-link">
+  <a href="/project/derivatives/"  class="summary-link">
     <div class="article-style">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.</p>
+      <p>Derivatives pricing in modern C++.</p>
     </div>
   </a>
   
 
+  
+
+</div>
+
+      </div>
+    
+      
+        
+          <div class="project-card project-item isotope-item js-id-Mesoscopic-transport js-id-Nanophysics js-id-NEGF">
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="card-simple view-card">
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jan 1, 0001
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
   
 
 </div>
@@ -3238,7 +1892,35 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
   
   
   
+  
+  <a href="/project/diploma/" >
+    <div class="img-hover-zoom">
+      <img src="/project/diploma/featured_hu83f9186152fda52c27e5f213a09965d8_210941_808x455_fill_q75_h2_lanczos_smart1_3.webp" height="455" width="808"
+           class="article-banner" alt="Diploma Thesis in Mathematical Physics" loading="lazy">
+    </div>
+  </a>
+  
 
+  <div class="section-subheading article-title mb-1 mt-3">
+    <a href="/project/diploma/" >Diploma Thesis in Mathematical Physics</a>
+  </div>
+
+  
+  <a href="/project/diploma/"  class="summary-link">
+    <div class="article-style">
+      <p>Time-dependent current through a quantum dot in the presence of a voltage probe (in Slovene)</p>
+    </div>
+  </a>
+  
+
+  
+
+</div>
+
+      </div>
+    
+
+  </div>
 </div>
 
 
@@ -3349,8 +2031,6 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
 
 
 
-  
-
 
 
 
@@ -3369,11 +2049,12 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
 
 <div class="col-12 col-lg-8">
 
-  <div class="alert alert-note">
+  <!--<div class="alert alert-note">
   <div>
     Quickly discover relevant content by <a href="./publication/">filtering publications</a>.
   </div>
 </div>
+-->
 
 
   
@@ -3389,11 +2070,14 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
   <span class="article-metadata li-cite-author">
     
 
-  <span class="author-highlighted">
-      <a href="/author/andrej-leban/">Andrej Leban</a></span>
+  <span >
+      <a href="/author/gasper-begus/">Gašper Beguš</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Equal contribution"></i>, <span >
+      <a href="/author/andrej-leban/">Andrej Leban</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Equal contribution"></i>, <span >
+      <a href="/author/shane-gero/">Shane Gero</a></span>
   </span>
-  (2019).
-  <a href="/publication/preprint/">An example preprint / working paper</a>.
+  (2023).
+  <a href="/publication/causalceti/">Approaching an unknown communication system by latent space exploration and causal inference</a>.
+  On <em>arXiv</em>.
   
   <p>
 
@@ -3410,72 +2094,27 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
 
 
 
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="http://arxiv.org/pdf/1512.04133v1" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/pdf/2303.10931" target="_blank" rel="noopener">
   PDF
 </a>
 
 
 
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="/#" target="_blank" rel="noopener">
-  Dataset
+<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
+        data-filename="/publication/causalceti/cite.bib">
+  Cite
 </a>
 
 
 
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/project/internal-project/">
-    Project
-  </a>
-  
 
 
 
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="/#" target="_blank" rel="noopener">
-  Poster
-</a>
 
 
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/slides/example/" target="_blank">
-    Slides
-  </a>
-  
 
 
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="/#" target="_blank" rel="noopener">
-  Video
-</a>
 
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="/#" target="_blank" rel="noopener">
-  Source Document
-</a>
 
 
 
@@ -3490,8 +2129,8 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
   
     
   
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="http://example.org" target="_blank" rel="noopener">
-    Custom Link</a>
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2303.10931" target="_blank" rel="noopener">
+    arXiv page</a>
 
 </p>
 
@@ -3512,13 +2151,94 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
   <span class="article-metadata li-cite-author">
     
 
-  <span class="author-highlighted">
-      <a href="/author/andrej-leban/">Andrej Leban</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Equal contribution"></i>, <span >
-      <a href="/author/robert-ford/">Robert Ford</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Equal contribution"></i>
+  <span >
+      <a href="/author/marco-miccheli/">Marco Miccheli</a></span>, <span >
+      <a href="/author/andrej-leban/">Andrej Leban</a></span>, <span >
+      <a href="/author/andrea-tacchella/">Andrea Tacchella</a></span>, <span >
+      <a href="/author/andrea-zaccaria/">Andrea Zaccaria</a></span>, <span >
+      <a href="/author/dario-mazzilli/">Dario Mazzilli</a></span>, <span >
+      <a href="/author/sebastien-bratieres/">Sébastien Bratières</a></span>
   </span>
-  (2015).
-  <a href="/publication/journal-article/">An example journal article</a>.
-  <em>Journal of Source Themes, 1</em>(1).
+  (2022).
+  <a href="/publication/bayesiantranslators/">A Bayesian approach to translators&#39; reliability assessment</a>.
+  On <em>arXiv</em>.
+  
+  <p>
+
+
+
+
+
+
+
+
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="/publication/bayesiantranslators/bayesianTranslators.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
+        data-filename="/publication/bayesiantranslators/cite.bib">
+  Cite
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2203.07135" target="_blank" rel="noopener">
+    arXiv page</a>
+
+</p>
+
+  
+  
+</div>
+
+  
+    
+
+
+<div class="pub-list-item view-citation" style="margin-bottom: 1rem">
+  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+
+  
+  
+
+  <span class="article-metadata li-cite-author">
+    
+
+  <span >
+      <a href="/author/andrej-leban/">Andrej Leban</a></span>
+  </span>
+  (2016).
+  <a href="/publication/dipoma/">Time-dependent current through a quantum dot in the presence of a voltage probe</a>.
+  In the <em>University of Ljubljana repository</em>.
   
   <p>
 
@@ -3535,41 +2255,60 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
 
 
 
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="http://arxiv.org/pdf/1512.04133v1" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary btn-page-header btn-sm" href="/uploads/andrej_leban-diploma.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 
 
 <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
-        data-filename="/publication/journal-article/cite.bib">
+        data-filename="/publication/dipoma/cite.bib">
   Cite
 </a>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+  
   
   
     
   
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-
-
-
-
+  
+  
+  
+  
+    
+    
+      
+    
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/project/diploma" >
+    Project page with more details</a>
 
   
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/slides/example/" target="_blank">
-    Slides
-  </a>
   
-
-
-
-
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://repozitorij.uni-lj.si/IzpisGradiva.php?id=97516" target="_blank" rel="noopener">
+    UL Repository</a>
 
 </p>
 
@@ -3696,302 +2435,104 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
         
         
         
-        <a href="/tag/academic/" style="font-size:0.7rem">Academic</a>
+        <a href="/tag/bash/" style="font-size:0.7rem">bash</a>
       
         
         
         
-        <a href="/tag/deep-learning/" style="font-size:0.7rem">Deep Learning</a>
+        <a href="/tag/c-/" style="font-size:0.7rem">C&#43;&#43;</a>
       
         
         
         
-        <a href="/tag/demo/" style="font-size:0.7rem">Demo</a>
+        <a href="/tag/causal-inference/" style="font-size:1.1630693432404289rem">Causal Inference</a>
       
         
         
         
-        <a href="/tag/plot/" style="font-size:0.7rem">plot</a>
+        <a href="/tag/data-science/" style="font-size:0.7rem">Data Science</a>
       
         
         
         
-        <a href="/tag/r-markdown/" style="font-size:0.7rem">R Markdown</a>
+        <a href="/tag/deep-learning/" style="font-size:1.8970168875100824rem">Deep Learning</a>
       
         
         
         
-        <a href="/tag/regression/" style="font-size:0.7rem">regression</a>
+        <a href="/tag/diffusion/" style="font-size:0.7rem">Diffusion</a>
       
         
         
         
-        <a href="/tag/source-themes/" style="font-size:1.7302256254687514rem">Source Themes</a>
+        <a href="/tag/dropbox/" style="font-size:0.7rem">Dropbox</a>
       
         
         
         
-        <a href="/tag/%E5%BC%80%E6%BA%90/" style="font-size:0.7rem">开源</a>
+        <a href="/tag/finance/" style="font-size:0.7rem">Finance</a>
+      
+        
+        
+        
+        <a href="/tag/generative-models/" style="font-size:0.7rem">Generative models</a>
+      
+        
+        
+        
+        <a href="/tag/git/" style="font-size:0.7rem">Git</a>
+      
+        
+        
+        
+        <a href="/tag/github/" style="font-size:1.4339475442696534rem">GitHub</a>
+      
+        
+        
+        
+        <a href="/tag/gmat/" style="font-size:0.7rem">GMAT</a>
+      
+        
+        
+        
+        <a href="/tag/linux/" style="font-size:0.7rem">Linux</a>
+      
+        
+        
+        
+        <a href="/tag/machine-learning/" style="font-size:0.7rem">Machine Learning</a>
+      
+        
+        
+        
+        <a href="/tag/mesoscopic-transport/" style="font-size:1.1630693432404289rem">Mesoscopic transport</a>
+      
+        
+        
+        
+        <a href="/tag/monte-carlo/" style="font-size:0.7rem">Monte Carlo</a>
+      
+        
+        
+        
+        <a href="/tag/nanophysics/" style="font-size:1.1630693432404289rem">Nanophysics</a>
+      
+        
+        
+        
+        <a href="/tag/negf/" style="font-size:1.1630693432404289rem">NEGF</a>
+      
+        
+        
+        
+        <a href="/tag/python/" style="font-size:1.1630693432404289rem">Python</a>
+      
+        
+        
+        
+        <a href="/tag/statistics/" style="font-size:1.6261386864808576rem">Statistics</a>
       
     </div>
-  
-
-</div>
-
-
-    
-      </div>
-    
-
-    </div>
-  </section>
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-  <section id="contact" class="home-section wg-contact  "  >
-   <div class="home-section-bg " >
-     
-   </div>
-    <div class="container">
-
-    
-      <div class="row  ">
-      
-        
-          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
-            <h1 class="mb-0">Contact</h1>
-            
-          </div>
-        
-      
-    
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="col-12 col-lg-8">
-  
-
-  
-
-    
-    
-      
-      
-      
-    
-
-    <div class="mb-3">
-      <form name="contact" method="POST" action="https://formspree.io/f/test"   >
-        <div class="form-group form-inline">
-          <label class="sr-only" for="inputName">Name</label>
-          <input type="text" name="name" class="form-control w-100" id="inputName" placeholder="Name" required>
-        </div>
-        <div class="form-group form-inline">
-          <label class="sr-only" for="inputEmail">Email</label>
-          <input type="email" name="email" class="form-control w-100" id="inputEmail" placeholder="Email" required>
-        </div>
-        <div class="form-group">
-          <label class="sr-only" for="inputMessage">Message</label>
-          <textarea name="message" class="form-control" id="inputMessage" rows="5" placeholder="Message" required></textarea>
-        </div>
-        
-        <div class="d-none">
-          <label>Do not fill this field unless you are a bot: <input name="_gotcha"></label>
-        </div>
-        
-        <button type="submit" class="btn btn-primary px-3 py-2 w-100">Send</button>
-      </form>
-    </div>
-  
-
-  <ul class="fa-ul">
-
-    
-    <li>
-      <i class="fa-li fas fa-envelope fa-2x" aria-hidden="true"></i>
-      <span id="person-email"><a href="mailto:test@example.org">test@example.org</a></span>
-    </li>
-    
-
-    
-    <li>
-      <i class="fa-li fas fa-phone fa-2x" aria-hidden="true"></i>
-      <span id="person-telephone"><a href="tel:888%20888%2088%2088">888 888 88 88</a></span>
-    </li>
-    
-
-    
-    
-      
-      <li>
-        <i class="fa-li fas fa-map-marker fa-2x" aria-hidden="true"></i>
-        <span id="person-address">450 Serra Mall, Stanford, CA 94305</span>
-      </li>
-    
-
-    
-    <li>
-      <i class="fa-li fas fa-compass fa-2x" aria-hidden="true"></i>
-      <span>Enter Building 1 and take the stairs to Office 200 on Floor 2</span>
-    </li>
-    
-
-    
-    <li>
-      <i class="fa-li fas fa-clock fa-2x" aria-hidden="true"></i>
-      <span>Monday 10:00 to 13:00<br>Wednesday 09:00 to 10:00</span>
-    </li>
-    
-
-    
-    <li>
-      <i class="fa-li fas fa-calendar-check fa-2x" aria-hidden="true"></i>
-      <a href="https://calendly.com" target="_blank" rel="noopener">Book an appointment</a>
-    </li>
-    
-
-    
-    
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <i class="fa-li fab fa-twitter fa-2x" aria-hidden="true"></i>
-      <a href="https://twitter.com/Twitter" target="_blank" rel="noopener">DM Me</a>
-    </li>
-    
-    
-    
-    
-      
-    
-    
-    
-    
-    
-    <li>
-      <i class="fa-li fab fa-skype fa-2x" aria-hidden="true"></i>
-      <a href="skype:echo123?call" >Skype Me</a>
-    </li>
-    
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <i class="fa-li fab fa-keybase fa-2x" aria-hidden="true"></i>
-      <a href="https://keybase.io/" target="_blank" rel="noopener">Chat on Keybase</a>
-    </li>
-    
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <i class="fa-li fas fa-comments fa-2x" aria-hidden="true"></i>
-      <a href="https://discourse.gohugo.io" target="_blank" rel="noopener">Discuss on Forum</a>
-    </li>
-    
-
-  </ul>
-
-  
-  <div class="d-none">
-    <input id="map-provider" value="mapnik">
-    <input id="map-lat" value="37.4275">
-    <input id="map-lng" value="-122.1697">
-    <input id="map-dir" value="450 Serra Mall, Stanford, CA 94305">
-    <input id="map-zoom" value="15">
-    <input id="map-api-key" value="">
-  </div>
-  <div id="map"></div>
   
 
 </div>
@@ -4020,6 +2561,14 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
 
   
 
+  
+  <p class="powered-by">
+    
+    
+      
+      <a href="/terms/">License</a>
+    
+  </p>
   
 
   
@@ -4097,6 +2646,8 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
       
 
       
+        <script src="https://cdn.jsdelivr.net/gh/mermaid-js/mermaid@v8.8.4/dist/mermaid.min.js" integrity="sha512-+TNmhaRJf3jyYHTpzEq/5I6b+aGyhzWb21mGdHAjxSGSYwxN9Grug3Y3B9qVxWfKKY8MscE/6mr9walWvFLFvQ==" crossorigin="anonymous" title="mermaid"></script>
+      
 
       
         
@@ -4108,6 +2659,12 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/python.min.js" crossorigin="anonymous"></script>
         
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/cpp.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/cmake.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/bash.min.js" crossorigin="anonymous"></script>
         
       
 

@@ -48,10 +48,10 @@ posterior (and conditional) distributions, and are computationally less expensiv
 </div>
 <div id="general-structure" class="section level2">
 <h2>General structure</h2>
-<div class="figure">
-<img src="generative-overview.png" title="Overview of Generative models" style="width:70.0%" alt="" />
-<p class="caption"><em>An overview of generative models</em>
-(<a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/">source</a>)</p>
+<div class="float">
+<img src="generative-overview.png" title="Overview of Generative models" style="width:70.0%" alt="An overview of generative models (source)" />
+<div class="figcaption"><em>An overview of generative models</em>
+(<a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/">source</a>)</div>
 </div>
 <p>Diffusion models are composed of two separate processes, <strong>the forward</strong> and <strong>the backward</strong>.</p>
 <div id="forward-diffusion" class="section level3">
@@ -162,13 +162,13 @@ reverse diffusion process: <img src="ho_algos.png" title="The two algorithms due
 <h3>Architecture</h3>
 <p>Ho et al. used a variation of an U-net called <a href="https://arxiv.org/abs/1701.05517">PixelCNN++</a> to estimate
 <span class="math inline">\(\epsilon_{\theta}(x_t, t))\)</span>:</p>
-<div class="figure">
-<img src="u-net-architecture.png" title="The original U-net" style="width:50.0%" alt="" />
-<p class="caption"><em>The original U-net</em></p>
+<div class="float">
+<img src="u-net-architecture.png" title="The original U-net" style="width:50.0%" alt="The original U-net" />
+<div class="figcaption"><em>The original U-net</em></div>
 </div>
-<div class="figure">
-<img src="pixelcnn.png" title="Salimans et al. - PixelCNN++ structure" style="width:125.0%" alt="" />
-<p class="caption"><em>PixelCNN++ structure</em></p>
+<div class="float">
+<img src="pixelcnn.png" title="Salimans et al. - PixelCNN++ structure" style="width:125.0%" alt="PixelCNN++ structure" />
+<div class="figcaption"><em>PixelCNN++ structure</em></div>
 </div>
 </div>
 </div>
@@ -176,11 +176,11 @@ reverse diffusion process: <img src="ho_algos.png" title="The two algorithms due
 <h2>How does it work in practice?</h2>
 <div id="example---recovery" class="section level3">
 <h3>Example - recovery</h3>
-<div class="figure">
-<img src="sohl-dickstein_spiral.png" title="Spiral distribution recovery" style="width:80.0%" alt="" />
-<p class="caption"><em>Recovery (middle row) of a spiral distribution (top) using a Gaussian diffusion model. The bottom row represents the
+<div class="float">
+<img src="sohl-dickstein_spiral.png" title="Spiral distribution recovery" style="width:80.0%" alt="Recovery (middle row) of a spiral distribution (top) using a Gaussian diffusion model. The bottom row represents the “drift term”, i.e. the field controlling the mean for the “particles” in the next step of the reverse process." />
+<div class="figcaption"><em>Recovery (middle row) of a spiral distribution (top) using a Gaussian diffusion model. The bottom row represents the
 “drift term”, i.e. the field controlling the mean for the “particles” in the next step of the reverse
-process.</em></p>
+process.</em></div>
 </div>
 </div>
 <div id="example---generation" class="section level3">
@@ -189,18 +189,18 @@ process.</em></p>
 <p>The <em>unconditional generation</em> was performed by estimating <span class="math inline">\(x_0\)</span> - the end result of the reverse process - from
 initially random <span class="math inline">\(x_T\)</span>. The following figure shows the order in which features crystallize when the <em>initial state is
 itself sampled from various points of the reverse process</em>. The training dataset was CIFAR10.</p>
-<div class="figure">
-<img src="ho_uncgen.png" title="Unconditional generation from the reverse process sample" width="1500" alt="" />
-<p class="caption"><em>Unconditional generation from the reverse process
-sample</em></p>
+<div class="float">
+<img src="ho_uncgen.png" title="Unconditional generation from the reverse process sample" width="1500" alt="Unconditional generation from the reverse process sample" />
+<div class="figcaption"><em>Unconditional generation from the reverse process
+sample</em></div>
 </div>
 <p>For <em>conditional generation,</em> the authors selected a <span class="math inline">\(x_t\)</span> from the actual distribution and sampled from the predictive
 posterior <span class="math inline">\(p(x_0|x_t)\)</span>. The following figure shows the results conditioned on the bottom-right quadrant, for a network
 trained on CelebA-HQ:</p>
-<div class="figure">
-<img src="ho_condgen.png" title="Conditional generation samples from a given state" width="1500" alt="" />
-<p class="caption"><em>Conditional generation samples from a given state:</em> the earlier the <span class="math inline">\(x_t\)</span>, the more deterministic the
-outcome.</p>
+<div class="float">
+<img src="ho_condgen.png" title="Conditional generation samples from a given state" width="1500" alt="Conditional generation samples from a given state: the earlier the x_t, the more deterministic the outcome." />
+<div class="figcaption"><em>Conditional generation samples from a given state:</em> the earlier the <span class="math inline">\(x_t\)</span>, the more deterministic the
+outcome.</div>
 </div>
 </div>
 <div id="imagen-dall-e-2" class="section level3">
@@ -215,14 +215,14 @@ text to do the guiding, combining a transformer with the previously described ar
 <p>This approach has been used to construct <a href="https://arxiv.org/pdf/2205.11487.pdf">Imagen</a>, which uses additional diffusion
 models to up-sample the image created by the guided diffusion process. The text embeddings are provided by a
 <em>pretrained</em> transformer’s encoder.</p>
-<div class="figure">
-<img src="imagen.png" width="700" alt="" />
-<p class="caption"><em>Imagen structure</em></p>
+<div class="float">
+<img src="imagen.png" width="700" alt="Imagen structure" />
+<div class="figcaption"><em>Imagen structure</em></div>
 </div>
 <p>The other diffusion-based model to make waves recently - DALL-E 2 - uses a bit more complex approach:</p>
-<div class="figure">
-<img src="dalle2.png" title="DALL-E 2 architecture" alt="" />
-<p class="caption"><em>DALL-E 2 architecture</em></p>
+<div class="float">
+<img src="dalle2.png" title="DALL-E 2 architecture" alt="DALL-E 2 architecture" />
+<div class="figcaption"><em>DALL-E 2 architecture</em></div>
 </div>
 <p>First, it re-uses a model called CLIP (Contrastive Language-Image Pre-training) to construct a <em>mapping between captions
 and images</em> (top of the schematic above). In practice, the net result of this is a <em>joint embedding of text and images</em>
@@ -235,10 +235,10 @@ are the starting point for the decoder. This is done with an <em>additional diff
 generates <em>multiple possible embeddings.</em> In other words, this is a generative model of the image embeddings given the
 text embeddings. The prior trains a decoder-only transformer to predict the conditional reverse process, as opposed to the U-net
 used in other examples.</p>
-<div class="figure">
-<img src="dalle2_interpolation.png" title="DALL-E 2: interpolation of the image embedding space" alt="" />
-<p class="caption"><em>DALL-E 2: interpolation of the image embedding
-space by the decoder</em></p>
+<div class="float">
+<img src="dalle2_interpolation.png" title="DALL-E 2: interpolation of the image embedding space" alt="DALL-E 2: interpolation of the image embedding space by the decoder" />
+<div class="figcaption"><em>DALL-E 2: interpolation of the image embedding
+space by the decoder</em></div>
 </div>
 </div>
 </div>

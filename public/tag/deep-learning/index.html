@@ -43,6 +43,7 @@
   
 
   
+    <meta name="google-site-verification" content="google-site-verification=oJUt4qEgz1nbEKcvDXzsR0LNbHNPGcPECa2xegOaWp8" />
   
   
   
@@ -53,7 +54,7 @@
   
   
 
-  <meta name="author" content="Andrej Leban" />
+  
 
   
   
@@ -63,7 +64,7 @@
   <meta name="description" content="" />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://academic-demo.netlify.app/tag/deep-learning/" />
+  <link rel="alternate" hreflang="en-us" href="https://andleb.netlify.app/tag/deep-learning/" />
 
   
   
@@ -72,6 +73,9 @@
   
 
   
+  
+    
+    <script src="/js/mathjax-config.js"></script>
   
 
   
@@ -83,29 +87,29 @@
   
     
     
-
-    
-    
-    
-    
-      
-      
-    
-    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
     
     
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
       
     
     
       
       
-        
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
-        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/monokai-sublime.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/monokai-sublime.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
       
     
 
@@ -220,17 +224,9 @@
 
       
       
-        
-      
 
       
-    
-      
-      
-
-      
-      
-
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
       
@@ -241,6 +237,14 @@
 
       
     
+      
+      
+
+      
+      
+
+      
+    
   
 
   
@@ -248,27 +252,66 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.512574799414e7d36471486881070b0f.css" />
-
-  
-
-
-
-  
-
-  
+  <link rel="stylesheet" href="/css/wowchemy.cd9e9a3a9af953d5551c8bdbe43c9303.css" />
 
   
 
 
 
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-228705789-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-228705789-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
   
   
   
 
   
-    <link rel="alternate" href="/tag/deep-learning/index.xml" type="application/rss+xml" title="Academic" />
+    <link rel="alternate" href="/tag/deep-learning/index.xml" type="application/rss+xml" title="Andrej&#39;s thoughts" />
   
 
   
@@ -278,7 +321,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://academic-demo.netlify.app/tag/deep-learning/" />
+  <link rel="canonical" href="https://andleb.netlify.app/tag/deep-learning/" />
 
   
   
@@ -300,14 +343,17 @@
   
   <meta property="twitter:card" content="summary" />
   
-  <meta property="og:site_name" content="Academic" />
-  <meta property="og:url" content="https://academic-demo.netlify.app/tag/deep-learning/" />
-  <meta property="og:title" content="Deep Learning | Academic" />
-  <meta property="og:description" content="" /><meta property="og:image" content="https://academic-demo.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" />
-    <meta property="twitter:image" content="https://academic-demo.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+    <meta property="twitter:site" content="@anleb1" />
+    <meta property="twitter:creator" content="@anleb1" />
+  
+  <meta property="og:site_name" content="Andrej&#39;s thoughts" />
+  <meta property="og:url" content="https://andleb.netlify.app/tag/deep-learning/" />
+  <meta property="og:title" content="Deep Learning | Andrej&#39;s thoughts" />
+  <meta property="og:description" content="" /><meta property="og:image" content="https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
-      <meta property="og:updated_time" content="2016-04-27T00:00:00&#43;00:00" />
+      <meta property="og:updated_time" content="2023-07-01T00:00:00&#43;00:00" />
     
   
 
@@ -323,7 +369,7 @@
 
 
 
-  <title>Deep Learning | Academic</title>
+  <title>Deep Learning | Andrej&#39;s thoughts</title>
 </head>
 
 
@@ -402,7 +448,7 @@
 
       
       <div class="d-none d-lg-inline-flex">
-        <a class="navbar-brand" href="/">Academic</a>
+        <a class="navbar-brand" href="/">Andrej&#39;s thoughts</a>
       </div>
       
 
@@ -415,7 +461,7 @@
 
       
       <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-        <a class="navbar-brand" href="/">Academic</a>
+        <a class="navbar-brand" href="/">Andrej&#39;s thoughts</a>
       </div>
       
 
@@ -448,17 +494,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#about"><span>Demo</span></a>
+            <a class="nav-link " href="/post"><span>Posts</span></a>
           </li>
 
           
@@ -485,17 +524,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#posts"><span>Posts</span></a>
+            <a class="nav-link " href="/publication"><span>Publications</span></a>
           </li>
 
           
@@ -522,91 +554,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#projects"><span>Projects</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#talks"><span>Talks</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#featured"><span>Publications</span></a>
+            <a class="nav-link " href="/project"><span>Projects</span></a>
           </li>
 
           
@@ -663,17 +614,10 @@
               
             
             
-              
-              
-              
-                
-              
-              
-            
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+            <a class="nav-link " href="/about"><span>About</span></a>
           </li>
 
           
@@ -782,6 +726,390 @@
 
 
 
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item view-compact">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/post/presentation-of-our-work-on-whale-communication-at-the-simons-institute/" >A talk on our work on whale communication at the Simons Institute</a>
+    </div>
+
+    
+    <a href="/post/presentation-of-our-work-on-whale-communication-at-the-simons-institute/"  class="summary-link">
+      <div class="article-style">
+        I recently helped present our work (together with Prof. Gašper Beguš, paper) on the usage of deep generative models for discovering the building blocks of sperm whale communication at the Decoding Communication in Nonhuman Species symposium hosted at the Simons Institute for the Theory of Computing, UC Berkeley:
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Jul 11, 2023
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    <a href="/post/presentation-of-our-work-on-whale-communication-at-the-simons-institute/" >
+      <img src="/post/presentation-of-our-work-on-whale-communication-at-the-simons-institute/featured_hu063dd136cb01c6fff63ab655079b3ce6_15151_150x0_resize_q75_h2_lanczos.webp" height="113" width="150"
+           alt="A talk on our work on whale communication at the Simons Institute" loading="lazy">
+    </a>
+    
+  </div>
+</div>
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item view-compact">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/post/new-publication-approaching-an-unknown-communication-system/" >New publication: Approaching an unknown communication system</a>
+    </div>
+
+    
+    <a href="/post/new-publication-approaching-an-unknown-communication-system/"  class="summary-link">
+      <div class="article-style">
+        We have a pre-print out based on our work with Project CETI, an initiative to decipher sperm whale communication using machine learning.
+In the paper, we combine approaches that help discover how known properties of human language are learned by generative models when trained on labeled speech audio data with methodology inspired by causal inference and apply it to the communication system of sperm whales, for which we do not have any such ground truth.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Mar 20, 2023
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    <a href="/post/new-publication-approaching-an-unknown-communication-system/" >
+      <img src="/post/new-publication-approaching-an-unknown-communication-system/featured_hu0c73f8c49a5ac16135a4ee3d6e45055b_1737936_150x0_resize_q75_h2_lanczos_3.webp" height="84" width="150"
+           alt="New publication: Approaching an unknown communication system" loading="lazy">
+    </a>
+    
+  </div>
+</div>
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item view-compact">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/post/diffusion-models/" >Diffusion models: an introduction</a>
+    </div>
+
+    
+    <a href="/post/diffusion-models/"  class="summary-link">
+      <div class="article-style">
+        A brief introduction to diffusion models
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Oct 9, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    <a href="/post/diffusion-models/" >
+      <img src="/post/diffusion-models/featured_hu2548f22b72f3b69286d51c0a8d133041_592271_150x0_resize_q75_h2_lanczos_3.webp" height="51" width="150"
+           alt="Diffusion models: an introduction" loading="lazy">
+    </a>
+    
+  </div>
+</div>
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item view-compact">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/post/new-publication-projects/" >New publication, projects</a>
+    </div>
+
+    
+    <a href="/post/new-publication-projects/"  class="summary-link">
+      <div class="article-style">
+        Given that the semester&rsquo;s over, I have finally gotten around to updating the site.
+We have a pre-print out based on the work I did during my internship last summer. It examines the problem of inferring the characteristics of different people involved in the process of translating and reviewing text by using Hierarchical Bayesian Models.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    May 15, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+  
+    
+
+
+
+
+
+
+
   
 
 
@@ -797,11 +1125,68 @@
   <div class="media-body">
 
     <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/project/internal-project/" >Internal Project</a>
+      <a href="/project/ganising/" >ganIsing</a>
     </div>
 
     
-    <a href="/project/internal-project/"  class="summary-link">
+    <a href="/project/ganising/"  class="summary-link">
+      <div class="article-style">
+        Solving the 2D Ising model using GANs
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    <a href="/project/ganising/" >
+      <img src="/project/ganising/featured_huc3d4bf137e8e38b5c19a47e330f38061_7855_150x0_resize_q75_h2_lanczos_3.webp" height="76" width="150"
+           alt="ganIsing" loading="lazy">
+    </a>
+    
+  </div>
+</div>
+
+  
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item view-compact">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/project/example/" >Example Project</a>
+    </div>
+
+    
+    <a href="/project/example/"  class="summary-link">
       <div class="article-style">
         An example of using the in-built project page.
       </div>
@@ -822,9 +1207,9 @@
     
     
     
-    <a href="/project/internal-project/" >
-      <img src="/project/internal-project/featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_224363_150x0_resize_q75_h2_lanczos.webp" height="84" width="150"
-           alt="Internal Project" loading="lazy">
+    <a href="/project/example/" >
+      <img src="/project/example/featured.bak_hu3d03a01dcc18bc5be0e67db3d8d209a6_224363_150x0_resize_q75_h2_lanczos.webp" height="84" width="150"
+           alt="Example Project" loading="lazy">
     </a>
     
   </div>
@@ -849,6 +1234,14 @@
 
   
 
+  
+  <p class="powered-by">
+    
+    
+      
+      <a href="/terms/">License</a>
+    
+  </p>
   
 
   
@@ -924,6 +1317,8 @@
       
 
       
+        <script src="https://cdn.jsdelivr.net/gh/mermaid-js/mermaid@v8.8.4/dist/mermaid.min.js" integrity="sha512-+TNmhaRJf3jyYHTpzEq/5I6b+aGyhzWb21mGdHAjxSGSYwxN9Grug3Y3B9qVxWfKKY8MscE/6mr9walWvFLFvQ==" crossorigin="anonymous" title="mermaid"></script>
+      
 
       
         
@@ -935,6 +1330,12 @@
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/python.min.js" crossorigin="anonymous"></script>
         
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/cpp.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/cmake.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/bash.min.js" crossorigin="anonymous"></script>
         
       
 
