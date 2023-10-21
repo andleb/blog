@@ -2,8 +2,8 @@
 title: "Generative Flow Networks"
 author: ''
 date: '2023-10-20'
-header-includes:
-  - \usepackage{float, amsthm, amsmath, amssymb, bm, enumitem, latexsym, color, minipage-marginpar, caption, multirow, verbatim, xcolor, setspace, fancyhdr}
+# header-includes:
+  # - \usepackage{float, amsthm, amsmath, amssymb, bm, enumitem, latexsym, color, minipage-marginpar, caption, multirow, verbatim, xcolor, setspace, fancyhdr}
 slug: gflownet
 categories: []
 tags:
@@ -25,16 +25,16 @@ output:
     toc_depth: 2
 bibliography: [references.bib]
 nocite: |
-  @bengio_gflownet_2023
-  @hu_gflownet-em_2023
-  @zhang_unifying_2023
+  @bengio_gflownet_2023,
+  @hu_gflownet-em_2023,
+  @zhang_unifying_2023,
   @bengio_flow_2021
 image:
   caption: ''
   focal_point: ''
   preview_only: yes
 projects: []
-draft: true
+draft: false
 toc: true
 reading_time: true
 share: true
