@@ -31,8 +31,8 @@ module:
     - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-netlify
     - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-reveal
     - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-seo
-    - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy
-
+    # - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy/v5
+    
 ############################
 ## ADVANCED
 ############################
