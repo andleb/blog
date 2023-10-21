@@ -2,8 +2,6 @@
 title: "Generative Flow Networks"
 author: ''
 date: '2023-10-20'
-# header-includes:
-  # - \usepackage{float, amsthm, amsmath, amssymb, bm, enumitem, latexsym, color, minipage-marginpar, caption, multirow, verbatim, xcolor, setspace, fancyhdr}
 slug: gflownet
 categories: []
 tags:
@@ -16,6 +14,10 @@ authors: []
 lastmod: '2023-10-20T21:36:00-07:00'
 featured: no
 math: true
+# header-includes:
+#   - \usepackage{float, amsthm, amsmath, amssymb, bm, enumitem, latexsym, color, minipage-marginpar, caption, multirow, verbatim, xcolor, setspace, fancyhdr}zz
+draft: false
+# toc: true
 output:
   html_document:
     toc: true
@@ -24,18 +26,16 @@ output:
     toc: true
     toc_depth: 2
 bibliography: [references.bib]
-nocite: |
-  @bengio_gflownet_2023,
-  @hu_gflownet-em_2023,
-  @zhang_unifying_2023,
-  @bengio_flow_2021
+# nocite: |
+#   @bengio_gflownet_2023,
+#   @hu_gflownet-em_2023,
+#   @zhang_unifying_2023,
+#   @bengio_flow_2021
 image:
   caption: ''
   focal_point: ''
   preview_only: yes
 projects: []
-draft: false
-toc: true
 reading_time: true
 share: true
 editor_options: 
@@ -72,7 +72,9 @@ editor_options:
 \def\argmax{\mathop{\rm argmax}}
 ```
 
-{{% toc %}}
+<!-- {{% toc %}} -->
+
+<!-- \tableofcontents -->
 
 ## Introduction
 
