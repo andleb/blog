@@ -2,6 +2,7 @@
 title: "Generative Flow Networks"
 author: ''
 date: '2023-10-20'
+draft: true
 slug: gflownet
 categories: []
 tags:
@@ -16,7 +17,6 @@ featured: no
 math: true
 header-includes:
   - \usepackage{float, amsthm, amsmath, amssymb, bm, enumitem, latexsym, color, minipage-marginpar, caption, multirow, verbatim, xcolor, setspace, fancyhdr}
-draft: true
 toc: true
 output:
   pdf_document:
@@ -74,7 +74,6 @@ editor_options:
 \def\argmin{\mathop{\rm argmin}}
 \def\argmax{\mathop{\rm argmax}}
 ```
-
 <!-- {{% toc %}} -->
 
 <!-- \tableofcontents -->
@@ -83,26 +82,9 @@ editor_options:
 
 Citation example @bengio_gflownet_2023
 
-
 123456
 
-
-
-
 ## Mathematical preliminaries
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## General structure
 
