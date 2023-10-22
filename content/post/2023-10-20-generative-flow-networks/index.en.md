@@ -11,7 +11,7 @@ tags:
 subtitle: ''
 summary: 'A brief introduction to generative flow networks'
 authors: []
-lastmod: '2023-10-20T21:36:00-07:00'
+lastmod: '2023https://bookdown.org/yihui/rmarkdown-cookbook/latex-variables.html-10-20T21:36:00-07:00'
 featured: no
 math: true
 header-includes:
@@ -85,8 +85,6 @@ Citation example @bengio_gflownet_2023
 
 
 123456
-
-
 
 
 
