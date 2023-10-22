@@ -16,7 +16,7 @@ featured: no
 math: true
 header-includes:
   - \usepackage{float, amsthm, amsmath, amssymb, bm, enumitem, latexsym, color, minipage-marginpar, caption, multirow, verbatim, xcolor, setspace, fancyhdr}
-draft: false
+draft: true
 toc: true
 output:
   pdf_document:
@@ -89,16 +89,20 @@ Citation example @bengio_gflownet_2023
 
 
 
+## Mathematical preliminaries
 
 
 
 
-Diffusion models seem to have taken the world by storm due to their amazing generative powers. That is not their only
-advantage, however. With a bit of a tongue in the proverbial cheek, statistical methods can be traditionally classified
-as either inflexible (classical stats), computationally expensive (MCMC), or non-analytical (boosted trees). From this
-perspective, **diffusion models** are a significant outlier since they are extremely flexible, provide access to the
-full posterior (and conditional) distributions, and are computationally less expensive than many of the competing
-methods.
+
+
+
+
+
+
+
+
+
 
 ## General structure
 
