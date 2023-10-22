@@ -14,10 +14,10 @@ authors: []
 lastmod: '2023-10-20T21:36:00-07:00'
 featured: no
 math: true
-# header-includes:
-#   - \usepackage{float, amsthm, amsmath, amssymb, bm, enumitem, latexsym, color, minipage-marginpar, caption, multirow, verbatim, xcolor, setspace, fancyhdr}zz
+header-includes:
+  - \usepackage{float, amsthm, amsmath, amssymb, bm, enumitem, latexsym, color, minipage-marginpar, caption, multirow, verbatim, xcolor, setspace, fancyhdr}
 draft: false
-# toc: true
+toc: true
 output:
   html_document:
     toc: true
@@ -26,11 +26,11 @@ output:
     toc: true
     toc_depth: 2
 bibliography: [references.bib]
-# nocite: |
-#   @bengio_gflownet_2023,
-#   @hu_gflownet-em_2023,
-#   @zhang_unifying_2023,
-#   @bengio_flow_2021
+nocite: |
+  @bengio_gflownet_2023,
+  @hu_gflownet-em_2023,
+  @zhang_unifying_2023,
+  @bengio_flow_2021
 image:
   caption: ''
   focal_point: ''
@@ -72,13 +72,21 @@ editor_options:
 \def\argmax{\mathop{\rm argmax}}
 ```
 
-<!-- {{% toc %}} -->
+{{% toc %}}
 
 <!-- \tableofcontents -->
 
 ## Introduction
 
 Citation example @bengio_gflownet_2023
+
+
+
+
+
+
+
+
 
 Diffusion models seem to have taken the world by storm due to their amazing generative powers. That is not their only
 advantage, however. With a bit of a tongue in the proverbial cheek, statistical methods can be traditionally classified
