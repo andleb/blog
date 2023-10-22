@@ -9,7 +9,7 @@ baseurl: 'https://andleb.netlify.app/' # Website URL
 copyright: '' # Footer text, e.g. '© {year} Me'
 
 sitemap:
-  changefreq: monthly
+  changefreq: weekly
   filename: sitemap.xml
   priority: 1.0
 
