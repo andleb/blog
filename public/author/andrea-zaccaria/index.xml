@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Andrea Zaccaria | Andrej&#39;s thoughts</title>
+    <link>https://andleb.netlify.app/author/andrea-zaccaria/</link>
+      <atom:link href="https://andleb.netlify.app/author/andrea-zaccaria/index.xml" rel="self" type="application/rss+xml" />
+    <description>Andrea Zaccaria</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 12 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Andrea Zaccaria</title>
+      <link>https://andleb.netlify.app/author/andrea-zaccaria/</link>
+    </image>
+    
+    <item>
+      <title>A Bayesian approach to translators&#39; reliability assessment</title>
+      <link>https://andleb.netlify.app/publication/bayesiantranslators/</link>
+      <pubDate>Tue, 12 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/publication/bayesiantranslators/</guid>
+      <description>&lt;p&gt;NOTE: This paper stems from the work I did as a Machine Learning intern at &lt;a href=&#34;https://translated.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Translated&lt;/a&gt;
+in Rome during the summer of 2021.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

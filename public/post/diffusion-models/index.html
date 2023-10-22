@@ -1,0 +1,1484 @@
+<!DOCTYPE html><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.4.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+    <meta name="google-site-verification" content="google-site-verification=oJUt4qEgz1nbEKcvDXzsR0LNbHNPGcPECa2xegOaWp8" />
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="A brief introduction to diffusion models" />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://andleb.netlify.app/post/diffusion-models/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/monokai-sublime.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/monokai-sublime.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css" integrity="" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.cd9e9a3a9af953d5551c8bdbe43c9303.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-228705789-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-228705789-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://andleb.netlify.app/post/diffusion-models/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+    <meta property="twitter:site" content="@anleb1" />
+    <meta property="twitter:creator" content="@anleb1" />
+  
+  <meta property="og:site_name" content="Andrej&#39;s thoughts" />
+  <meta property="og:url" content="https://andleb.netlify.app/post/diffusion-models/" />
+  <meta property="og:title" content="Diffusion models: an introduction | Andrej&#39;s thoughts" />
+  <meta property="og:description" content="A brief introduction to diffusion models" /><meta property="og:image" content="https://andleb.netlify.app/post/diffusion-models/featured.png" />
+    <meta property="twitter:image" content="https://andleb.netlify.app/post/diffusion-models/featured.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2022-10-02T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2022-10-09T21:36:00-07:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://andleb.netlify.app/post/diffusion-models/"
+  },
+  "headline": "Diffusion models: an introduction",
+  
+  "image": [
+    "https://andleb.netlify.app/post/diffusion-models/featured.png"
+  ],
+  
+  "datePublished": "2022-10-02T00:00:00Z",
+  "dateModified": "2022-10-09T21:36:00-07:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Andrej's thoughts",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "A brief introduction to diffusion models"
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Diffusion models: an introduction | Andrej&#39;s thoughts</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="300d30b09ac19d1f546eed75c567b6d9" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.8f76bdc9e086322ed5147724ebba3d06.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Andrej&#39;s thoughts</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Andrej&#39;s thoughts</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/about"><span>About</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link  active" href="/post"><span>Posts</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/publication"><span>Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/project"><span>Projects</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/courses/"><span>Courses</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+            
+            <li class="nav-item d-none d-lg-inline-flex">
+              <a class="nav-link" href="/"  aria-label="">
+                <i class="fas fa-" aria-hidden="true"></i>
+              </a>
+            </li>
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Light</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Dark</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automatic</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Diffusion models: an introduction</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Oct 9, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+
+
+<!-- LaTeX preamble -->
+<p><details class="toc-inpage d-print-none  " open>
+  <summary class="font-weight-bold">Table of Contents</summary>
+  
+</details>
+</p>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>Diffusion models seem to have taken the world by storm due to their amazing generative powers. That is not their only
+advantage, however. With a bit of a tongue in the proverbial cheek, statistical methods can be traditionally classified
+as either inflexible (classical stats), computationally expensive (MCMC), or non-analytical (boosted trees). From this
+perspective, <strong>diffusion models</strong> are a significant outlier since they are extremely flexible, provide access to the full
+posterior (and conditional) distributions, and are computationally less expensive than many of the competing methods.</p>
+</div>
+<div id="general-structure" class="section level2">
+<h2>General structure</h2>
+<div class="float">
+<img src="generative-overview.png" title="Overview of Generative models" style="width:70.0%" alt="An overview of generative models (source)" />
+<div class="figcaption"><em>An overview of generative models</em>
+(<a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/">source</a>)</div>
+</div>
+<p>Diffusion models are composed of two separate processes, <strong>the forward</strong> and <strong>the backward</strong>.</p>
+<div id="forward-diffusion" class="section level3">
+<h3>Forward diffusion</h3>
+<p>In general - a diffusion process can be characterized by a <em>Markov diffusion kernel</em> given a final state <span class="math inline">\(\pi(x)\)</span>:</p>
+<span class="math display">\[\begin{equation}
+    q(x_t | x_{t-1}) = T_\pi(x_t | x_{t-1}; \beta_t)
+\end{equation}\]</span>
+<p>Since it’s a length-one Markov process, we have for the full joint: <span class="math display">\[\begin{equation}
+    q(x_{t=0:T} ) = q(x_0) \prod_{i=1}^T q(x_i | x_{i-1})
+\end{equation}\]</span></p>
+<p>Usually, we use a Gaussian diffusion, for which the posterior is closed form (c.f. the 1-step update in <em>Kalman filtering</em>):</p>
+<span class="math display">\[\begin{equation}
+    q(x_t | x_{t-1}) = \mathcal{N}(\sqrt{1 - \beta_t}x_{t-1}, \beta_t \mathbf{I})
+\end{equation}\]</span>
+<p><span class="math inline">\(\beta_i\)</span>s are called the <strong>variance schedule</strong>, with usually <span class="math inline">\(\beta_1 &lt; \beta_2 &lt; ... &lt; \beta_T\)</span>.</p>
+<p>Moreover, due to the property of the Gaussian distribution:</p>
+<p><span class="math display">\[\alpha_t := 1 - \beta_t\]</span></p>
+<p><span class="math display">\[\bar{\alpha}_t := \prod_{s=1}^t \alpha_t\]</span></p>
+<span class="math display">\[\begin{equation}
+q(x_t | x_0) = \mathcal{N}(\sqrt{\bar{\alpha_t}}~x_0, (1 - \alpha_t) \mathbf{I}),
+\end{equation}\]</span>
+<p>meaning any state in the forward process can be expressed knowing <em>just the initial one</em> and the <em>variance schedule</em>. In
+general, the theoretical underpinning of <em>Langevin dynamics</em> guarantees any smooth distribution can be corrupted into
+Gaussian noise, meaning the initial distribution can be almost arbitrarily complex, giving the model its expressive power.</p>
+</div>
+<div id="reverse-diffusion" class="section level3">
+<h3>Reverse diffusion</h3>
+<p>The reverse process is characterized by a new transition probability <span class="math inline">\(p(x)\)</span>.
+Its starting point is the stationary distribution at the final time <span class="math inline">\(T\)</span>:</p>
+<span class="math display">\[\begin{equation}
+    \pi(x_T) := p(x_T)
+\end{equation}\]</span>
+<p>Like before:</p>
+<span class="math display">\[\begin{equation}
+    p(x_{t=T:0}) = p(x_T) \prod_{i=T-1}^1 p(x_i+1 | x_{i})
+\end{equation}\]</span>
+<p>For Gaussian (and binomial), the joint is still in the same family; however, there is no closed-form for the parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\Sigma\)</span>.
+These need to be estimated, in this case via neural networks.</p>
+<p>A natural training target is the likelihood of the original data <span class="math inline">\(p(x_0)\)</span> as given by the learned reverse process’ distribution,
+obtained by marginalizing the full joint:
+<span class="math display">\[\begin{equation}
+    p(x_0) = \int_{\mathcal{X}} p(x_{t=T:0}) ~ dx_1 .... dx_T
+\end{equation}\]</span></p>
+<p>This is computationally intractable! A trick is to use annealed importance sampling - comparing the relative probability of the backward - <span class="math inline">\(p\)</span> - and the forward trajectories <span class="math inline">\(q\)</span>, where the latter are known in closed form:</p>
+<span class="math display">\[\begin{equation}
+    p(x_0) = \int_{\mathcal{X}} q(x_{t=1:T}) ~p(x_T)~ \prod_{t=1}^T \frac{p(x_{t-1}|x_t)}{q(x_{t}|x_{t-1})} ~ dx_1 .... dx_T
+\end{equation}\]</span>
+<p>In the limit of very small <span class="math inline">\(\beta\)</span>, both directions become the same.</p>
+</div>
+</div>
+<div id="training" class="section level2">
+<h2>Training</h2>
+<p>We maximize the <strong>expected</strong> log likelihood of the original data <span class="math inline">\(p(x_0)\)</span> under the original true distribution <span class="math inline">\(q(x_0)\)</span>:</p>
+<span class="math display">\[\begin{aligned}
+    &amp; L(p, q) = \mathbb{E}_{q(x_0)} [p(x_0)] = \int_{\mathcal{X}} q(x_0) ~ \log p(x_T)~ dx_0\\
+    &amp; = -~\mathbb{E}_{q} \left[ \underbrace{D( q(x_T | x_0) || p(x_T))}_{L_T} + \underbrace{\sum_{t=2}^T D( q(x_{t-1} | x_t, x_0) || p(x_{t-1} || x_t))}_{L_{t-1}} - \underbrace{\log p(x_0 | x+1)}_{L_0}   \right]
+\end{aligned}\]</span>
+<p>It can be <em>lower bounded</em> by a closed-form expression:</p>
+<span class="math display">\[\begin{aligned}
+    L \geq K = - \sum_{t=2}^T \int q(x_0, x_t) ~ D(q(x_{t-1}|x_{t}, x_{0}) ~||~ p(x_{t-1}|x_{t}))~dx_0,~dx_t\\
+    + H_q(X_T|X_0) - H_q(X_1|X_0) - H_p(X_T),&amp;
+\end{aligned}\]</span>
+<p>where <span class="math inline">\(D\)</span> is the K-L divergence and H denotes the (conditional) entropies. Hence maximizing the latter maximizes the
+former.</p>
+<p>Additionally, conditioning the forward process posteriors on <span class="math inline">\(x_0\)</span> gives us the closed-forms</p>
+<span class="math display">\[\begin{equation}
+q(x_{t-1}|x_{t}, x_{0}) = \mathcal{N}(\tilde{\mu}_t, \tilde{\beta}_t \mathbf{I})
+\end{equation}\]</span>
+<p><span class="math display">\[\tilde{\mu}_t := \frac{\sqrt{\bar{\alpha}_{t-1}} \beta_t}{1 - \bar{\alpha}_t}~x_0 + \frac{\sqrt{\bar{\alpha}_{t}} (1 - \bar{\alpha}_{t})}{1 - \bar{\alpha}_t}~x_t\]</span></p>
+<p><span class="math display">\[\tilde{\beta}_t := \frac{1 - \bar{\alpha}_{t-1}}{1 - \bar{\alpha}_t} \beta_t\]</span></p>
+<p>The goal of training is therefore to <strong>estimate the reverse Markov transition densities</strong> <span class="math inline">\(p(x_{t-1}|x_t)\)</span>:
+<span class="math display">\[\hat{p}(x_{t-1}|x_t) = \underset{p}{\operatorname{argmax}} K\]</span></p>
+<p>As mentioned, in the case of the Gaussian and binomial, the reverse process stays in the same family, therefore the task amounts to
+estimating the parameters.</p>
+<div id="variance-schedule" class="section level3">
+<h3>Variance schedule</h3>
+<p>Since <span class="math inline">\(\beta_t\)</span> is a free parameter, it can be learned simultaneously with the whole <span class="math inline">\(K\)</span> optimization procedure,
+freezing the other variables and optimizing on <span class="math inline">\(\beta\)</span>. Alternatively, the first paper also treated a sequence as a
+hyperparameter and used a simply linearly increasing <span class="math inline">\(\beta\)</span>. This is also the approach of <em>Ho et al.</em></p>
+</div>
+<div id="estimating-p" class="section level3">
+<h3>Estimating <span class="math inline">\(p\)</span></h3>
+<p>Our goal is to learn the following:</p>
+<p><span class="math display">\[
+p(x_{t-1} | x_t) = \mathcal{N}(\mu(x_t, t), \Sigma(x_t, t)), ~~ t \in [T, 0]
+\]</span>
+which corresponds to estimating <span class="math inline">\(\mu(x_t, t), \Sigma(x_t, t)\)</span>.</p>
+<p>For the variance, it is simply set to be isotropic with the diagonal entries either <strong>fixed</strong> at a constant (either
+<span class="math inline">\(\beta_t\)</span> or <span class="math inline">\(\tilde{\beta}_t\)</span>) or <strong>learned</strong>. The latter proved to be unstable in Ho et al., but has since been
+successfully implemented.</p>
+<p>The mean is, of course, learned in all implementations and proceeds as follows: by inspecting the <span class="math inline">\(L_{t-1}\)</span> term in the likelihood in <a href="#training">Training</a>, the minimizing mean can be expressed by the reparametrization:
+<span class="math display">\[x_t = \sqrt{\bar{\alpha}_t}~x_0 + \sqrt{1 - \bar{\alpha}_t}~\epsilon \]</span>
+<span class="math display">\[\epsilon \sim \mathcal{N}(0, \mathbf{I})\]</span></p>
+<span class="math display">\[\begin{equation}
+\mu(x_t, t) = \frac{1}{\sqrt{\alpha_t}} (x_t - \frac{\beta_t}{\sqrt{1 - \bar{\alpha_t}}} \epsilon_{\theta}(x_t, t)),
+\end{equation}\]</span>
+<p>meaning we instead learn the estimator of the <strong>noise</strong> in the mean term at step <span class="math inline">\(t\)</span>: <span class="math inline">\(\epsilon_{\theta}(x_t, t))\)</span> from the state <span class="math inline">\(x_t\)</span>.</p>
+<p>This can be further simplified by setting <span class="math inline">\(t\)</span> to be <em>continuous</em> on <span class="math inline">\([1, T]\)</span> and optimizing the following simplified
+objective for <span class="math inline">\(\epsilon_\theta(x_t, t)\)</span>:</p>
+<p><span class="math display">\[\begin{equation}
+L_{\text{simple}}(\theta) := \mathbb{E}_{t, x_0, \epsilon} \left[\Vert \epsilon - \epsilon_\theta(\sqrt{\bar{\alpha}_t} x_0 + \sqrt{1 - \bar{\alpha}_t} \epsilon, t) \Vert^2\right]
+\end{equation}\]</span> This can be optimized using standard optimization techniques, such as gradient descent. We can now state
+the two algorithms needed to first, train the noise estimator <span class="math inline">\(\epsilon_\theta\)</span>, and then, obtain a sample from the
+reverse diffusion process: <img src="ho_algos.png" title="The two algorithms due to Ho et al." style="width:75.0%" alt="Algorithms due to Ho et al." /></p>
+</div>
+<div id="architecture" class="section level3">
+<h3>Architecture</h3>
+<p>Ho et al. used a variation of an U-net called <a href="https://arxiv.org/abs/1701.05517">PixelCNN++</a> to estimate
+<span class="math inline">\(\epsilon_{\theta}(x_t, t))\)</span>:</p>
+<div class="float">
+<img src="u-net-architecture.png" title="The original U-net" style="width:50.0%" alt="The original U-net" />
+<div class="figcaption"><em>The original U-net</em></div>
+</div>
+<div class="float">
+<img src="pixelcnn.png" title="Salimans et al. - PixelCNN++ structure" style="width:125.0%" alt="PixelCNN++ structure" />
+<div class="figcaption"><em>PixelCNN++ structure</em></div>
+</div>
+</div>
+</div>
+<div id="how-does-it-work-in-practice" class="section level2">
+<h2>How does it work in practice?</h2>
+<div id="example---recovery" class="section level3">
+<h3>Example - recovery</h3>
+<div class="float">
+<img src="sohl-dickstein_spiral.png" title="Spiral distribution recovery" style="width:80.0%" alt="Recovery (middle row) of a spiral distribution (top) using a Gaussian diffusion model. The bottom row represents the “drift term”, i.e. the field controlling the mean for the “particles” in the next step of the reverse process." />
+<div class="figcaption"><em>Recovery (middle row) of a spiral distribution (top) using a Gaussian diffusion model. The bottom row represents the
+“drift term”, i.e. the field controlling the mean for the “particles” in the next step of the reverse
+process.</em></div>
+</div>
+</div>
+<div id="example---generation" class="section level3">
+<h3>Example - generation</h3>
+<p>Ho et al. used the modified network for both <strong>conditional</strong> and <strong>unconditional</strong> generation.</p>
+<p>The <em>unconditional generation</em> was performed by estimating <span class="math inline">\(x_0\)</span> - the end result of the reverse process - from
+initially random <span class="math inline">\(x_T\)</span>. The following figure shows the order in which features crystallize when the <em>initial state is
+itself sampled from various points of the reverse process</em>. The training dataset was CIFAR10.</p>
+<div class="float">
+<img src="ho_uncgen.png" title="Unconditional generation from the reverse process sample" width="1500" alt="Unconditional generation from the reverse process sample" />
+<div class="figcaption"><em>Unconditional generation from the reverse process
+sample</em></div>
+</div>
+<p>For <em>conditional generation,</em> the authors selected a <span class="math inline">\(x_t\)</span> from the actual distribution and sampled from the predictive
+posterior <span class="math inline">\(p(x_0|x_t)\)</span>. The following figure shows the results conditioned on the bottom-right quadrant, for a network
+trained on CelebA-HQ:</p>
+<div class="float">
+<img src="ho_condgen.png" title="Conditional generation samples from a given state" width="1500" alt="Conditional generation samples from a given state: the earlier the x_t, the more deterministic the outcome." />
+<div class="figcaption"><em>Conditional generation samples from a given state:</em> the earlier the <span class="math inline">\(x_t\)</span>, the more deterministic the
+outcome.</div>
+</div>
+</div>
+<div id="imagen-dall-e-2" class="section level3">
+<h3>Imagen &amp; DALL-E 2</h3>
+<p><a href="https://arxiv.org/abs/2207.12598">Ho and Salimans</a> improved the above procedure by introducing the notion of <em>guiding</em>
+the model during training on labeled data, i.e. estimating <span class="math inline">\(\epsilon_\theta(x_t, t ∣ y)\)</span>, where <span class="math inline">\(y\)</span> are the labels. The
+crux of the approach is training both on conditional and unconditional objectives at once by randomly setting the class
+label to a null class with some predetermined probability. Likewise, the samples are drawn from a convex combination
+(with the same coefficient) of both <span class="math inline">\(p\)</span>-s.</p>
+<p>This was used by Nichol et al. in <a href="https://arxiv.org/abs/2112.10741?s=09">GLIDE</a>, which uses information extracted from
+text to do the guiding, combining a transformer with the previously described architecture.</p>
+<p>This approach has been used to construct <a href="https://arxiv.org/pdf/2205.11487.pdf">Imagen</a>, which uses additional diffusion
+models to up-sample the image created by the guided diffusion process. The text embeddings are provided by a
+<em>pretrained</em> transformer’s encoder.</p>
+<div class="float">
+<img src="imagen.png" width="700" alt="Imagen structure" />
+<div class="figcaption"><em>Imagen structure</em></div>
+</div>
+<p>The other diffusion-based model to make waves recently - DALL-E 2 - uses a bit more complex approach:</p>
+<div class="float">
+<img src="dalle2.png" title="DALL-E 2 architecture" alt="DALL-E 2 architecture" />
+<div class="figcaption"><em>DALL-E 2 architecture</em></div>
+</div>
+<p>First, it re-uses a model called CLIP (Contrastive Language-Image Pre-training) to construct a <em>mapping between captions
+and images</em> (top of the schematic above). In practice, the net result of this is a <em>joint embedding of text and images</em>
+in a representation space.</p>
+<p>In generation, this model is frozen and a version of the GLIDE guided diffusion model is used to generate images
+<strong>starting from the image representation space</strong> (as opposed to random noise, for instance). As previously, additional
+up-samplers are used in the decoder, as well.</p>
+<p>To generate from text prompts, we need to map the caption text embeddings to the above mentioned image embeddings, which
+are the starting point for the decoder. This is done with an <em>additional diffusion model</em> called <strong>the prior</strong>, which
+generates <em>multiple possible embeddings.</em> In other words, this is a generative model of the image embeddings given the
+text embeddings. The prior trains a decoder-only transformer to predict the conditional reverse process, as opposed to the U-net
+used in other examples.</p>
+<div class="float">
+<img src="dalle2_interpolation.png" title="DALL-E 2: interpolation of the image embedding space" alt="DALL-E 2: interpolation of the image embedding space by the decoder" />
+<div class="figcaption"><em>DALL-E 2: interpolation of the image embedding
+space by the decoder</em></div>
+</div>
+</div>
+</div>
+<div id="references" class="section level2">
+<h2>References</h2>
+<ul>
+<li>The original paper: <a href="https://arxiv.org/abs/1503.03585">Sohl-Dickstein et al. - Deep Unsupervised Learning using Non-equilibrium
+Thermodynamics</a></li>
+<li>Performant implementation: <a href="https://arxiv.org/abs/2006.11239">Ho et al. - Denoising Diffusion Probabilistic Models</a></li>
+<li>A good blog post: <a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/">Weng, Lilian. (Jul 2021). What are diffusion models?
+Lil’Log.</a></li>
+<li>A summary of recent developments:
+<a href="https://maciejdomagala.github.io/generative_models/2022/06/06/The-recent-rise-of-diffusion-based-models.html" class="uri">https://maciejdomagala.github.io/generative_models/2022/06/06/The-recent-rise-of-diffusion-based-models.html</a></li>
+<li>DALL-E 2 initial paper: <a href="https://arxiv.org/abs/2204.06125">Ramesh et al. - Hierarchical Text-Conditional Image Generation with CLIP
+Latents</a></li>
+</ul>
+<p>Related:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Kalman_filter">The Kalman filter</a></li>
+<li><a href="../../uploads/leban_andrej%20-%20continuous%20time%20kalman%20filter.pdf">My presentation on the Continuous-time Kalman
+filter</a></li>
+<li><a href="https://arxiv.org/abs/1601.00670">Blei, Kucukelbir, McAuliffe - Variational Inference: A Review for Statisticians</a></li>
+</ul>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/deep-learning/">Deep Learning</a>
+  
+  <a class="badge badge-light" href="/tag/statistics/">Statistics</a>
+  
+  <a class="badge badge-light" href="/tag/diffusion/">Diffusion</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://andleb.netlify.app/post/diffusion-models/&amp;text=Diffusion%20models:%20an%20introduction" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://andleb.netlify.app/post/diffusion-models/&amp;t=Diffusion%20models:%20an%20introduction" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Diffusion%20models:%20an%20introduction&amp;body=https://andleb.netlify.app/post/diffusion-models/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://andleb.netlify.app/post/diffusion-models/&amp;title=Diffusion%20models:%20an%20introduction" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://andleb.netlify.app/"></a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:leban@umich.edu" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/" >
+        <i class="fas fa-"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/andleb" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/anleb1" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=dHJ98jAAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/gflownet/">Generative Flow Networks</a></li>
+      
+      <li><a href="/post/new-publication-approaching-an-unknown-communication-system/">New publication: Approaching an unknown communication system</a></li>
+      
+      <li><a href="/post/new-publication-projects/">New publication, projects</a></li>
+      
+      <li><a href="/post/presentation-of-our-work-on-whale-communication-at-the-simons-institute/">A talk on our work on whale communication at the Simons Institute</a></li>
+      
+      <li><a href="/project/ganising/">ganIsing</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+  
+
+  
+  <p class="powered-by">
+    
+    
+      
+      <a href="/terms/">License</a>
+    
+  </p>
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    <script src="/js/vendor-bundle.min.b73dfaac3b6499dc997741748a7c3fe2.js"></script>
+
+    
+    
+    
+      
+      
+        <script src="https://cdn.jsdelivr.net/gh/desandro/imagesloaded@v4.1.4/imagesloaded.pkgd.min.js" integrity="sha512-S5PZ9GxJZO16tT9r3WJp/Safn31eu8uWrzglMahDT4dsmgqWonRY9grk3j+3tfuPr9WJNsfooOR7Gi7HL5W2jw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/metafizzy/isotope@v3.0.6/dist/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/gh/mermaid-js/mermaid@v8.8.4/dist/mermaid.min.js" integrity="sha512-+TNmhaRJf3jyYHTpzEq/5I6b+aGyhzWb21mGdHAjxSGSYwxN9Grug3Y3B9qVxWfKKY8MscE/6mr9walWvFLFvQ==" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/python.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/cpp.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/cmake.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/bash.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js" integrity="" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+
+    
+    
+    
+    <script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+    
+    
+      <script src="/js/wowchemy-headroom.1cb9e2fc8399acee94eab837265b73bf.js" type="module"></script>
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.247fd8f54253895301106e3006f53f38.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

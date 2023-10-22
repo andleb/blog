@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python | Andrej&#39;s thoughts</title>
+    <link>https://andleb.netlify.app/tag/python/</link>
+      <atom:link href="https://andleb.netlify.app/tag/python/index.xml" rel="self" type="application/rss+xml" />
+    <description>Python</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 05 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Python</title>
+      <link>https://andleb.netlify.app/tag/python/</link>
+    </image>
+    
+    <item>
+      <title>A simple GMAT practice set generator</title>
+      <link>https://andleb.netlify.app/post/a-simple-gmat-practice-set-generator/</link>
+      <pubDate>Wed, 05 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/post/a-simple-gmat-practice-set-generator/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;em&gt;NOTE: This is a migration of an old post from my &lt;a href=&#34;https://andleb1.wordpress.com/2020/03/08/a-simple-gmat-practice-set-generator/&#34;&gt;previous blog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I recently sat for the GMAT. To practice smarter, I came up with a simple &lt;em&gt;Official Guide 2020&lt;/em&gt; problem set generator in Python.
+The motivation came from my dissatisfaction with available solutions, for example, the solution you get by registering the book online.
+Some don’t allow you to narrow the problems down by sub-category, others aren’t random generators or don’t keep track of done problems.
+On the other hand, using my simple generator, you can still input the answers in any online system and thus take advantage of any statistics offered.&lt;/p&gt;
+&lt;p&gt;The code and more details at: &lt;a href=&#34;https://github.com/andleb/set_generator&#34; class=&#34;uri&#34;&gt;https://github.com/andleb/set_generator&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to call all the functions in a Python file on an object</title>
+      <link>https://andleb.netlify.app/post/how-to-call-all-the-functions-in-a-python-file-on-an-object/</link>
+      <pubDate>Wed, 05 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/post/how-to-call-all-the-functions-in-a-python-file-on-an-object/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;em&gt;NOTE: This is a migration of an old post from my previous blog.&lt;/em&gt;
+&lt;!-- (https://andleb1.wordpress.com/2020/05/28/how-to-call-all-the-functions-in-a-python-file-on-an-object/)* --&gt;&lt;/p&gt;
+&lt;p&gt;Recently, I’ve been playing around with some competitions on Kaggle. Given that an inescapable fact of Machine Learning is &lt;em&gt;Feature Selection&lt;/em&gt;,
+I’ve been finding myself in the situation of having to call a dozen or more functions that add synthetic features,
+infer missing values, etc., on the same &lt;code&gt;Pandas DataFrame&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The following code snippet will call every function in its &lt;code&gt;.py&lt;/code&gt; file but itself on the object,
+using tail recursion (nested helper function &lt;code&gt;recCall&lt;/code&gt;):&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import inspect
+import sys
+ 
+import pandas as pd
+ 
+def addAllFeatures(data: pd.DataFrame):
+    currFunc  = inspect.getframeinfo(inspect.currentframe()).function
+    functions = [obj for name, obj in
+                 inspect.getmembers(sys.modules[__name__])
+                 if (inspect.isfunction(obj) and name != currFunc)]
+ 
+    def recCall(modifiedData, remFuncs):
+        if len(remFuncs) == 0:
+            return modifiedData
+         
+        return recCall(remFuncs[0](modifiedData), remFuncs[1:])
+ 
+    return recCall(data, functions)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For this specific example, the general form of the feature-adding functions is:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;def addFeature(data: pd.DataFrame, *args, **kwargs):
+     
+    # add the feature ...
+     
+    return data&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Also notable is the fact that the data gets modified between calls of the recursion;
+if your features depend on each other, then the &lt;code&gt;functions&lt;/code&gt; list would need to be in the correct dependency order.
+Determining this can, however, quickly become non-trivial.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

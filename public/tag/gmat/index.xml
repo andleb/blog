@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GMAT | Andrej&#39;s thoughts</title>
+    <link>https://andleb.netlify.app/tag/gmat/</link>
+      <atom:link href="https://andleb.netlify.app/tag/gmat/index.xml" rel="self" type="application/rss+xml" />
+    <description>GMAT</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 05 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>GMAT</title>
+      <link>https://andleb.netlify.app/tag/gmat/</link>
+    </image>
+    
+    <item>
+      <title>A simple GMAT practice set generator</title>
+      <link>https://andleb.netlify.app/post/a-simple-gmat-practice-set-generator/</link>
+      <pubDate>Wed, 05 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/post/a-simple-gmat-practice-set-generator/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;em&gt;NOTE: This is a migration of an old post from my &lt;a href=&#34;https://andleb1.wordpress.com/2020/03/08/a-simple-gmat-practice-set-generator/&#34;&gt;previous blog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I recently sat for the GMAT. To practice smarter, I came up with a simple &lt;em&gt;Official Guide 2020&lt;/em&gt; problem set generator in Python.
+The motivation came from my dissatisfaction with available solutions, for example, the solution you get by registering the book online.
+Some don’t allow you to narrow the problems down by sub-category, others aren’t random generators or don’t keep track of done problems.
+On the other hand, using my simple generator, you can still input the answers in any online system and thus take advantage of any statistics offered.&lt;/p&gt;
+&lt;p&gt;The code and more details at: &lt;a href=&#34;https://github.com/andleb/set_generator&#34; class=&#34;uri&#34;&gt;https://github.com/andleb/set_generator&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

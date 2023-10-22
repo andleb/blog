@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; | Andrej&#39;s thoughts</title>
+    <link>https://andleb.netlify.app/tag/c-/</link>
+      <atom:link href="https://andleb.netlify.app/tag/c-/index.xml" rel="self" type="application/rss+xml" />
+    <description>C&#43;&#43;</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <image>
+      <url>https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>C&#43;&#43;</title>
+      <link>https://andleb.netlify.app/tag/c-/</link>
+    </image>
+    
+    <item>
+      <title>derivatives</title>
+      <link>https://andleb.netlify.app/project/derivatives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/project/derivatives/</guid>
+      <description>&lt;p&gt;A few years back, I undertook a significant study of mathematical finance. I chiefly followed M. Joshi&amp;rsquo;s &lt;a href=&#34;https://www.amazon.com/gp/product/0521514088&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Concepts and Practice of Mathematical Finance&lt;/a&gt; and &lt;a href=&#34;https://www.amazon.com/gp/product/0987122800&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;More Mathematical Finance&lt;/a&gt;.
+Since the companion practical textbook, &lt;a href=&#34;https://www.amazon.com/gp/product/0521721628&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;C++ Design Patterns and Derivatives Pricing&lt;/a&gt;,
+was based on outdated, pre-&lt;code&gt;C++11&lt;/code&gt; paradigms, and the author has sadly passed away, I decided to rewrite the latter in modern C++.
+The goal was to keep the original spirit while adding advanced functionality.
+I hope that other people studying from the same sources find the project useful, and I have thus, in a small way, helped keep the book relevant.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

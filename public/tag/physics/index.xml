@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Physics | Andrej&#39;s thoughts</title>
+    <link>https://andleb.netlify.app/tag/physics/</link>
+      <atom:link href="https://andleb.netlify.app/tag/physics/index.xml" rel="self" type="application/rss+xml" />
+    <description>Physics</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 15 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Physics</title>
+      <link>https://andleb.netlify.app/tag/physics/</link>
+    </image>
+    
+    <item>
+      <title>ganIsing</title>
+      <link>https://andleb.netlify.app/project/ganising/</link>
+      <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/project/ganising/</guid>
+      <description>&lt;p&gt;This is my final project for &lt;em&gt;STAT241 / CS281A: Statistical Learning Theory&lt;/em&gt; at UC Berkeley in Fall 2021.&lt;/p&gt;
+&lt;p&gt;Given that I&amp;rsquo;ve gotten out of Physics just about when the Deep Learning &amp;ldquo;revolution&amp;rdquo; hit the field, it was a great reason to try in person how generative adversarial networks can replicate results obtained by time-consuming Monte Carlo simulation, something I am deeply familiar with.&lt;/p&gt;
+&lt;p&gt;The goal of this project was two-fold: to examine the approach on a classic example - the 2D Ising model, and to provide a brief (the final report linked above was limited to 10 pages) overview of the use of GANs in general.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

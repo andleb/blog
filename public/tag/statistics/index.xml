@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statistics | Andrej&#39;s thoughts</title>
+    <link>https://andleb.netlify.app/tag/statistics/</link>
+      <atom:link href="https://andleb.netlify.app/tag/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <description>Statistics</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 20 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Statistics</title>
+      <link>https://andleb.netlify.app/tag/statistics/</link>
+    </image>
+    
+    <item>
+      <title>Generative Flow Networks</title>
+      <link>https://andleb.netlify.app/post/gflownet/</link>
+      <pubDate>Fri, 20 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/post/gflownet/</guid>
+      <description>&lt;!-- LaTeX preamble --&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{=tex}&#34;&gt;\newtheorem{theorem}{Theorem}
+
+\newcommand{\E}{{\mathbb E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\se}{{\mathcal{E}}}
+\newcommand{\R}{{\mathbb R}}
+\renewcommand{\P}{{\mathbb P}}
+\newcommand{\ac}{{\mathcal{A}}}
+\newcommand{\A}{{\mathcal{A}}}
+\newcommand{\B}{{\mathcal{B}}}
+\newcommand{\T}{{\mathcal{T}}}
+\newcommand{\Z}{{\mathcal{Z}}}
+\newcommand{\K}{{\mathcal{K}}}
+\newcommand{\lc}{{\mathcal{L}}}
+\newcommand{\Ps}{{\mathcal{P}}}
+\newcommand{\pa}{{\mathring{p}}}
+\newcommand{\F}{{\cal F}}
+\newcommand{\samp}{{\mathcal{X}}}
+\newcommand{\X}{{\mathcal{X}}}
+\newcommand{\hi}{{\hat{\Phi}}}
+\newcommand{\indep}{\perp \!\!\! \perp}
+\def\qt#1{\\qquad\\text{#1}}
+\def\argmin{\mathop{\rm argmin}}
+\def\argmax{\mathop{\rm argmax}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- &lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;Table of Contents&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#mathematical-preliminaries&#34;&gt;Mathematical preliminaries&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#general-structure&#34;&gt;General structure&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#forward-diffusion&#34;&gt;Forward diffusion&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#reverse-diffusion&#34;&gt;Reverse diffusion&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#training&#34;&gt;Training&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#variance-schedule&#34;&gt;Variance schedule&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#estimating-p&#34;&gt;Estimating $p$&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#architecture&#34;&gt;Architecture&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-does-it-work-in-practice&#34;&gt;How does it work in practice?&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#example---recovery&#34;&gt;Example - recovery&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#example---generation&#34;&gt;Example - generation&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#imagen--dall-e-2&#34;&gt;Imagen &amp;amp; DALL-E 2&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#references&#34;&gt;References&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/details&gt;
+ --&gt;
+&lt;!-- \tableofcontents --&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Citation example @bengio_gflownet_2023&lt;/p&gt;
+&lt;p&gt;123456&lt;/p&gt;
+&lt;h2 id=&#34;mathematical-preliminaries&#34;&gt;Mathematical preliminaries&lt;/h2&gt;
+&lt;h2 id=&#34;general-structure&#34;&gt;General structure&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;An overview of generative models&lt;/em&gt;
+(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-overview-of-generative-models&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&amp;lt;a href=&amp;#34;https://lilianweng.github.io/posts/2021-07-11-diffusion-models/&amp;#34; target=&amp;#34;_blank&amp;#34; rel=&amp;#34;noopener&amp;#34;&amp;gt;source&amp;lt;/a&amp;gt;)&#34; srcset=&#34;
+               /post/gflownet/generative-overview_hucb6f640be08c90d6178259e0eccf4c36_525595_7adb589f84d45e2c76d1da559a4d821d.webp 400w,
+               /post/gflownet/generative-overview_hucb6f640be08c90d6178259e0eccf4c36_525595_20877785b17e0fc370f0ef92db4d1aa3.webp 760w,
+               /post/gflownet/generative-overview_hucb6f640be08c90d6178259e0eccf4c36_525595_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://andleb.netlify.app/post/gflownet/generative-overview_hucb6f640be08c90d6178259e0eccf4c36_525595_7adb589f84d45e2c76d1da559a4d821d.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;526&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Overview of Generative models
+    &lt;/figcaption&gt;&lt;/figure&gt;
+{width=&amp;ldquo;70%&amp;quot;}&lt;/p&gt;
+&lt;p&gt;Diffusion models are composed of two separate processes, &lt;strong&gt;the forward&lt;/strong&gt; and &lt;strong&gt;the backward&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;forward-diffusion&#34;&gt;Forward diffusion&lt;/h3&gt;
+&lt;p&gt;In general - a diffusion process can be characterized by a &lt;em&gt;Markov diffusion kernel&lt;/em&gt; given a final state $\pi(x)$:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{=tex}&#34;&gt;\begin{equation}
+    q(x_t | x_{t-1}) = T_\pi(x_t | x_{t-1}; \beta_t)
+\end{equation}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Since it&amp;rsquo;s a length-one Markov process, we have for the full joint: \begin{equation}
+q(x_{t=0:T} ) = q(x_0) \prod_{i=1}^T q(x_i | x_{i-1})
+\end{equation}&lt;/p&gt;
+&lt;p&gt;Usually, we use a Gaussian diffusion, for which the posterior is closed form (c.f. the 1-step update in &lt;em&gt;Kalman
+filtering&lt;/em&gt;):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{=tex}&#34;&gt;\begin{equation}
+    q(x_t | x_{t-1}) = \mathcal{N}(\sqrt{1 - \beta_t}x_{t-1}, \beta_t \mathbf{I})
+\end{equation}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;$\beta_i$s are called the &lt;strong&gt;variance schedule&lt;/strong&gt;, with usually $\beta_1 &amp;lt; \beta_2 &amp;lt; &amp;hellip; &amp;lt; \beta_T$.&lt;/p&gt;
+&lt;p&gt;Moreover, due to the property of the Gaussian distribution:&lt;/p&gt;
+&lt;p&gt;$$\alpha_t := 1 - \beta_t$$&lt;/p&gt;
+&lt;p&gt;$$\bar{\alpha}&lt;em&gt;t := \prod&lt;/em&gt;{s=1}^t \alpha_t$$&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{=tex}&#34;&gt;\begin{equation}
+q(x_t | x_0) = \mathcal{N}(\sqrt{\bar{\alpha_t}}~x_0, (1 - \alpha_t) \mathbf{I}),
+\end{equation}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;meaning any state in the forward process can be expressed knowing &lt;em&gt;just the initial one&lt;/em&gt; and the &lt;em&gt;variance schedule&lt;/em&gt;. In
+general, the theoretical underpinning of &lt;em&gt;Langevin dynamics&lt;/em&gt; guarantees any smooth distribution can be corrupted into
+Gaussian noise, meaning the initial distribution can be almost arbitrarily complex, giving the model its expressive
+power.&lt;/p&gt;
+&lt;h3 id=&#34;reverse-diffusion&#34;&gt;Reverse diffusion&lt;/h3&gt;
+&lt;p&gt;The reverse process is characterized by a new transition probability $p(x)$. Its starting point is the stationary
+distribution at the final time $T$:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{=tex}&#34;&gt;\begin{equation}
+    \pi(x_T) := p(x_T)
+\end{equation}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Like before:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{=tex}&#34;&gt;\begin{equation}
+    p(x_{t=T:0}) = p(x_T) \prod_{i=T-1}^1 p(x_i+1 | x_{i})
+\end{equation}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For Gaussian (and binomial), the joint is still in the same family; however, there is no closed-form for the parameters
+$\mu$ and $\Sigma$. These need to be estimated, in this case via neural networks.&lt;/p&gt;
+&lt;p&gt;A natural training target is the likelihood of the original data $p(x_0)$ as given by the learned reverse process&#39;
+distribution, obtained by marginalizing the full joint: \begin{equation}
+p(x_0) = \int_{\mathcal{X}} p(x_{t=T:0}) ~ dx_1 &amp;hellip;. dx_T
+\end{equation}&lt;/p&gt;
+&lt;p&gt;This is computationally intractable! A trick is to use annealed importance sampling - comparing the relative probability
+of the backward - $p$ - and the forward trajectories $q$, where the latter are known in closed form:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{=tex}&#34;&gt;\begin{equation}
+    p(x_0) = \int_{\mathcal{X}} q(x_{t=1:T}) ~p(x_T)~ \prod_{t=1}^T \frac{p(x_{t-1}|x_t)}{q(x_{t}|x_{t-1})} ~ dx_1 .... dx_T
+\end{equation}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the limit of very small $\beta$, both directions become the same.&lt;/p&gt;
+&lt;h2 id=&#34;training&#34;&gt;Training&lt;/h2&gt;
+&lt;p&gt;We maximize the &lt;strong&gt;expected&lt;/strong&gt; log likelihood of the original data $p(x_0)$ under the original true distribution $q(x_0)$:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{=tex}&#34;&gt;\begin{align}
+    &amp;amp; L(p, q) = \mathbb{E}_{q(x_0)} [p(x_0)] = \int_{\mathcal{X}} q(x_0) ~ \log p(x_T)~ dx_0\\
+    &amp;amp; = -~\mathbb{E}_{q} \left[ \underbrace{D( q(x_T | x_0) || p(x_T))}_{L_T} + \underbrace{\sum_{t=2}^T D( q(x_{t-1} | x_t, x_0) || p(x_{t-1} || x_t))}_{L_{t-1}} - \underbrace{\log p(x_0 | x+1)}_{L_0}   \right]
+\end{align}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It can be &lt;em&gt;lower bounded&lt;/em&gt; by a closed-form expression:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{=tex}&#34;&gt;\begin{align}
+    L \geq K = - \sum_{t=2}^T \int q(x_0, x_t) ~ D(q(x_{t-1}|x_{t}, x_{0}) ~||~ p(x_{t-1}|x_{t}))~dx_0,~dx_t\\ 
+    + H_q(X_T|X_0) - H_q(X_1|X_0) - H_p(X_T),&amp;amp;
+\end{align}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;where $D$ is the K-L divergence and H denotes the (conditional) entropies. Hence maximizing the latter maximizes the
+former.&lt;/p&gt;
+&lt;p&gt;Additionally, conditioning the forward process posteriors on $x_0$ gives us the closed-forms&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{=tex}&#34;&gt;\begin{equation}
+q(x_{t-1}|x_{t}, x_{0}) = \mathcal{N}(\tilde{\mu}_t, \tilde{\beta}_t \mathbf{I})
+\end{equation}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;$$\tilde{\mu}&lt;em&gt;t := \frac{\sqrt{\bar{\alpha}&lt;/em&gt;{t-1}} \beta_t}{1 - \bar{\alpha}&lt;em&gt;t}~x_0 + \frac{\sqrt{\bar{\alpha}&lt;/em&gt;{t}} (1 - \bar{\alpha}_{t})}{1 - \bar{\alpha}_t}~x_t$$&lt;/p&gt;
+&lt;p&gt;$$\tilde{\beta}&lt;em&gt;t := \frac{1 - \bar{\alpha}&lt;/em&gt;{t-1}}{1 - \bar{\alpha}_t} \beta_t$$&lt;/p&gt;
+&lt;p&gt;The goal of training is therefore to &lt;strong&gt;estimate the reverse Markov transition densities&lt;/strong&gt; $p(x_{t-1}|x_t)$:
+$$\hat{p}(x_{t-1}|x_t) = \underset{p}{\operatorname{argmax}} K$$&lt;/p&gt;
+&lt;p&gt;As mentioned, in the case of the Gaussian and binomial, the reverse process stays in the same family, therefore the task
+amounts to estimating the parameters.&lt;/p&gt;
+&lt;h3 id=&#34;variance-schedule&#34;&gt;Variance schedule&lt;/h3&gt;
+&lt;p&gt;Since $\beta_t$ is a free parameter, it can be learned simultaneously with the whole $K$ optimization procedure,
+freezing the other variables and optimizing on $\beta$. Alternatively, the first paper also treated a sequence as a
+hyperparameter and used a simply linearly increasing $\beta$. This is also the approach of &lt;em&gt;Ho et al.&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;estimating-p&#34;&gt;Estimating $p$&lt;/h3&gt;
+&lt;p&gt;Our goal is to learn the following:&lt;/p&gt;
+&lt;p&gt;$$
+p(x_{t-1} | x_t) = \mathcal{N}(\mu(x_t, t), \Sigma(x_t, t)), ~~ t \in [T, 0]
+$$ which corresponds to estimating $\mu(x_t, t), \Sigma(x_t, t)$.&lt;/p&gt;
+&lt;p&gt;For the variance, it is simply set to be isotropic with the diagonal entries either &lt;strong&gt;fixed&lt;/strong&gt; at a constant (either
+$\beta_t$ or $\tilde{\beta}_t$) or &lt;strong&gt;learned&lt;/strong&gt;. The latter proved to be unstable in Ho et al., but has since been
+successfully implemented.&lt;/p&gt;
+&lt;p&gt;The mean is, of course, learned in all implementations and proceeds as follows: by inspecting the $L_{t-1}$ term in the
+likelihood in [Training], the minimizing mean can be expressed by the reparametrization:
+$$x_t = \sqrt{\bar{\alpha}_t}~x_0 + \sqrt{1 - \bar{\alpha}_t}~\epsilon $$ $$\epsilon \sim \mathcal{N}(0, \mathbf{I})$$&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{=tex}&#34;&gt;\begin{equation}
+\mu(x_t, t) = \frac{1}{\sqrt{\alpha_t}} (x_t - \frac{\beta_t}{\sqrt{1 - \bar{\alpha_t}}} \epsilon_{\theta}(x_t, t)),
+\end{equation}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;meaning we instead learn the estimator of the &lt;strong&gt;noise&lt;/strong&gt; in the mean term at step $t$: $\epsilon_{\theta}(x_t, t))$ from
+the state $x_t$.&lt;/p&gt;
+&lt;p&gt;This can be further simplified by setting $t$ to be &lt;em&gt;continuous&lt;/em&gt; on $[1, T]$ and optimizing the following simplified
+objective for $\epsilon_\theta(x_t, t)$:&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+L_{\text{simple}}(\theta) := \mathbb{E}&lt;em&gt;{t, x_0, \epsilon} \left[\Vert \epsilon - \epsilon&lt;/em&gt;\theta(\sqrt{\bar{\alpha}_t} x_0 + \sqrt{1 - \bar{\alpha}&lt;em&gt;t} \epsilon, t) \Vert^2\right]
+\end{equation} This can be optimized using standard optimization techniques, such as gradient descent. We can now state
+the two algorithms needed to first, train the noise estimator $\epsilon&lt;/em&gt;\theta$, and then, obtain a sample from the
+reverse diffusion process: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-the-two-algorithms-due-to-ho-et-al&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Algorithms due to Ho et
+al.&#34; srcset=&#34;
+               /post/gflownet/ho_algos_hu770e42ced4accfc410685173b9a7f10b_46392_0a08489dc02e1614643328f673a49ff7.webp 400w,
+               /post/gflownet/ho_algos_hu770e42ced4accfc410685173b9a7f10b_46392_e8dedaa28e2aec0216cf7ee1634863a6.webp 760w,
+               /post/gflownet/ho_algos_hu770e42ced4accfc410685173b9a7f10b_46392_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://andleb.netlify.app/post/gflownet/ho_algos_hu770e42ced4accfc410685173b9a7f10b_46392_0a08489dc02e1614643328f673a49ff7.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;200&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      The two algorithms due to Ho et al.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+{width=&amp;ldquo;75%&amp;quot;}&lt;/p&gt;
+&lt;h3 id=&#34;architecture&#34;&gt;Architecture&lt;/h3&gt;
+&lt;p&gt;Ho et al. used a variation of an U-net called &lt;a href=&#34;https://arxiv.org/abs/1701.05517&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PixelCNN++&lt;/a&gt; to estimate
+$\epsilon_{\theta}(x_t, t))$:&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-the-original-u-net&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&amp;lt;em&amp;gt;The original U-net&amp;lt;/em&amp;gt;&#34; srcset=&#34;
+               /post/gflownet/u-net-architecture_hua7d70ae1f7cbdafa7d7ab33e5d6fa6be_103270_dd09f8875154f6313af3845de56e74a7.webp 400w,
+               /post/gflownet/u-net-architecture_hua7d70ae1f7cbdafa7d7ab33e5d6fa6be_103270_1b262ebee0452a1ad9d815a3a1bed74c.webp 760w,
+               /post/gflownet/u-net-architecture_hua7d70ae1f7cbdafa7d7ab33e5d6fa6be_103270_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://andleb.netlify.app/post/gflownet/u-net-architecture_hua7d70ae1f7cbdafa7d7ab33e5d6fa6be_103270_dd09f8875154f6313af3845de56e74a7.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;506&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      The original U-net
+    &lt;/figcaption&gt;&lt;/figure&gt;
+{width=&amp;ldquo;50%&amp;quot;}&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-salimans-et-al---pixelcnn-structure&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&amp;lt;em&amp;gt;PixelCNN&amp;#43;&amp;#43; structure&amp;lt;/em&amp;gt;&#34; srcset=&#34;
+               /post/gflownet/pixelcnn_hu1c2fdc16633231d20f9f93a131c1179b_39354_43dd05b8aa31414c4c2e9f413739d516.webp 400w,
+               /post/gflownet/pixelcnn_hu1c2fdc16633231d20f9f93a131c1179b_39354_649e9ed83bf9ef10bda59c0e9357d7a5.webp 760w,
+               /post/gflownet/pixelcnn_hu1c2fdc16633231d20f9f93a131c1179b_39354_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://andleb.netlify.app/post/gflownet/pixelcnn_hu1c2fdc16633231d20f9f93a131c1179b_39354_43dd05b8aa31414c4c2e9f413739d516.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;230&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Salimans et al. - PixelCNN++ structure
+    &lt;/figcaption&gt;&lt;/figure&gt;
+{width=&amp;ldquo;125%&amp;quot;}&lt;/p&gt;
+&lt;h2 id=&#34;how-does-it-work-in-practice&#34;&gt;How does it work in practice?&lt;/h2&gt;
+&lt;h3 id=&#34;example---recovery&#34;&gt;Example - recovery&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-spiral-distribution-recovery&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&amp;lt;em&amp;gt;Recovery (middle row) of a spiral distribution (top) using a Gaussian diffusion model. The bottom row represents the
+&amp;amp;ldquo;drift term&amp;amp;rdquo;, i.e. the field controlling the mean for the &amp;amp;ldquo;particles&amp;amp;rdquo; in the next step of the reverse
+process.&amp;lt;/em&amp;gt;&#34; srcset=&#34;
+               /post/gflownet/sohl-dickstein_spiral_hu6033b7fe1d3f0a2b0d916b204e6c78b7_432518_26d30076e346b31c0c22f4502cdcd293.webp 400w,
+               /post/gflownet/sohl-dickstein_spiral_hu6033b7fe1d3f0a2b0d916b204e6c78b7_432518_8ff010c840b50aeafd041629df4ca241.webp 760w,
+               /post/gflownet/sohl-dickstein_spiral_hu6033b7fe1d3f0a2b0d916b204e6c78b7_432518_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://andleb.netlify.app/post/gflownet/sohl-dickstein_spiral_hu6033b7fe1d3f0a2b0d916b204e6c78b7_432518_26d30076e346b31c0c22f4502cdcd293.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;540&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Spiral distribution recovery
+    &lt;/figcaption&gt;&lt;/figure&gt;
+{width=&amp;ldquo;80%&amp;quot;}&lt;/p&gt;
+&lt;h3 id=&#34;example---generation&#34;&gt;Example - generation&lt;/h3&gt;
+&lt;p&gt;Ho et al. used the modified network for both &lt;strong&gt;conditional&lt;/strong&gt; and &lt;strong&gt;unconditional&lt;/strong&gt; generation.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;unconditional generation&lt;/em&gt; was performed by estimating $x_0$ - the end result of the reverse process - from
+initially random $x_T$. The following figure shows the order in which features crystallize when the &lt;em&gt;initial state is
+itself sampled from various points of the reverse process&lt;/em&gt;. The training dataset was CIFAR10.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-unconditional-generation-from-the-reverse-process-sample&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&amp;lt;em&amp;gt;Unconditional generation from the reverse process
+sample&amp;lt;/em&amp;gt;&#34; srcset=&#34;
+               /post/gflownet/ho_uncgen_hu596246d6f83e271abee3f92340d7e1f4_200694_37bdd76bb4e858cea3801f54b137caa3.webp 400w,
+               /post/gflownet/ho_uncgen_hu596246d6f83e271abee3f92340d7e1f4_200694_7a9e16e211ea18623737c1bd2945437c.webp 760w,
+               /post/gflownet/ho_uncgen_hu596246d6f83e271abee3f92340d7e1f4_200694_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://andleb.netlify.app/post/gflownet/ho_uncgen_hu596246d6f83e271abee3f92340d7e1f4_200694_37bdd76bb4e858cea3801f54b137caa3.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;172&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Unconditional generation from the reverse process sample
+    &lt;/figcaption&gt;&lt;/figure&gt;
+{width=&amp;ldquo;1500&amp;rdquo;}&lt;/p&gt;
+&lt;p&gt;For &lt;em&gt;conditional generation,&lt;/em&gt; the authors selected a $x_t$ from the actual distribution and sampled from the predictive
+posterior $p(x_0|x_t)$. The following figure shows the results conditioned on the bottom-right quadrant, for a network
+trained on CelebA-HQ:&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-conditional-generation-samples-from-a-given-state&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&amp;lt;em&amp;gt;Conditional generation samples from a given state:&amp;lt;/em&amp;gt; the earlier the $x_t$, the more deterministic the
+outcome.&#34; srcset=&#34;
+               /post/gflownet/ho_condgen_hu79304fa7f9aa27b6a5838733cd076033_204919_4dd7102f28081137139b56b59f89146c.webp 400w,
+               /post/gflownet/ho_condgen_hu79304fa7f9aa27b6a5838733cd076033_204919_282e9ba0da2acc4ea038e4097bd65d71.webp 760w,
+               /post/gflownet/ho_condgen_hu79304fa7f9aa27b6a5838733cd076033_204919_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://andleb.netlify.app/post/gflownet/ho_condgen_hu79304fa7f9aa27b6a5838733cd076033_204919_4dd7102f28081137139b56b59f89146c.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;180&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Conditional generation samples from a given state
+    &lt;/figcaption&gt;&lt;/figure&gt;
+{width=&amp;ldquo;1500&amp;rdquo;}&lt;/p&gt;
+&lt;h3 id=&#34;imagen--dall-e-2&#34;&gt;Imagen &amp;amp; DALL-E 2&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2207.12598&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ho and Salimans&lt;/a&gt; improved the above procedure by introducing the notion of &lt;em&gt;guiding&lt;/em&gt;
+the model during training on labeled data, i.e. estimating $\epsilon_\theta(x_t, t ∣ y)$, where $y$ are the labels. The
+crux of the approach is training both on conditional and unconditional objectives at once by randomly setting the class
+label to a null class with some predetermined probability. Likewise, the samples are drawn from a convex combination
+(with the same coefficient) of both $p$-s.&lt;/p&gt;
+&lt;p&gt;This was used by Nichol et al. in &lt;a href=&#34;https://arxiv.org/abs/2112.10741?s=09&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GLIDE&lt;/a&gt;, which uses information extracted from
+text to do the guiding, combining a transformer with the previously described architecture.&lt;/p&gt;
+&lt;p&gt;This approach has been used to construct &lt;a href=&#34;https://arxiv.org/pdf/2205.11487.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Imagen&lt;/a&gt;, which uses additional diffusion
+models to up-sample the image created by the guided diffusion process. The text embeddings are provided by a
+&lt;em&gt;pretrained&lt;/em&gt; transformer&amp;rsquo;s encoder.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&amp;lt;em&amp;gt;Imagen structure&amp;lt;/em&amp;gt;&#34; srcset=&#34;
+               /post/gflownet/imagen_hu3ac25849951c4040bfb452f83013f992_196848_f109af4293119160f9fe732b9554635a.webp 400w,
+               /post/gflownet/imagen_hu3ac25849951c4040bfb452f83013f992_196848_38274f7b68e386255b7b64c026fe5a3b.webp 760w,
+               /post/gflownet/imagen_hu3ac25849951c4040bfb452f83013f992_196848_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://andleb.netlify.app/post/gflownet/imagen_hu3ac25849951c4040bfb452f83013f992_196848_f109af4293119160f9fe732b9554635a.webp&#34;
+               width=&#34;635&#34;
+               height=&#34;644&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+{width=&amp;ldquo;700&amp;rdquo;}&lt;/p&gt;
+&lt;p&gt;The other diffusion-based model to make waves recently - DALL-E 2 - uses a bit more complex approach:&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-dall-e-2-architecture&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&amp;lt;em&amp;gt;DALL-E 2 architecture&amp;lt;/em&amp;gt;&#34; srcset=&#34;
+               /post/gflownet/dalle2_hua1659d01b788753569c0f068636fac52_128584_e2d959c532ec2831c6a44e67562fd6e1.webp 400w,
+               /post/gflownet/dalle2_hua1659d01b788753569c0f068636fac52_128584_4ed7ea5fb56b9c9ff16a24e1e0414982.webp 760w,
+               /post/gflownet/dalle2_hua1659d01b788753569c0f068636fac52_128584_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://andleb.netlify.app/post/gflownet/dalle2_hua1659d01b788753569c0f068636fac52_128584_e2d959c532ec2831c6a44e67562fd6e1.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;315&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      DALL-E 2 architecture
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;First, it re-uses a model called CLIP (Contrastive Language-Image Pre-training) to construct a &lt;em&gt;mapping between captions
+and images&lt;/em&gt; (top of the schematic above). In practice, the net result of this is a &lt;em&gt;joint embedding of text and images&lt;/em&gt;
+in a representation space.&lt;/p&gt;
+&lt;p&gt;In generation, this model is frozen and a version of the GLIDE guided diffusion model is used to generate images
+&lt;strong&gt;starting from the image representation space&lt;/strong&gt; (as opposed to random noise, for instance). As previously, additional
+up-samplers are used in the decoder, as well.&lt;/p&gt;
+&lt;p&gt;To generate from text prompts, we need to map the caption text embeddings to the above mentioned image embeddings, which
+are the starting point for the decoder. This is done with an &lt;em&gt;additional diffusion model&lt;/em&gt; called &lt;strong&gt;the prior&lt;/strong&gt;, which
+generates &lt;em&gt;multiple possible embeddings.&lt;/em&gt; In other words, this is a generative model of the image embeddings given the
+text embeddings. The prior trains a decoder-only transformer to predict the conditional reverse process, as opposed to
+the U-net used in other examples.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-dall-e-2-interpolation-of-the-image-embedding-space&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&amp;lt;em&amp;gt;DALL-E 2: interpolation of the image embedding space by the
+decoder&amp;lt;/em&amp;gt;&#34; srcset=&#34;
+               /post/gflownet/dalle2_interpolation_hu2548f22b72f3b69286d51c0a8d133041_592271_1244e345feb440c79071c31a06d11c94.webp 400w,
+               /post/gflownet/dalle2_interpolation_hu2548f22b72f3b69286d51c0a8d133041_592271_ce04e60fc8e3754a06ad3b16639473d6.webp 760w,
+               /post/gflownet/dalle2_interpolation_hu2548f22b72f3b69286d51c0a8d133041_592271_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://andleb.netlify.app/post/gflownet/dalle2_interpolation_hu2548f22b72f3b69286d51c0a8d133041_592271_1244e345feb440c79071c31a06d11c94.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;259&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      DALL-E 2: interpolation of the image embedding space
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>New publication: Approaching an unknown communication system</title>
+      <link>https://andleb.netlify.app/post/new-publication-approaching-an-unknown-communication-system/</link>
+      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/post/new-publication-approaching-an-unknown-communication-system/</guid>
+      <description>&lt;p&gt;We have a &lt;a href=&#34;https://andleb.netlify.app/publication/causalceti/&#34;&gt;pre-print&lt;/a&gt; out based on our work with &lt;a href=&#34;https://www.projectceti.org/team&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Project CETI&lt;/a&gt;,
+an initiative to decipher sperm whale communication using machine learning.&lt;/p&gt;
+&lt;p&gt;In the paper, we combine approaches that help discover how known properties of human language are learned by generative models when trained on labeled speech audio data with methodology inspired by causal inference and apply it to the communication system of sperm whales, for which we do not have any such ground truth. With this, we can propose what components of their communication might serve as the carriers of meaning, not only giving credence to existing theories but also suggesting additional ways the whales might encode information.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Diffusion models: an introduction</title>
+      <link>https://andleb.netlify.app/post/diffusion-models/</link>
+      <pubDate>Sun, 02 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/post/diffusion-models/</guid>
+      <description>
+
+
+&lt;!-- LaTeX preamble --&gt;
+&lt;p&gt;&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;Table of Contents&lt;/summary&gt;
+  
+&lt;/details&gt;
+&lt;/p&gt;
+&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Diffusion models seem to have taken the world by storm due to their amazing generative powers. That is not their only
+advantage, however. With a bit of a tongue in the proverbial cheek, statistical methods can be traditionally classified
+as either inflexible (classical stats), computationally expensive (MCMC), or non-analytical (boosted trees). From this
+perspective, &lt;strong&gt;diffusion models&lt;/strong&gt; are a significant outlier since they are extremely flexible, provide access to the full
+posterior (and conditional) distributions, and are computationally less expensive than many of the competing methods.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;general-structure&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;General structure&lt;/h2&gt;
+&lt;div class=&#34;float&#34;&gt;
+&lt;img src=&#34;generative-overview.png&#34; title=&#34;Overview of Generative models&#34; style=&#34;width:70.0%&#34; alt=&#34;An overview of generative models (source)&#34; /&gt;
+&lt;div class=&#34;figcaption&#34;&gt;&lt;em&gt;An overview of generative models&lt;/em&gt;
+(&lt;a href=&#34;https://lilianweng.github.io/posts/2021-07-11-diffusion-models/&#34;&gt;source&lt;/a&gt;)&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Diffusion models are composed of two separate processes, &lt;strong&gt;the forward&lt;/strong&gt; and &lt;strong&gt;the backward&lt;/strong&gt;.&lt;/p&gt;
+&lt;div id=&#34;forward-diffusion&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Forward diffusion&lt;/h3&gt;
+&lt;p&gt;In general - a diffusion process can be characterized by a &lt;em&gt;Markov diffusion kernel&lt;/em&gt; given a final state &lt;span class=&#34;math inline&#34;&gt;\(\pi(x)\)&lt;/span&gt;:&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    q(x_t | x_{t-1}) = T_\pi(x_t | x_{t-1}; \beta_t)
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;Since it’s a length-one Markov process, we have for the full joint: &lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    q(x_{t=0:T} ) = q(x_0) \prod_{i=1}^T q(x_i | x_{i-1})
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Usually, we use a Gaussian diffusion, for which the posterior is closed form (c.f. the 1-step update in &lt;em&gt;Kalman filtering&lt;/em&gt;):&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    q(x_t | x_{t-1}) = \mathcal{N}(\sqrt{1 - \beta_t}x_{t-1}, \beta_t \mathbf{I})
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\beta_i\)&lt;/span&gt;s are called the &lt;strong&gt;variance schedule&lt;/strong&gt;, with usually &lt;span class=&#34;math inline&#34;&gt;\(\beta_1 &amp;lt; \beta_2 &amp;lt; ... &amp;lt; \beta_T\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Moreover, due to the property of the Gaussian distribution:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\alpha_t := 1 - \beta_t\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\bar{\alpha}_t := \prod_{s=1}^t \alpha_t\]&lt;/span&gt;&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+q(x_t | x_0) = \mathcal{N}(\sqrt{\bar{\alpha_t}}~x_0, (1 - \alpha_t) \mathbf{I}),
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;meaning any state in the forward process can be expressed knowing &lt;em&gt;just the initial one&lt;/em&gt; and the &lt;em&gt;variance schedule&lt;/em&gt;. In
+general, the theoretical underpinning of &lt;em&gt;Langevin dynamics&lt;/em&gt; guarantees any smooth distribution can be corrupted into
+Gaussian noise, meaning the initial distribution can be almost arbitrarily complex, giving the model its expressive power.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;reverse-diffusion&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Reverse diffusion&lt;/h3&gt;
+&lt;p&gt;The reverse process is characterized by a new transition probability &lt;span class=&#34;math inline&#34;&gt;\(p(x)\)&lt;/span&gt;.
+Its starting point is the stationary distribution at the final time &lt;span class=&#34;math inline&#34;&gt;\(T\)&lt;/span&gt;:&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    \pi(x_T) := p(x_T)
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;Like before:&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    p(x_{t=T:0}) = p(x_T) \prod_{i=T-1}^1 p(x_i+1 | x_{i})
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;For Gaussian (and binomial), the joint is still in the same family; however, there is no closed-form for the parameters &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\Sigma\)&lt;/span&gt;.
+These need to be estimated, in this case via neural networks.&lt;/p&gt;
+&lt;p&gt;A natural training target is the likelihood of the original data &lt;span class=&#34;math inline&#34;&gt;\(p(x_0)\)&lt;/span&gt; as given by the learned reverse process’ distribution,
+obtained by marginalizing the full joint:
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    p(x_0) = \int_{\mathcal{X}} p(x_{t=T:0}) ~ dx_1 .... dx_T
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;This is computationally intractable! A trick is to use annealed importance sampling - comparing the relative probability of the backward - &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; - and the forward trajectories &lt;span class=&#34;math inline&#34;&gt;\(q\)&lt;/span&gt;, where the latter are known in closed form:&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+    p(x_0) = \int_{\mathcal{X}} q(x_{t=1:T}) ~p(x_T)~ \prod_{t=1}^T \frac{p(x_{t-1}|x_t)}{q(x_{t}|x_{t-1})} ~ dx_1 .... dx_T
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;In the limit of very small &lt;span class=&#34;math inline&#34;&gt;\(\beta\)&lt;/span&gt;, both directions become the same.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;training&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Training&lt;/h2&gt;
+&lt;p&gt;We maximize the &lt;strong&gt;expected&lt;/strong&gt; log likelihood of the original data &lt;span class=&#34;math inline&#34;&gt;\(p(x_0)\)&lt;/span&gt; under the original true distribution &lt;span class=&#34;math inline&#34;&gt;\(q(x_0)\)&lt;/span&gt;:&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{aligned}
+    &amp;amp; L(p, q) = \mathbb{E}_{q(x_0)} [p(x_0)] = \int_{\mathcal{X}} q(x_0) ~ \log p(x_T)~ dx_0\\
+    &amp;amp; = -~\mathbb{E}_{q} \left[ \underbrace{D( q(x_T | x_0) || p(x_T))}_{L_T} + \underbrace{\sum_{t=2}^T D( q(x_{t-1} | x_t, x_0) || p(x_{t-1} || x_t))}_{L_{t-1}} - \underbrace{\log p(x_0 | x+1)}_{L_0}   \right]
+\end{aligned}\]&lt;/span&gt;
+&lt;p&gt;It can be &lt;em&gt;lower bounded&lt;/em&gt; by a closed-form expression:&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{aligned}
+    L \geq K = - \sum_{t=2}^T \int q(x_0, x_t) ~ D(q(x_{t-1}|x_{t}, x_{0}) ~||~ p(x_{t-1}|x_{t}))~dx_0,~dx_t\\
+    + H_q(X_T|X_0) - H_q(X_1|X_0) - H_p(X_T),&amp;amp;
+\end{aligned}\]&lt;/span&gt;
+&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(D\)&lt;/span&gt; is the K-L divergence and H denotes the (conditional) entropies. Hence maximizing the latter maximizes the
+former.&lt;/p&gt;
+&lt;p&gt;Additionally, conditioning the forward process posteriors on &lt;span class=&#34;math inline&#34;&gt;\(x_0\)&lt;/span&gt; gives us the closed-forms&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+q(x_{t-1}|x_{t}, x_{0}) = \mathcal{N}(\tilde{\mu}_t, \tilde{\beta}_t \mathbf{I})
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\tilde{\mu}_t := \frac{\sqrt{\bar{\alpha}_{t-1}} \beta_t}{1 - \bar{\alpha}_t}~x_0 + \frac{\sqrt{\bar{\alpha}_{t}} (1 - \bar{\alpha}_{t})}{1 - \bar{\alpha}_t}~x_t\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\tilde{\beta}_t := \frac{1 - \bar{\alpha}_{t-1}}{1 - \bar{\alpha}_t} \beta_t\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The goal of training is therefore to &lt;strong&gt;estimate the reverse Markov transition densities&lt;/strong&gt; &lt;span class=&#34;math inline&#34;&gt;\(p(x_{t-1}|x_t)\)&lt;/span&gt;:
+&lt;span class=&#34;math display&#34;&gt;\[\hat{p}(x_{t-1}|x_t) = \underset{p}{\operatorname{argmax}} K\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;As mentioned, in the case of the Gaussian and binomial, the reverse process stays in the same family, therefore the task amounts to
+estimating the parameters.&lt;/p&gt;
+&lt;div id=&#34;variance-schedule&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Variance schedule&lt;/h3&gt;
+&lt;p&gt;Since &lt;span class=&#34;math inline&#34;&gt;\(\beta_t\)&lt;/span&gt; is a free parameter, it can be learned simultaneously with the whole &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt; optimization procedure,
+freezing the other variables and optimizing on &lt;span class=&#34;math inline&#34;&gt;\(\beta\)&lt;/span&gt;. Alternatively, the first paper also treated a sequence as a
+hyperparameter and used a simply linearly increasing &lt;span class=&#34;math inline&#34;&gt;\(\beta\)&lt;/span&gt;. This is also the approach of &lt;em&gt;Ho et al.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;estimating-p&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Estimating &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Our goal is to learn the following:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+p(x_{t-1} | x_t) = \mathcal{N}(\mu(x_t, t), \Sigma(x_t, t)), ~~ t \in [T, 0]
+\]&lt;/span&gt;
+which corresponds to estimating &lt;span class=&#34;math inline&#34;&gt;\(\mu(x_t, t), \Sigma(x_t, t)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;For the variance, it is simply set to be isotropic with the diagonal entries either &lt;strong&gt;fixed&lt;/strong&gt; at a constant (either
+&lt;span class=&#34;math inline&#34;&gt;\(\beta_t\)&lt;/span&gt; or &lt;span class=&#34;math inline&#34;&gt;\(\tilde{\beta}_t\)&lt;/span&gt;) or &lt;strong&gt;learned&lt;/strong&gt;. The latter proved to be unstable in Ho et al., but has since been
+successfully implemented.&lt;/p&gt;
+&lt;p&gt;The mean is, of course, learned in all implementations and proceeds as follows: by inspecting the &lt;span class=&#34;math inline&#34;&gt;\(L_{t-1}\)&lt;/span&gt; term in the likelihood in &lt;a href=&#34;#training&#34;&gt;Training&lt;/a&gt;, the minimizing mean can be expressed by the reparametrization:
+&lt;span class=&#34;math display&#34;&gt;\[x_t = \sqrt{\bar{\alpha}_t}~x_0 + \sqrt{1 - \bar{\alpha}_t}~\epsilon \]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\epsilon \sim \mathcal{N}(0, \mathbf{I})\]&lt;/span&gt;&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+\mu(x_t, t) = \frac{1}{\sqrt{\alpha_t}} (x_t - \frac{\beta_t}{\sqrt{1 - \bar{\alpha_t}}} \epsilon_{\theta}(x_t, t)),
+\end{equation}\]&lt;/span&gt;
+&lt;p&gt;meaning we instead learn the estimator of the &lt;strong&gt;noise&lt;/strong&gt; in the mean term at step &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;: &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_{\theta}(x_t, t))\)&lt;/span&gt; from the state &lt;span class=&#34;math inline&#34;&gt;\(x_t\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;This can be further simplified by setting &lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt; to be &lt;em&gt;continuous&lt;/em&gt; on &lt;span class=&#34;math inline&#34;&gt;\([1, T]\)&lt;/span&gt; and optimizing the following simplified
+objective for &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_\theta(x_t, t)\)&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{equation}
+L_{\text{simple}}(\theta) := \mathbb{E}_{t, x_0, \epsilon} \left[\Vert \epsilon - \epsilon_\theta(\sqrt{\bar{\alpha}_t} x_0 + \sqrt{1 - \bar{\alpha}_t} \epsilon, t) \Vert^2\right]
+\end{equation}\]&lt;/span&gt; This can be optimized using standard optimization techniques, such as gradient descent. We can now state
+the two algorithms needed to first, train the noise estimator &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_\theta\)&lt;/span&gt;, and then, obtain a sample from the
+reverse diffusion process: &lt;img src=&#34;ho_algos.png&#34; title=&#34;The two algorithms due to Ho et al.&#34; style=&#34;width:75.0%&#34; alt=&#34;Algorithms due to Ho et al.&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;architecture&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Architecture&lt;/h3&gt;
+&lt;p&gt;Ho et al. used a variation of an U-net called &lt;a href=&#34;https://arxiv.org/abs/1701.05517&#34;&gt;PixelCNN++&lt;/a&gt; to estimate
+&lt;span class=&#34;math inline&#34;&gt;\(\epsilon_{\theta}(x_t, t))\)&lt;/span&gt;:&lt;/p&gt;
+&lt;div class=&#34;float&#34;&gt;
+&lt;img src=&#34;u-net-architecture.png&#34; title=&#34;The original U-net&#34; style=&#34;width:50.0%&#34; alt=&#34;The original U-net&#34; /&gt;
+&lt;div class=&#34;figcaption&#34;&gt;&lt;em&gt;The original U-net&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;float&#34;&gt;
+&lt;img src=&#34;pixelcnn.png&#34; title=&#34;Salimans et al. - PixelCNN++ structure&#34; style=&#34;width:125.0%&#34; alt=&#34;PixelCNN++ structure&#34; /&gt;
+&lt;div class=&#34;figcaption&#34;&gt;&lt;em&gt;PixelCNN++ structure&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;how-does-it-work-in-practice&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;How does it work in practice?&lt;/h2&gt;
+&lt;div id=&#34;example---recovery&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Example - recovery&lt;/h3&gt;
+&lt;div class=&#34;float&#34;&gt;
+&lt;img src=&#34;sohl-dickstein_spiral.png&#34; title=&#34;Spiral distribution recovery&#34; style=&#34;width:80.0%&#34; alt=&#34;Recovery (middle row) of a spiral distribution (top) using a Gaussian diffusion model. The bottom row represents the “drift term”, i.e. the field controlling the mean for the “particles” in the next step of the reverse process.&#34; /&gt;
+&lt;div class=&#34;figcaption&#34;&gt;&lt;em&gt;Recovery (middle row) of a spiral distribution (top) using a Gaussian diffusion model. The bottom row represents the
+“drift term”, i.e. the field controlling the mean for the “particles” in the next step of the reverse
+process.&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example---generation&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Example - generation&lt;/h3&gt;
+&lt;p&gt;Ho et al. used the modified network for both &lt;strong&gt;conditional&lt;/strong&gt; and &lt;strong&gt;unconditional&lt;/strong&gt; generation.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;unconditional generation&lt;/em&gt; was performed by estimating &lt;span class=&#34;math inline&#34;&gt;\(x_0\)&lt;/span&gt; - the end result of the reverse process - from
+initially random &lt;span class=&#34;math inline&#34;&gt;\(x_T\)&lt;/span&gt;. The following figure shows the order in which features crystallize when the &lt;em&gt;initial state is
+itself sampled from various points of the reverse process&lt;/em&gt;. The training dataset was CIFAR10.&lt;/p&gt;
+&lt;div class=&#34;float&#34;&gt;
+&lt;img src=&#34;ho_uncgen.png&#34; title=&#34;Unconditional generation from the reverse process sample&#34; width=&#34;1500&#34; alt=&#34;Unconditional generation from the reverse process sample&#34; /&gt;
+&lt;div class=&#34;figcaption&#34;&gt;&lt;em&gt;Unconditional generation from the reverse process
+sample&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;For &lt;em&gt;conditional generation,&lt;/em&gt; the authors selected a &lt;span class=&#34;math inline&#34;&gt;\(x_t\)&lt;/span&gt; from the actual distribution and sampled from the predictive
+posterior &lt;span class=&#34;math inline&#34;&gt;\(p(x_0|x_t)\)&lt;/span&gt;. The following figure shows the results conditioned on the bottom-right quadrant, for a network
+trained on CelebA-HQ:&lt;/p&gt;
+&lt;div class=&#34;float&#34;&gt;
+&lt;img src=&#34;ho_condgen.png&#34; title=&#34;Conditional generation samples from a given state&#34; width=&#34;1500&#34; alt=&#34;Conditional generation samples from a given state: the earlier the x_t, the more deterministic the outcome.&#34; /&gt;
+&lt;div class=&#34;figcaption&#34;&gt;&lt;em&gt;Conditional generation samples from a given state:&lt;/em&gt; the earlier the &lt;span class=&#34;math inline&#34;&gt;\(x_t\)&lt;/span&gt;, the more deterministic the
+outcome.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;imagen-dall-e-2&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Imagen &amp;amp; DALL-E 2&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2207.12598&#34;&gt;Ho and Salimans&lt;/a&gt; improved the above procedure by introducing the notion of &lt;em&gt;guiding&lt;/em&gt;
+the model during training on labeled data, i.e. estimating &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_\theta(x_t, t ∣ y)\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt; are the labels. The
+crux of the approach is training both on conditional and unconditional objectives at once by randomly setting the class
+label to a null class with some predetermined probability. Likewise, the samples are drawn from a convex combination
+(with the same coefficient) of both &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt;-s.&lt;/p&gt;
+&lt;p&gt;This was used by Nichol et al. in &lt;a href=&#34;https://arxiv.org/abs/2112.10741?s=09&#34;&gt;GLIDE&lt;/a&gt;, which uses information extracted from
+text to do the guiding, combining a transformer with the previously described architecture.&lt;/p&gt;
+&lt;p&gt;This approach has been used to construct &lt;a href=&#34;https://arxiv.org/pdf/2205.11487.pdf&#34;&gt;Imagen&lt;/a&gt;, which uses additional diffusion
+models to up-sample the image created by the guided diffusion process. The text embeddings are provided by a
+&lt;em&gt;pretrained&lt;/em&gt; transformer’s encoder.&lt;/p&gt;
+&lt;div class=&#34;float&#34;&gt;
+&lt;img src=&#34;imagen.png&#34; width=&#34;700&#34; alt=&#34;Imagen structure&#34; /&gt;
+&lt;div class=&#34;figcaption&#34;&gt;&lt;em&gt;Imagen structure&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The other diffusion-based model to make waves recently - DALL-E 2 - uses a bit more complex approach:&lt;/p&gt;
+&lt;div class=&#34;float&#34;&gt;
+&lt;img src=&#34;dalle2.png&#34; title=&#34;DALL-E 2 architecture&#34; alt=&#34;DALL-E 2 architecture&#34; /&gt;
+&lt;div class=&#34;figcaption&#34;&gt;&lt;em&gt;DALL-E 2 architecture&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;First, it re-uses a model called CLIP (Contrastive Language-Image Pre-training) to construct a &lt;em&gt;mapping between captions
+and images&lt;/em&gt; (top of the schematic above). In practice, the net result of this is a &lt;em&gt;joint embedding of text and images&lt;/em&gt;
+in a representation space.&lt;/p&gt;
+&lt;p&gt;In generation, this model is frozen and a version of the GLIDE guided diffusion model is used to generate images
+&lt;strong&gt;starting from the image representation space&lt;/strong&gt; (as opposed to random noise, for instance). As previously, additional
+up-samplers are used in the decoder, as well.&lt;/p&gt;
+&lt;p&gt;To generate from text prompts, we need to map the caption text embeddings to the above mentioned image embeddings, which
+are the starting point for the decoder. This is done with an &lt;em&gt;additional diffusion model&lt;/em&gt; called &lt;strong&gt;the prior&lt;/strong&gt;, which
+generates &lt;em&gt;multiple possible embeddings.&lt;/em&gt; In other words, this is a generative model of the image embeddings given the
+text embeddings. The prior trains a decoder-only transformer to predict the conditional reverse process, as opposed to the U-net
+used in other examples.&lt;/p&gt;
+&lt;div class=&#34;float&#34;&gt;
+&lt;img src=&#34;dalle2_interpolation.png&#34; title=&#34;DALL-E 2: interpolation of the image embedding space&#34; alt=&#34;DALL-E 2: interpolation of the image embedding space by the decoder&#34; /&gt;
+&lt;div class=&#34;figcaption&#34;&gt;&lt;em&gt;DALL-E 2: interpolation of the image embedding
+space by the decoder&lt;/em&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The original paper: &lt;a href=&#34;https://arxiv.org/abs/1503.03585&#34;&gt;Sohl-Dickstein et al. - Deep Unsupervised Learning using Non-equilibrium
+Thermodynamics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Performant implementation: &lt;a href=&#34;https://arxiv.org/abs/2006.11239&#34;&gt;Ho et al. - Denoising Diffusion Probabilistic Models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A good blog post: &lt;a href=&#34;https://lilianweng.github.io/posts/2021-07-11-diffusion-models/&#34;&gt;Weng, Lilian. (Jul 2021). What are diffusion models?
+Lil’Log.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A summary of recent developments:
+&lt;a href=&#34;https://maciejdomagala.github.io/generative_models/2022/06/06/The-recent-rise-of-diffusion-based-models.html&#34; class=&#34;uri&#34;&gt;https://maciejdomagala.github.io/generative_models/2022/06/06/The-recent-rise-of-diffusion-based-models.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;DALL-E 2 initial paper: &lt;a href=&#34;https://arxiv.org/abs/2204.06125&#34;&gt;Ramesh et al. - Hierarchical Text-Conditional Image Generation with CLIP
+Latents&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Related:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Kalman_filter&#34;&gt;The Kalman filter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../uploads/leban_andrej%20-%20continuous%20time%20kalman%20filter.pdf&#34;&gt;My presentation on the Continuous-time Kalman
+filter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://arxiv.org/abs/1601.00670&#34;&gt;Blei, Kucukelbir, McAuliffe - Variational Inference: A Review for Statisticians&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>New publication, projects</title>
+      <link>https://andleb.netlify.app/post/new-publication-projects/</link>
+      <pubDate>Sun, 15 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/post/new-publication-projects/</guid>
+      <description>&lt;p&gt;Given that the semester&amp;rsquo;s over, I have finally gotten around to updating the site.&lt;/p&gt;
+&lt;p&gt;We have a &lt;a href=&#34;https://andleb.netlify.app/publication/bayesiantranslators/&#34;&gt;pre-print&lt;/a&gt; out based on the work I did during my internship last summer.
+It examines the problem of inferring the characteristics of different people involved in the process of translating and
+reviewing text by using Hierarchical Bayesian Models. Specifically, I came to the idea of using zero-inflated and fat-tailed
+distributions to model the number of mistakes; this was influenced both by the statistical properties of the raw data
+and by the peculiarities of the process of translation.&lt;/p&gt;
+&lt;p&gt;Additionally, I have made public the repositories for two of the final projects I did this year at UC Berkeley:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://andleb.netlify.app/project/ganising/&#34;&gt;ganIsing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://andleb.netlify.app/project/230afinal/&#34;&gt;230Afinal&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(I might make public more in the future&amp;hellip;)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>230A final</title>
+      <link>https://andleb.netlify.app/project/230afinal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/project/230afinal/</guid>
+      <description>&lt;p&gt;This is my final project for &lt;em&gt;STAT230A: Linear Models&lt;/em&gt; at UC Berkeley in Spring 2022, done jointly with &lt;a href=&#34;https://ischmidt20.github.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Isaac Schmidt&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The goal was to replicate the findings of &lt;a href=&#34;https://www.aeaweb.org/articles?id=10.1257/aer.102.4.1508&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Michalopoulos: The Origins of Ethnolinguistic Diversity&lt;/a&gt;. The project took an additional dimension since we couldn&amp;rsquo;t obtain some of the data used in the paper - the &lt;a href=&#34;https://www.worldgeodatasets.com/language/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;WLMS dataset&lt;/a&gt;, prompting us to recreate a portion of the paper using the &lt;a href=&#34;https://icr.ethz.ch/data/greg/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GREG dataset&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The main finding of the paper, which also bore out in our re-analysis using the alternative dataset, is that the &lt;em&gt;variation&lt;/em&gt; in the elevation and in the land quality (see the map above) are the two most decisive factors in driving a region&amp;rsquo;s ethnolinguistic diversity.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

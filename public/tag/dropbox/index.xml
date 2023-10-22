@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dropbox | Andrej&#39;s thoughts</title>
+    <link>https://andleb.netlify.app/tag/dropbox/</link>
+      <atom:link href="https://andleb.netlify.app/tag/dropbox/index.xml" rel="self" type="application/rss+xml" />
+    <description>Dropbox</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 05 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://andleb.netlify.app/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Dropbox</title>
+      <link>https://andleb.netlify.app/tag/dropbox/</link>
+    </image>
+    
+    <item>
+      <title>How to backup git repositories</title>
+      <link>https://andleb.netlify.app/post/how-to-backup-git-repositories/</link>
+      <pubDate>Wed, 05 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://andleb.netlify.app/post/how-to-backup-git-repositories/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;em&gt;NOTE: This is a migration of an old post from my previous blog.&lt;/em&gt;
+&lt;!-- ](https://andleb1.wordpress.com/2019/09/29/how-to-backup-git-repositories/)* --&gt;&lt;/p&gt;
+&lt;p&gt;In this post I’d like to briefly sketch my personal setup for git repositories, focusing on their backup.&lt;/p&gt;
+&lt;div id=&#34;repository-architecture-overview&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Repository architecture overview&lt;/h1&gt;
+&lt;p&gt;Generally, each repository on my desktop system will have at least two remotes. The first, the ubiquitous &lt;em&gt;origin&lt;/em&gt;, will be located inside an encrypted folder that is mounted inside the &lt;em&gt;Dropbox&lt;/em&gt; directory and hence automatically synced to the cloud. This setup is replicated across all my other machines; its setup could be a topic of a future post.&lt;/p&gt;
+&lt;p&gt;The second, which I usually name &lt;em&gt;backup&lt;/em&gt;, is located on a separate hard drive reserved for this purpose. It mirrors the whole repository, which is achieved using:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git push --mirror backup&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;on the first-time push.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;using-git-aliases-to-sync-the-backup-on-each-push&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Using git aliases to sync the backup on each push&lt;/h1&gt;
+&lt;p&gt;Since this repository is (hopefully) never pulled from, but only kept up to date with an acceptable state of the working repository,
+it is therefore convenient to avoid having to push to it manually. For this purpose I set up a &lt;em&gt;git alias&lt;/em&gt; in my &lt;code&gt;.gitconfig&lt;/code&gt;,
+which tries to push to all remotes of a particular repository.
+In the case of the aforementioned &lt;em&gt;origin&lt;/em&gt;, this command will naturally fail on the occasions where the paths have diverged.
+This I let happen and move on, since the motto is &lt;em&gt;“fast–forward if possible”&lt;/em&gt;.
+Due to the nature of the &lt;em&gt;backup&lt;/em&gt; repository, however, pushing to it should never fail:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;[alias]
+    ...
+    pushallbr = !&amp;quot;git remote -v | grep -v &amp;#39;github&amp;#39; | grep -Eo ^\\w+&amp;#39;|\
+     xargs -L1 -I R git push R&amp;quot;
+    ...&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;“pushallbr”&lt;/em&gt; stands for &lt;em&gt;“push all branches”&lt;/em&gt;, one can of course pick a different alias.
+Note that I filter out &lt;em&gt;github&lt;/em&gt; repositories explicitly (the -v flag in &lt;code&gt;grep&lt;/code&gt; inverts the match).
+The purpose of this command is just syncing the local repositories, for the ones on github I want to retain manual control.
+In my workflow I usually use this command over the common push origin master and thus sync the backup “automatically”.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;syncing-all-sub-directories&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Syncing all sub-directories&lt;/h1&gt;
+&lt;p&gt;Having set up our backup repository and added an alias that syncs it, an useful thing to have would be a shell
+script that descends into a hierarchy of repositories and tries to sync them all:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;#! /bin/bash
+{find . -maxdepth 8 -type d -exec bash -c &amp;quot;git --git-dir={}/.git --work-tree=$PWD/{} pushallbr&amp;quot; \;} 2&amp;gt;/dev/null
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Things to note:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Since we expect the command to fail in some (or many) cases without adverse side effects,
+we ignore the error messages by redirecting them to &lt;code&gt;/dev/null&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;To be able to use a complex git alias within a &lt;code&gt;find ... -exec&lt;/code&gt; command,
+one must invoke the whole thing as an inline script via &lt;code&gt;bash -c &#34;...&#34;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
