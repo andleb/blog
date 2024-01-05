@@ -95,6 +95,8 @@ social:
     icon_pack: fab
     link: https://github.com/andleb
     label: My GitHub profile
+    display:
+      header: true
   - icon: twitter
     icon_pack: fab
     link: https://twitter.com/anleb1
