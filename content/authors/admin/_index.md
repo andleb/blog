@@ -25,7 +25,8 @@ organizations:
     url: https://lsa.umich.edu/stats
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research focuses primarily on generative AI for science
+# bio: My research focuses primarily on generative AI for science
+bio: ''
 
 # Interests to show in About widget
 interests:
