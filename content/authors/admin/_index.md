@@ -17,7 +17,7 @@ last_name: Leban
 superuser: true
 
 # Role/position/tagline
-role: Ph.D. Student,
+role: Ph.D. Student
 
 # Organizations/Affiliations to show in About widget
 organizations:

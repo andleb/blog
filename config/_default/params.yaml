@@ -22,12 +22,12 @@ marketing:
     description: 'Ph.D. student at the University of Michigan, Ann Arbor'
     twitter: 'anleb1'
   analytics:
-    google_analytics: ''
+    google_analytics: '' # 'UA-228705789-1'
     baidu_tongji: ''
     google_tag_manager: ''
     microsoft_clarity: ''
   verification:
-    google: ''
+    google: '' #'google-site-verification=oJUt4qEgz1nbEKcvDXzsR0LNbHNPGcPECa2xegOaWp8'
     baidu: ''
 
 # Site header
@@ -64,10 +64,21 @@ locale:
 # Site features
 
 features:
+#NOTE: see if this works
+  highlight: true
   syntax_highlighter:
+    highlight: true
     enable: true
     theme_light: github-light
     theme_dark: dracula
+    #NOTE: see if this works
+    highlight_languages:
+      - r
+      - python
+      - latex
+      - cpp
+      - cmake
+      - bash
   math:
     enable: true
   privacy_pack:
@@ -76,6 +87,18 @@ features:
     url: 'https://github.com/andleb/blog'
     content_dir: content
     branch: main
+  show_related:
+    book: true
+    page: false
+    post: true
+    project: true
+    publication: true
+    event: true
+  reading_time: true
+  abstract_length: 135
+  publications:
+    date_format: January 2006
+    citation_style: apa
   avatar:
     gravatar: false
     shape: circle

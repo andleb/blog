@@ -63,6 +63,8 @@ markup:
     renderer:
       unsafe: true
   highlight:
+    #NOTE: see if this works
+    enable: true
     anchorLineNos: false
     codeFences: true
     guessSyntax: true
