@@ -1,0 +1,39 @@
+---
+title: The GitHub’s Arctic Code Vault
+author: 
+date: '2022-01-05'
+slug: the-github-s-arctic-code-vault
+categories: []
+tags:
+  - GitHub
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2022-01-05T18:21:10-08:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+*NOTE: This is a migration of an old post from my previous  blog.*
+<!-- https://andleb1.wordpress.com/2020/10/02/the-githubs-arctic-code-vault/)* -->
+
+Something extremely *cool* happened to two of my GitHub repositories (please pardon the pun). 
+Namely, they were included in Github’s Arctic Vault Archive program. 
+
+In short, GitHub has partnered with a Norwegian company to write some of the repositories to special, 
+durable film reels and deposit them 250 meters underground in an abandoned coal mine in the remote [Svalbard islands](https://en.wikipedia.org/wiki/Svalbard).
+
+All in all, about 200 3500-foot (1km) reels of film were thus deposited. 
+
+Given how often we hear the familiar complaint of the supposed transience of modern products, 
+it is uplifting to see a company take a concrete action to remedy this. 
+As for myself, I am deeply honored to have something that I created preserved for posterity.
+
+<iframe width="728" height="410" src="https://www.youtube.com/embed/fzI9FNjXQ0o"
+title="YouTube video player" frameborder="0" allow="accelerometer; 
+autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>

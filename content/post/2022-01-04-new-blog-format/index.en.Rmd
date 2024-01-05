@@ -1,0 +1,25 @@
+---
+title: New blog format
+author: 
+date: '2022-01-04'
+slug: new-blog-format
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2022-01-04T21:59:03-08:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+Since Wordpress was just annoying enough for typesetting math & code to dissuade me from posting regularly, I have decided to migrate to [blogdown](https://bookdown.org/yihui/blogdown/). 
+<!-- My old blog can be found [here](https://andleb1.wordpress.com/). -->
+
+I will, however, move over some of the posts there.
+

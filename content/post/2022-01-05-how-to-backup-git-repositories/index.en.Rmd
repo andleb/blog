@@ -1,0 +1,88 @@
+---
+title: "How to backup git repositories"
+author: 
+date: '2022-01-05'
+draft: false
+slug: how-to-backup-git-repositories
+categories: []
+tags:
+- bash
+- Dropbox
+- Git
+- GitHub
+- Linux
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2022-01-05T17:33:27-08:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+*NOTE: This is a migration of an old post from my previous blog.*
+<!-- ](https://andleb1.wordpress.com/2019/09/29/how-to-backup-git-repositories/)* -->
+
+
+In this post I’d like to briefly sketch my personal setup for git repositories, focusing on their backup.
+
+# Repository architecture overview  
+  
+  
+
+Generally, each repository on my desktop system will have at least two remotes. The first, the ubiquitous *origin*, will be located inside an encrypted folder that is mounted inside the *Dropbox* directory and hence automatically synced to the cloud. This setup is replicated across all my other machines; its setup could be a topic of a future post.
+
+The second, which I usually name *backup*, is located on a separate hard drive reserved for this purpose. It mirrors the whole repository, which is achieved using:
+
+```{bash, eval=FALSE, include=TRUE}
+git push --mirror backup
+```
+on the first-time push.
+
+
+# Using git aliases to sync the backup on each push
+
+
+Since this repository is (hopefully) never pulled from, but only kept up to date with an acceptable state of the working repository,
+it is therefore convenient to avoid having to push to it manually. For this purpose I set up a *git alias* in my `.gitconfig`,
+which tries to push to all remotes of a particular repository. 
+In the case of the aforementioned *origin*, this command will naturally fail on the occasions where the paths have diverged. 
+This I let happen and move on, since the motto is *“fast–forward if possible”*.
+Due to the nature of the *backup* repository, however, pushing to it should never fail:
+```{bash, eval=FALSE, include=TRUE}
+[alias]
+    ...
+    pushallbr = !"git remote -v | grep -v 'github' | grep -Eo ^\\w+'|\
+     xargs -L1 -I R git push R"
+    ...
+```
+
+*“pushallbr”* stands for *“push all branches”*, one can of course pick a different alias.
+Note that I filter out *github* repositories explicitly (the -v flag in `grep` inverts the match).
+The purpose of this command is just syncing the local repositories, for the ones on github I want to retain manual control. 
+In my workflow I usually use this command over the common push origin master and thus sync the backup “automatically”.
+
+
+# Syncing all sub-directories
+
+Having set up our backup repository and added an alias that syncs it, an useful thing to have would be a shell
+script that descends into a hierarchy of repositories and tries to sync them all:
+
+```{bash, eval=FALSE, include=TRUE}
+#! /bin/bash
+{find . -maxdepth 8 -type d -exec bash -c "git --git-dir={}/.git --work-tree=$PWD/{} pushallbr" \;} 2>/dev/null
+
+```
+
+Things to note:
+
+* Since we expect the command to fail in some (or many) cases without adverse side effects,
+we ignore the error messages by redirecting them to `/dev/null`  
+  
+
+* To be able to use a complex git alias within a `find ... -exec` command,
+one must invoke the whole thing as an inline script via `bash -c "..."`
+
