@@ -3,8 +3,19 @@
 # Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
-title: Academic # Website name
-baseURL: 'https://example.com/' # Website URL
+title: "Andrej's Thoughts" # Website name
+baseURL: 'https://andleb.netlify.app/' # Website URL
+
+
+
+############################
+## SEO
+############################
+sitemap:
+  changefreq: weekly
+  filename: sitemap.xml
+  priority: 1.0
+  _merge: deep
 
 ############################
 ## LANGUAGE
@@ -18,7 +29,8 @@ removePathAccents: true
 ############################
 ## ADVANCED
 ############################
-
+math: true
+enableInlineShortcodes: true
 enableGitInfo: false
 summaryLength: 30
 paginate: 10
@@ -47,6 +59,9 @@ taxonomies:
   author: authors
 markup:
   _merge: deep
+  goldmark:
+    renderer:
+      unsafe: true
 related:
   threshold: 80
   includeNewer: true
@@ -58,7 +73,7 @@ related:
       weight: 70
 security:
   _merge: deep
-sitemap:
-  _merge: deep
+# sitemap:
+#   _merge: deep
 minify:
   _merge: deep
