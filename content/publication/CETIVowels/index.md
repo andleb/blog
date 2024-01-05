@@ -82,7 +82,7 @@ image:
 This paper follows up on predictions obtained from generative models in [Approaching an unknown communication system by latent space exploration and causal inference](../causalceti) and uncovers patterns corresponding to vowels and dipthongs in
 the communication of sperm whales.
 
-The work has receives significant attention, with more that 1.7 million impressions on X:
+The work has received significant attention, with more than 1.7 million impressions on X:
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Sperm whales have equivalents to human vowels.<br><br>We uncovered spectral properties in whales’ clicks that are recurrent across whales, independent of traditional types, and compositional.<br><br>We got clues to look into spectral properties from our AI interpretability technique CDEV. <a href="https://t.co/8sEAzPkMfo">pic.twitter.com/8sEAzPkMfo</a></p>&mdash; Gašper Beguš (@begusgasper) <a href="https://twitter.com/begusgasper/status/1732069051512598797?ref_src=twsrc%5Etfw">December 5, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
 and coverage in media outlets (some collected [in this Medium post](https://medium.com/@InnovateForge/whale-language-ai-breakthrough-c2728eecc8fe)).
