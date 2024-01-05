@@ -6,7 +6,7 @@ title: "A Bayesian approach to translators' reliability assessment"
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - Marco Miccheli
-  - Andrej Leban
+  - admin
   - Andrea Tacchella
   - Andrea Zaccaria
   - Dario Mazzilli

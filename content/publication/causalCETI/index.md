@@ -6,7 +6,7 @@ title: "Approaching an unknown communication system by latent space exploration 
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - Gašper Beguš
-  - Andrej Leban
+  - admin
   - Shane Gero
 
 # Author notes (optional)
