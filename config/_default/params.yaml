@@ -22,12 +22,12 @@ marketing:
     description: 'Ph.D. student at the University of Michigan, Ann Arbor'
     twitter: 'anleb1'
   analytics:
-    google_analytics: '' # 'UA-228705789-1'
+    google_analytics: 'UA-228705789-1' # 'UA-228705789-1'
     baidu_tongji: ''
     google_tag_manager: ''
     microsoft_clarity: ''
   verification:
-    google: '' #'google-site-verification=oJUt4qEgz1nbEKcvDXzsR0LNbHNPGcPECa2xegOaWp8'
+    google: 'google-site-verification=oJUt4qEgz1nbEKcvDXzsR0LNbHNPGcPECa2xegOaWp8' #'google-site-verification=oJUt4qEgz1nbEKcvDXzsR0LNbHNPGcPECa2xegOaWp8'
     baidu: ''
 
 # Site header
