@@ -1,6 +1,7 @@
 ---
 title: Diploma Thesis in Mathematical Physics
 summary: Time-dependent current through a quantum dot in the presence of a voltage probe (in Slovene)
+weight: 2
 tags:
   - Mesoscopic transport
   - Nanophysics

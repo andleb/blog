@@ -1,11 +1,12 @@
 ---
 title: ganIsing
+weight: 99
 summary: Solving the 2D Ising model using GANs
 tags:
   - Deep Learning
   - Monte Carlo
   - Physics
-date: '2021-12-15T00:00:00Z'
+date: ''
 
 # Optional external URL for project (replaces project detail page).
 external_link: ''

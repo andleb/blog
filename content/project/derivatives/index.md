@@ -1,5 +1,6 @@
 ---
 title: derivatives
+weight: 1
 summary: " Derivatives pricing in modern C++. "
 tags:
   - Quant
