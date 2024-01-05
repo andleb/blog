@@ -24,7 +24,7 @@ marketing:
   analytics:
     google_analytics: 'G-315158793' # 'UA-228705789-1'
     baidu_tongji: ''
-    google_tag_manager: ''
+    google_tag_manager: 'G-C4RQH6RNGW'
     microsoft_clarity: ''
   verification:
     google: 'google-site-verification=oJUt4qEgz1nbEKcvDXzsR0LNbHNPGcPECa2xegOaWp8' #'google-site-verification=oJUt4qEgz1nbEKcvDXzsR0LNbHNPGcPECa2xegOaWp8'
