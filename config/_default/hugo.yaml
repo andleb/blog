@@ -15,7 +15,7 @@ sitemap:
   changefreq: weekly
   filename: sitemap.xml
   priority: 1.0
-  _merge: deep
+  # _merge: deep
 
 ############################
 ## LANGUAGE
