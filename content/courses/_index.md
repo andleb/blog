@@ -12,7 +12,7 @@ header:
 (Cumulative GPA: 3.97)
 
 
-*    [STAT 215A: Statistical Models I](https://classes.berkeley.edu/content/2021-fall-stat-215a-001-lec-001) (Stat. PhD core)     
+* [STAT 215A: Statistical Models I](https://classes.berkeley.edu/content/2021-fall-stat-215a-001-lec-001) (Stat. PhD core)     
 
 
 - [CS281/STAT241A Statistical Learning Theory](https://classes.berkeley.edu/content/2021-fall-compsci-c281a-001-lec-001)  
