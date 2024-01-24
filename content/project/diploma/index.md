@@ -33,12 +33,12 @@ url_video: ''
 # slides: example
 ---
 
-This is the thesis for my Diploma (Master's and Bachelor's combined) in Mathematical Physics at the University of Ljubljana. It was advised by dr. Tomaž Rejec from the Department of Theoretical Physics, Jožef Stefan Institute.
+This is the thesis for my Diploma (Master's and Bachelor's combined) in Mathematical Physics at the [University of Ljubljana](https://www.fmf.uni-lj.si/en/study-physics/programmes/2Fiz/2023/7000784/). It was advised by dr. Tomaž Rejec from the [Department of Theoretical Physics, Jožef Stefan Institute](https://web-f1.ijs.si/).
 
-The work is an original examination of the effects that a coupled voltage probe has on the current flowing through a quantum dot. This was done by numerically simulating the problem from first principles (i.e. from a version of Schrödinger's equation). The main challenge was to ensure that the voltage on the probe was set just so there was no current flowing in or out of it, *while* the system was being integrated - i.e. without knowing what the actual currents at that step were.
+The work is an original examination of the effects that a coupled voltage probe has on the current flowing through a quantum dot, specifically its temporal properties. This was done by numerically simulating the problem from first principles (i.e. from a version of Schrödinger's equation). The main challenge was to ensure that the voltage on the probe was set just so there was no current flowing in or out of it, *while* the system was being integrated - i.e. without knowing what the actual currents at that step were.
 
 
 The document attached significantly compresses the theoretical background of the thesis (based on the Non-Equilibrium Green's Functions formalism - NEGF), which is to be found in the [referenced works](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.72.035308) since it falls outside of the Diploma program and the recommended Diploma thesis format.
 
 
-([University of Ljubljana Repository reference page](https://repozitorij.uni-lj.si/IzpisGradiva.php?id=97516&lang=eng))
+References: [University of Ljubljana Repository reference page](https://repozitorij.uni-lj.si/IzpisGradiva.php?id=97516&lang=eng).

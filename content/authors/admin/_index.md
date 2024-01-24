@@ -121,11 +121,12 @@ social:
 highlight_name: true
 ---
 
-I am a Ph.D. student at the [Department of Statistics, University of Michigan](https://lsa.umich.edu/stats).
+I am a Ph.D. student at the [Department of Statistics, University of Michigan](https://lsa.umich.edu/stats), currently working with Professors [Ambuj Tewari](https://www.ambujtewari.com/) and [Yixin Wang](https://yixinwang.github.io/). 
 <!-- TODO: Ambuj, Yixin, interests-->
 
-Previously, I did research at UC Berkeley, where I was part of [Project CETI](https://www.projectceti.org/about), which aims to decipher sperm whale communication with machine learning.
+Previously, I did research at UC Berkeley, where I was part of [Project CETI](https://www.projectceti.org/about), working on furthering our understanding of sperm whale communication using modern machine learning.
 
+I also hold a degree in Mathematical Physics from the [University of Ljubljana, Slovenia](https://www.fmf.uni-lj.si/en/), and have worked in both the technology and financial industries in the time between my Physics and Statistics degrees.
 
 You can get the source code of this website at [https://github.com/andleb/blog](https://github.com/andleb/blog).
 {style="text-align: justify;"}
