@@ -9,7 +9,7 @@ header:
   image: ''
 ---
 
-### [University of Michigan: MSSIS](https://sites.lsa.umich.edu/mssiss/), 3/24
+### [University of Michigan: MSSISS](https://sites.lsa.umich.edu/mssiss/), 3/24
 [Abstract](https://sites.lsa.umich.edu/mssiss/mssiss-2024/presentations/#session-five)
 
 ###  [Simons Institute's Workshop on Decoding Communication in Nonhuman Species II](https://simons.berkeley.edu/workshops/decoding-communication-nonhuman-species-ii-co-hosted-project-ceti#simons-tabs), 6/23
