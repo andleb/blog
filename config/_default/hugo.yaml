@@ -12,10 +12,11 @@ baseURL: 'https://andleb.netlify.app/' # Website URL
 ## SEO
 ############################
 sitemap:
-  changefreq: weekly
+  changefreq: monthly
+  disable: false
   filename: sitemap.xml
   priority: 1.0
-  _merge: deep
+  # _merge: deep
 
 ############################
 ## LANGUAGE
@@ -93,7 +94,5 @@ related:
       weight: 70
 security:
   _merge: deep
-# sitemap:
-#   _merge: deep
 minify:
   _merge: deep
