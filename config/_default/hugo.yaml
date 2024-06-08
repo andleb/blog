@@ -15,7 +15,7 @@ sitemap:
   changefreq: monthly
   disable: false
   filename: sitemap.xml
-  priority: 1.0
+  priority: 0.9
   # _merge: deep
 
 ############################
